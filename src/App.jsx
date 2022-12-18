@@ -1,12 +1,8 @@
-import { Button } from '@mui/material';
+import SongPage from 'pages/song';
 import './App.css';
 
 function App() {
-    return (
-        <Button variant="contained" color="primary">
-            test
-        </Button>
-    );
+    return <SongPage />;
 }
 
 export default App;
