@@ -1,11 +1,22 @@
-import { Button } from '@mui/material';
+import { Container } from '@mui/material';
+import { Route, Routes } from 'react-router-dom';
+import { routes } from 'routes';
 import './App.css';
 
 function App() {
     return (
-        <Button variant="contained" color="primary">
-            test
-        </Button>
+        <Container>
+            <Routes>
+                {Object.keys(routes).map((route) => {
+                    return (
+                        <Route
+                            element={routes[route].element}
+                            path={routes[route].path}
+                        />
+                    );
+                })}
+            </Routes>
+        </Container>
     );
 }
 
