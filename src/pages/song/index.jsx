@@ -1,17 +1,20 @@
-import { useTheme } from '@emotion/react';
 import { Box, Button } from '@mui/material';
-import { LyricsDrawer } from 'components';
+import { LyricsDrawer, MusicPlayerSlider } from 'components';
 import React from 'react';
 
 function SongPage() {
-    const theme = useTheme();
     return (
         <Box
             sx={{
                 maxWidth: 433,
                 mx: 'auto',
-                background: theme.palette.background.default,
+                background: '#1e1e1e',
                 pt: 35 / 8,
+                position: 'relative',
+                height: 500,
+                borderRadius: 5,
+                overflow: 'hidden',
+                fontFamily: 'Century Gothic',
             }}>
             <Box
                 sx={{
@@ -25,6 +28,7 @@ function SongPage() {
                 </Box>
                 <Box>!icon!</Box>
             </Box>
+            <MusicPlayerSlider />
             <LyricsDrawer />
         </Box>
     );
