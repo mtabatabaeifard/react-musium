@@ -1,0 +1,30 @@
+.main-image{
+    background-image: url('./../../assets/images/Welcome/img_girl.png');
+    background-repeat: no-repeat;
+    background-position-y: 10rem;
+}
+
+.circle {
+    mix-blend-mode: soft-light;
+    box-shadow: inset 0px 0px 8px 0px #06a0b5;
+}
+
+.big-circle{
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+}
+
+.small-circle{
+    padding-top: 4.8rem;
+    padding-right: 3rem;
+    height: 78px;
+    width: 78px;
+}
+
+.medium-circle{
+    padding-top: 4.3rem;
+    padding-right: 1.5rem;
+    align-self: end;
+    height: 103px;
+    width: 103px;
+}
