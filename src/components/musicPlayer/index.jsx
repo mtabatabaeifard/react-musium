@@ -8,7 +8,7 @@ import Stack from '@mui/material/Stack';
 
 export function MusicPlayerSlider() {
     const theme = useTheme();
-    const duration = 200; // seconds
+    const duration = 163; // seconds
     const [position, setPosition] = React.useState(32);
     const [paused, setPaused] = React.useState(false);
 
@@ -93,7 +93,7 @@ export function MusicPlayerSlider() {
                     mt: -2,
                 }}>
                 <TinyText>{formatDuration(position)}</TinyText>
-                <TinyText>-{formatDuration(duration - position)}</TinyText>
+                <TinyText>{formatDuration(duration)}</TinyText>
             </Box>
             <Box
                 sx={{
