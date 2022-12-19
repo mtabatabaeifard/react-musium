@@ -10,12 +10,15 @@ function Welcome() {
             height="100vh"
             display="flex"
             flexDirection="column"
+            justifyContent="space-between"
             className="main-image">
-            <Box display="flex" justifyContent="space-between">
-                <img src={circle} alt="" className="circle big-circle" />
-                <img src={circle} alt="" className="circle small-circle" />
+            <Box display="flex" flexDirection="column">
+                <Box display="flex" justifyContent="space-between">
+                    <img src={circle} alt="" className="circle big-circle" />
+                    <img src={circle} alt="" className="circle small-circle" />
+                </Box>
+                <img src={circle} alt="" className="circle medium-circle" />
             </Box>
-            <img src={circle} alt="" className="circle medium-circle" />
             <Box
                 bgcolor="common.black"
                 borderRadius="54px 54px 0 0"
