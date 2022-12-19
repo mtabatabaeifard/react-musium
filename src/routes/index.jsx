@@ -1,10 +1,13 @@
 import SongPage from 'pages/song';
+import Home from 'pages/Home';
 
-const routes = {
+export const routes = {
+    HOME: {
+        path: '/',
+        element: <Home />,
+    },
     SONG: {
         path: '/song',
         element: <SongPage />,
     },
 };
-
-export default routes;

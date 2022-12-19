@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
-import routes from 'routes';
+import { routes } from 'routes';
 import './App.css';
 
 function App() {
