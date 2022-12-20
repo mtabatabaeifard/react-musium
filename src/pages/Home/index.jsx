@@ -1,14 +1,14 @@
-import { Button } from '@mui/material';
+// import { Box } from '@mui/material';
+import { TitleCreator } from 'components';
 import React from 'react';
 
 function Home() {
     return (
-        <div>
-            Home
-            <Button variant="contained" color="primary">
-                test
-            </Button>
-        </div>
+        <>
+            <TitleCreator title="Continue Listening" />
+            <TitleCreator title="Your Top Mixes" />
+            <TitleCreator title="Based on your recent listening" />
+        </>
     );
 }
 
