@@ -10,7 +10,7 @@ function SongPage() {
             sx={{
                 maxWidth: 433,
                 mx: 'auto',
-                background: '#1e1e1e',
+                background: '#000',
                 pt: 35 / 8,
                 position: 'relative',
                 overflow: 'hidden',
@@ -70,7 +70,7 @@ function SongPage() {
             <MusicPlayerSlider />
             <IconButton
                 aria-label="Download"
-                sx={{ marginTop: '2.8rem', marginLeft: '73.58%' }}>
+                sx={{ marginTop: '2.8rem', marginLeft: '72.58%' }}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -87,6 +87,7 @@ function SongPage() {
                 sx={{
                     color: theme.palette.secondary.main,
                     fontSize: '1.4rem',
+                    fontWeight: 600,
                     letterSpacing: '0.055em',
                     marginTop: '3rem',
                     marginBottom: '15.8rem',

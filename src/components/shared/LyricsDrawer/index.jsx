@@ -20,7 +20,10 @@ export function LyricsDrawer() {
                 borderRadius: '2.5rem',
                 position: 'absolute',
                 maxWidth: '381px',
-                bottom: `${drawerState ? '5.0rem' : '-8.8rem'}`,
+                paddingBottom: `${drawerState ? '45rem' : '1.5rem'}`,
+                bottom: `${drawerState ? '4.5rem' : '-8.8rem'}`,
+                lineHeight: `${drawerState ? '5rem' : '2.6rem'}`,
+                transition: 'all .8s ease-out .2s',
                 boxShadow: 'inset 0rem .4rem .4rem rgba(0, 0, 0, 0.25)',
                 [theme.breakpoints.down('smallMobile')]: {
                     bottom: -154,
