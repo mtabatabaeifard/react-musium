@@ -94,7 +94,7 @@ export function MusicPlayerSlider() {
                 sx={{
                     mx: 1.8,
                     height: 4,
-                    borderRadius: 1 / 8,
+                    borderRadius: 2 / 8,
                     maxWidth: '93%',
                     '& .MuiSlider-thumb': {
                         width: 12,
@@ -126,7 +126,7 @@ export function MusicPlayerSlider() {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     ml: 1.8,
-                    mt: -2.5,
+                    mt: -1.75,
                     maxWidth: '93%',
                 }}>
                 <TinyText>{formatDuration(position)}</TinyText>
