@@ -23,6 +23,9 @@ const theme = createTheme({
     status: {
         danger: 'red',
     },
+    typography: {
+        fontFamily: ['Lexend', 'sans serif'].join(','),
+    },
     components: {
         MuiButton: {
             styleOverrides: {
