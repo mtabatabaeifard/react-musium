@@ -1,2 +1,2 @@
-export * from 'components/LyricsDrawer';
-export * from 'components/musicPlayer';
+export * from 'components/shared/LyricsDrawer';
+export * from 'components/shared/musicPlayer';
