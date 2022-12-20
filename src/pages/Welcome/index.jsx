@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import circle from '../../assets/images/Welcome/Ellipse.svg';
 import './style.css';
 
-function Welcome() {
+export function Welcome() {
     return (
         <Box
             bgcolor="primary.medium"
@@ -31,5 +31,3 @@ function Welcome() {
         </Box>
     );
 }
-
-export default Welcome;

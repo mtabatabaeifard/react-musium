@@ -3,7 +3,7 @@ import React from 'react';
 import musiumLogo from '../../assets/images/LaunchScreen/musium logo.png';
 import musium from '../../assets/images/LaunchScreen/musium.svg';
 
-function LaunchScreen() {
+export function LaunchScreen() {
     return (
         <Box
             display="flex"
@@ -18,5 +18,3 @@ function LaunchScreen() {
         </Box>
     );
 }
-
-export default LaunchScreen;

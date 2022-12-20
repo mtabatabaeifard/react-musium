@@ -35,6 +35,13 @@ const theme = createTheme({
             },
         },
     },
+    breakpoints: {
+        values: {
+            smallMobile: 430,
+            smallerMobile: 395,
+            smallestMobile: 360,
+        },
+    },
 });
 
 export default theme;
