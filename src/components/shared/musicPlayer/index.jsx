@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 
 export function MusicPlayerSlider() {
     const theme = useTheme();
-    const duration = 163; // seconds
+    const duration = 163;
     const [position, setPosition] = React.useState(32);
     const [paused, setPaused] = React.useState(true);
 
@@ -17,7 +17,6 @@ export function MusicPlayerSlider() {
         letterSpacing: 0.2,
         color: theme.palette.secondary.main,
         fontSize: '1.2rem',
-        paddingLeft: '1rem',
     });
 
     function formatDuration(value) {
@@ -26,7 +25,7 @@ export function MusicPlayerSlider() {
         return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
     }
     return (
-        <Box sx={{ overflow: 'hidden', px: 45 / 8 }}>
+        <Box sx={{ overflow: 'hidden', px: 34 / 8, marginTop: '2.7rem' }}>
             <Box
                 sx={{
                     display: 'flex',
@@ -56,7 +55,7 @@ export function MusicPlayerSlider() {
                     </Typography>
                 </Box>
                 <Box>
-                    <IconButton aria-label="Shuffle">
+                    <IconButton aria-label="Share">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="18"
@@ -69,7 +68,7 @@ export function MusicPlayerSlider() {
                             />
                         </svg>
                     </IconButton>
-                    <IconButton aria-label="Shuffle">
+                    <IconButton aria-label="Like" sx={{ marginRight: 1 }}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="15"
@@ -93,10 +92,10 @@ export function MusicPlayerSlider() {
                 max={duration}
                 onChange={(_, value) => setPosition(value)}
                 sx={{
-                    marginLeft: 11 / 8,
+                    mx: 1.8,
                     height: 4,
-                    borderRadius: 0,
-                    width: 330,
+                    borderRadius: 1 / 8,
+                    maxWidth: '93%',
                     '& .MuiSlider-thumb': {
                         width: 12,
                         height: 12,
@@ -126,7 +125,9 @@ export function MusicPlayerSlider() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    mt: -2,
+                    ml: 1.8,
+                    mt: -2.5,
+                    maxWidth: '93%',
                 }}>
                 <TinyText>{formatDuration(position)}</TinyText>
                 <TinyText>{formatDuration(duration)}</TinyText>
@@ -135,9 +136,21 @@ export function MusicPlayerSlider() {
                 sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    justifyContent: 'end',
                     mt: 1 / 8,
-                    gap: 20 / 8,
+                    mr: 0.4,
+                    [theme.breakpoints.up('smallMobile')]: {
+                        gap: 20 / 8,
+                    },
+                    [theme.breakpoints.down('smallMobile')]: {
+                        gap: 12 / 8,
+                    },
+                    [theme.breakpoints.down('smallerMobile')]: {
+                        gap: 4 / 8,
+                    },
+                    [theme.breakpoints.down('smallestMobile')]: {
+                        gap: 1 / 8,
+                    },
                 }}>
                 <IconButton aria-label="Shuffle">
                     <svg
@@ -207,7 +220,7 @@ export function MusicPlayerSlider() {
                             stroke="#fff"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                            strokeWidth="2"
+                            strokeWidth="3"
                             width="20px"
                             height="20px">
                             <path d="M23 2 L23 30 M9 2 L9 30" />

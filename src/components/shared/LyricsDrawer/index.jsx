@@ -2,11 +2,14 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useTheme } from '@emotion/react';
+import { useState } from 'react';
 
 export function LyricsDrawer() {
     const theme = useTheme();
+    const [drawerState, setDrawerState] = useState(false);
     return (
         <Box
+            onClick={() => setDrawerState(!drawerState)}
             p={25 / 8}
             sx={{
                 background: theme.palette.primary.main,
@@ -17,8 +20,17 @@ export function LyricsDrawer() {
                 borderRadius: '2.5rem',
                 position: 'absolute',
                 maxWidth: '381px',
-                bottom: -88,
+                bottom: `${drawerState ? '5.0rem' : '-8.8rem'}`,
                 boxShadow: 'inset 0rem .4rem .4rem rgba(0, 0, 0, 0.25)',
+                [theme.breakpoints.down('smallMobile')]: {
+                    bottom: -154,
+                },
+                [theme.breakpoints.down('smallerMobile')]: {
+                    bottom: -208,
+                },
+                [theme.breakpoints.down('smallestMobile')]: {
+                    bottom: -238,
+                },
             }}>
             You never look at the sky <br />
             Cause you think it's too high <br />
