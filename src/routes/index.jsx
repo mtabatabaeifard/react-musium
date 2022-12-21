@@ -1,7 +1,8 @@
 import { Home } from 'pages/Home';
 import { SongPage } from 'pages/song';
-import { LaunchScreen } from 'pages/LaunchScreen';
-import { Welcome } from 'pages/Welcome';
+import { LaunchScreen } from 'pages/launchScreen';
+import { Welcome } from 'pages/welcome';
+import { SignIn } from 'pages/signIn';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -15,6 +16,10 @@ export const routes = {
     HOME: {
         path: '/Home',
         element: <Home />,
+    },
+    SIGNIN: {
+        path: '/sign-in',
+        element: <SignIn />,
     },
     SONG: {
         path: '/song',
