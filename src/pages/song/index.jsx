@@ -3,7 +3,7 @@ import { LyricsDrawer, MusicPlayerSlider } from 'components';
 import React from 'react';
 import image from 'assets/images/SongPic.png';
 
-export function SongPage() {
+function SongPage() {
     const theme = useTheme();
     return (
         <Box
@@ -99,3 +99,5 @@ export function SongPage() {
         </Box>
     );
 }
+
+export default SongPage;

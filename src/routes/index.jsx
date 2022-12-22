@@ -1,5 +1,5 @@
-import { Home } from 'pages/Home';
-import { SongPage } from 'pages/song';
+import Home from 'pages/Home';
+import SongPage from 'pages/song';
 import { LaunchScreen } from 'pages/launchScreen';
 import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
