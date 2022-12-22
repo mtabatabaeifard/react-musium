@@ -13,9 +13,11 @@ const theme = createTheme({
             gray: '#446266',
         },
         secondary: {
-            main: '#00C2CB',
+            main: '#8A9A9D',
+            sec: '#00C2CB',
         },
         text: {
+            primary: '#FFFFFF',
             white: 'rgba(255, 255, 255, 0.87)',
             gray: '#8A9A9D',
         },
