@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import { LogoSectionSingUp } from './logo';
 import { FormSectionSingUP } from './form';
 import {socialSingUp } from './social';
-import './index.css'
+import './styles/style.css'
 
 
 export default function SingUp() {

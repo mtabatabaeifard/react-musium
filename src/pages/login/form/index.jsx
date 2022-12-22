@@ -6,7 +6,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React from 'react';
-import '../index.css'
+import '../styles/style.css'
 import { CheckBoxButton } from 'components/shared/CheckBoxButton';
 
 export function FormSection() {
@@ -32,7 +32,7 @@ export function FormSection() {
     return (
         <Box paddingTop={4}>
 
-            <Box >
+            <Box>
                 <FormControl variant="outlined" sx={{
                     display: 'flex', flexDirection: 'column', alignItems: 'center',
                     gap: '2.3rem',
@@ -41,9 +41,10 @@ export function FormSection() {
                         placeholder='Email'
                         InputProps={{
                             style: {
+                                fontSize:'1.6rem',
                                 height: "100%",
                               },
-                            startAdornment: <InputAdornment position="start"><MailOutlineIcon sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /></InputAdornment>,
+                            startAdornment: <InputAdornment position="start"><MailOutlineIcon fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /></InputAdornment>,
                         }}
                         id="outlined-multiline-flexible"
                         maxRows={6}
@@ -53,19 +54,21 @@ export function FormSection() {
                         type={showPassword ? 'text' : 'password'}
                         InputProps={{
                             style: {
+                                fontSize:'1.6rem',
                                 height: "100%",
                               },
                             endAdornment: <InputAdornment position="end">
-                                <IconButton sx={{ color: 'rgba(255, 255, 255, 0.27)' }}
+                                <IconButton  sx={{ color: 'rgba(255, 255, 255, 0.27)' }}
+                                    fontSize='large'
                                     onClick={handleClickShowPassword}
                                     onMouseDown={handleMouseDownPassword}
                                     edge="end"
                                 >
-                                    {showPassword ? <VisibilityOff sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /> : <Visibility sx={{ color: 'rgba(255, 255, 255, 0.27)' }} />}
+                                    {showPassword ? <VisibilityOff fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /> : <Visibility fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} />}
                                 </IconButton>
                             </InputAdornment>,
                             startAdornment:  <InputAdornment position="start">
-                            <LockOutlinedIcon sx={{ color: 'rgba(255, 255, 255, 0.27)' }} >
+                            <LockOutlinedIcon fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} >
                                 {showPassword ? <VisibilityOff /> : <Visibility />}
                             </LockOutlinedIcon>
                         </InputAdornment>
@@ -81,7 +84,7 @@ export function FormSection() {
                     sx={styles.button}
                     variant="outlined" size='medium'>Log in</Button>
             </Box>
-            <Link marginTop={3} marginBottom={5.5} sx={{ color: '#00C2CB', textDecoration: 'none', display: 'flex', justifyContent: 'center',fontSize:'1.4rem' ,cursor: 'pointer',}} to ="/forgetpassword" >Forgot the password?</Link>
+            <Link underline='hover' marginTop={3} marginBottom={5.5} sx={{ color: '#00C2CB', textDecoration: 'none', display: 'flex', justifyContent: 'center',fontSize:'1.4rem' ,}} href ="/forgetpassword" >Forgot the password?</Link>
         </Box>
     )
 }

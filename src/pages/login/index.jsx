@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import { LogoSection } from './logo';
 import { FormSection } from './form';
 import { social } from './social';
-import './index.css'
+import './styles/style.css'
 
 
 export default function Login() {

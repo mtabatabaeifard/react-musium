@@ -6,7 +6,6 @@ export function CheckBoxButton(props) {
         formControlLabel: {
             padding: '2.125rem 2.5rem 2.75rem 2.75rem',
             color: '#FFFFFF',
-            
         },
         checkBox: {
             color: ' #00C2CB',
@@ -18,7 +17,7 @@ export function CheckBoxButton(props) {
     return (
         <FormControlLabel
             sx={style.formControlLabel}
-            control={<Checkbox defaultChecked labal sx={style.checkBox} />
+            control={<Checkbox  defaultChecked labal sx={style.checkBox} />
             } 
              {...props}  />
     )

@@ -9,7 +9,7 @@ import { Button } from "components";
 export function social() {
     const styles = {
         icons: { display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'pointer',
-         color: 'white', border: '1px solid #fff', borderRadius: '50%' , height:'5rem',minWidth:'5rem',
+         color: 'white', border: '1px solid #DBE7E8', borderRadius: '50%' , height:'5rem',minWidth:'5rem',
         backgroundColor:'#1E1E1E'},
         button: {
           height: '3.6875rem',
@@ -30,7 +30,7 @@ export function social() {
                 <Button sx={styles.icons} ><FacebookSharpIcon fontSize="large" sx={{ color: '#0165E1' }}  /></Button>
                 <Button sx={styles.icons}>  <AppleIcon fontSize="large" sx={{ color: '#fff' }}  /> </Button>
             </Box>
-            <Box display='flex' justifyContent='center' gap={.5} paddingTop={4} color='#fff' fontSize={16}> <p>Don’t have an account?</p>  <Link sx={{ display:'flex',alignItems:'center', cursor: 'pointer', textDecoration: 'none', color: '#00C2CB' }} href='/singup'>Sign Up</Link> </Box>
+            <Box display='flex' justifyContent='center' gap={.5} paddingTop={4} color='#fff' fontSize={16}> <p>Don’t have an account?</p>  <Link underline="hover" sx={{ display:'flex',alignItems:'center',color:'#7CEEFF'}} href='/singup'>Sign Up</Link> </Box>
         </Box>
     )
 }
