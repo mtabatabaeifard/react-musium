@@ -11,8 +11,8 @@ export function Button(props) {
                 fontWeight: '400',
                 borderRadius: '5rem',
                 boxShadow: '0px 0px 10px 0.5px #39C0D4',
-                paddingX: '14.2rem',
-                paddingY: '1.5rem',
+                width: '37.7rem',
+                height: '6rem',
                 textTransform: 'none',
             }}
             {...props}

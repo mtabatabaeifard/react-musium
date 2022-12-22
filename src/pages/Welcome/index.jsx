@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import { Button } from 'components';
 import { Link } from 'react-router-dom';
-import { SwiperSlider } from '../../components/shared/Slider';
+import { SwiperSlider } from '../../components/Slider';
 import circle from '../../assets/images/Welcome/Ellipse.svg';
 import mainImage from '../../assets/images/Welcome/img_girl.png';
 import './style.css';
@@ -19,6 +19,7 @@ export function Welcome() {
                 backgroundImage: `url(${mainImage})`,
                 backgroundPositionY: '15rem',
                 backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
             }}>
             <Box display="flex" flexDirection="column">
                 <Box display="flex" justifyContent="space-between">
@@ -37,41 +38,49 @@ export function Welcome() {
                     justifyContent: 'center',
                     height: '40rem',
                 }}>
-                <Typography
+                <Container
                     sx={{
-                        color: 'common.white',
-                        fontSize: '2.6rem',
-                        fontWeight: '600',
-                        width: '83%',
-                        letterSpacing: '.2rem',
-                        textAlign: 'center',
-                        lineHeight: '3.7rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
                     }}>
-                    <SwiperSlider style={{ color: 'white' }}>
-                        From the{' '}
-                        <Box component="span" sx={{ color: '#76D7E6' }}>
-                            latest{' '}
-                        </Box>{' '}
-                        to the{' '}
-                        <Box component="span" sx={{ color: '#7CEEFF' }}>
-                            greatest{' '}
-                        </Box>
-                        hits, play your favorite on
-                        <Box
-                            component="span"
-                            sx={{
-                                color: 'primary.main',
-                                textShadow: '0px 0px 12px #39c0d4',
-                            }}>
-                            {' '}
-                            musium{' '}
-                        </Box>{' '}
-                        now!
-                    </SwiperSlider>
-                </Typography>
-                <Link to="/sign-in" style={{ textDecoration: 'none' }}>
-                    <Button>Get Started</Button>
-                </Link>
+                    <Typography
+                        sx={{
+                            color: 'common.white',
+                            fontSize: '2.6rem',
+                            fontWeight: '600',
+                            width: '93%',
+                            margin: '0 auto',
+                            letterSpacing: '.2rem',
+                            textAlign: 'center',
+                            lineHeight: '3.7rem',
+                        }}>
+                        <SwiperSlider style={{ color: 'white' }}>
+                            From the{' '}
+                            <Box component="span" sx={{ color: '#76D7E6' }}>
+                                latest{' '}
+                            </Box>{' '}
+                            to the{' '}
+                            <Box component="span" sx={{ color: '#7CEEFF' }}>
+                                greatest{' '}
+                            </Box>
+                            hits, play your favorite on
+                            <Box
+                                component="span"
+                                sx={{
+                                    color: 'primary.main',
+                                    textShadow: '0px 0px 12px #39c0d4',
+                                }}>
+                                {' '}
+                                musium{' '}
+                            </Box>{' '}
+                            now!
+                        </SwiperSlider>
+                    </Typography>
+                    <Link to="/sign-in" style={{ textDecoration: 'none' }}>
+                        <Button>Get Started</Button>
+                    </Link>
+                </Container>
             </Box>
         </Box>
     );
