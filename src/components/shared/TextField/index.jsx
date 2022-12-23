@@ -6,7 +6,7 @@ export function TextField(props) {
   const styles = {
     inputs: {
       height:'6rem',
-      width: '95%',
+      width: '90%',
       backgroundColor: '#1E1E1E',
       color: theme.palette.secondary.main,
       borderRadius: '10px',
