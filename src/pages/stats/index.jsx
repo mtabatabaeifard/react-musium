@@ -1,4 +1,5 @@
-import { Box, useTheme, ButtonBase } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
+import { FloatingStats } from 'components';
 import React from 'react';
 
 function StatsPage() {
@@ -7,7 +8,6 @@ function StatsPage() {
         <Box
             sx={{
                 maxWidth: 433,
-                height: '922px',
                 background: ' #000000',
                 mx: 'auto',
                 position: 'relative',
@@ -19,6 +19,7 @@ function StatsPage() {
                 sx={{
                     display: 'flex',
                     justifyContent: 'space-around',
+                    pb: '30px',
                 }}>
                 <Box>
                     <svg
@@ -42,6 +43,7 @@ function StatsPage() {
                             sx={{
                                 fontSize: '20px',
                                 lineHeight: '25px',
+                                fontWeight:'700',
                                 textAlign: 'center',
                                 letterSpacing: '0.1rem',
                                 color: theme.palette.text.primary,
@@ -54,7 +56,7 @@ function StatsPage() {
                                 lineHeight: '12px',
                                 textAlign: 'center',
                                 letterSpacing: '0.06rem',
-                                color: theme.palette.text.primary,
+                                color: '#8A9A9D',
                             }}>
                             past 30Days
                         </Box>
@@ -63,7 +65,7 @@ function StatsPage() {
                 <Box
                     sx={{
                         display: 'flex',
-                        gap: '10px',
+                        gap: '18px',
                     }}>
                     <Box>
                         <svg
@@ -93,45 +95,7 @@ function StatsPage() {
                     </Box>
                 </Box>
             </Box>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    pt: '25px',
-                    px: '20px',
-                }}>
-                <ButtonBase
-                    sx={{
-                        fontSize: '16px',
-                        lineHeight: '20px',
-                        textAlign: 'center',
-                        letterSpacing: '0.06em',
-                        color: '#39C0D4',
-                        textShadow: '0px 0px 4px #39C0D4',
-                    }}>
-                    Treaks
-                </ButtonBase>
-                <ButtonBase
-                    sx={{
-                        color: theme.palette.text.primary,
-                        fontSize: '16px',
-                        lineHeight: '20px',
-                        textAlign: 'center',
-                        letterSpacing: '0.06rem',
-                    }}>
-                    Artist
-                </ButtonBase>
-                <ButtonBase
-                    sx={{
-                        color: theme.palette.text.primary,
-                        fontSize: '16px',
-                        lineHeight: '20px',
-                        textAlign: 'center',
-                        letterSpacing: '0.06rem',
-                    }}>
-                    Albume
-                </ButtonBase>
-            </Box>
+            <FloatingStats />
         </Box>
     );
 }
