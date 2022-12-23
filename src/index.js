@@ -6,6 +6,7 @@ import theme from 'theme';
 import { ThemeProvider } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import './assets/fonts/font.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
