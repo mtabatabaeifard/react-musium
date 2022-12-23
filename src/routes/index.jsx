@@ -1,8 +1,8 @@
 import Home from 'pages/Home';
 import SongPage from 'pages/song';
 import PlayList from 'pages/PlayList';
-import { LaunchScreen } from 'pages/launchScreen';
-import { Welcome } from 'pages/welcome';
+import { LaunchScreen } from 'pages/LaunchScreen';
+import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
 
 export const routes = {
