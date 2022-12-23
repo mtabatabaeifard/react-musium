@@ -43,7 +43,7 @@ function StatsPage() {
                             sx={{
                                 fontSize: '20px',
                                 lineHeight: '25px',
-                                fontWeight:'700',
+                                fontWeight: '700',
                                 textAlign: 'center',
                                 letterSpacing: '0.1rem',
                                 color: theme.palette.text.primary,
