@@ -1,5 +1,5 @@
-import { Box, Button, IconButton, Typography, useTheme } from '@mui/material';
-import { LyricsDrawer, MusicPlayerSlider } from 'components';
+import { Box, IconButton, Typography, useTheme } from '@mui/material';
+import { Button, LyricsDrawer, MusicPlayerSlider } from 'components';
 import React from 'react';
 import image from 'assets/images/SongPic.png';
 
