@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper';
-import homePicOneSliderTwo from 'assets/images/homePic1_sliderTwo.png';
 import homePicTwoSliderTwo from 'assets/images/homePic2_sliderTwo.png';
+import homePicOneSliderTwo from 'assets/images/homePic1_sliderTwo.png';
 import { SliderPictureCreator, TitleCreator } from 'components';
 
 export function SecondSlider() {
@@ -12,6 +12,7 @@ export function SecondSlider() {
         <Box sx={{ margin: '0 1.6rem' }}>
             <TitleCreator title="Based on your recent listening" />
             <Box
+                component="div"
                 sx={{
                     display: 'flex',
                     gap: '3.4rem',
