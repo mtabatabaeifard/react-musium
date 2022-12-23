@@ -1,7 +1,6 @@
 import { Box } from '@mui/material';
-
 import React from 'react';
-import { ContinueListening } from './ContinueListening';
+import { ContinueListening } from './continueListening';
 import { FirstSlider } from './FirstSlider';
 import { SecondSlider } from './SecondSlider';
 

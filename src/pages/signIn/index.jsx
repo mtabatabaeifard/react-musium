@@ -47,7 +47,8 @@ export function SignIn() {
                     marginTop: '3.5rem',
                 }}>
                 <SignInButton>
-                    Continue with Google
+                    Continue wi
+                    Google
                     <img src={googleLogo} alt="Google" />
                 </SignInButton>
                 <SignInButton>
