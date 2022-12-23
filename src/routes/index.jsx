@@ -6,6 +6,14 @@ import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
 
 export const routes = {
+     LAUNCHSCREEN: {
+        path: '/',
+        element: <LaunchScreen />,
+    },
+    WELCOME: {
+        path: '/Welcome',
+        element: <Welcome />,
+    },
     HOME: {
         path: '/',
         element: <Home />,
