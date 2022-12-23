@@ -2,8 +2,9 @@ import Home from 'pages/Home';
 import Login from 'pages/login';
 import SingUp from 'pages/singup';
 import SongPage from 'pages/song';
-import { LaunchScreen } from 'pages/launchScreen';
-import { Welcome } from 'pages/welcome';
+import StatsPage from 'pages/stats';
+import { LaunchScreen } from 'pages/LaunchScreen';
+import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
 
 export const routes = {
@@ -33,6 +34,10 @@ export const routes = {
     },
     SingUp: {
         path: '/singup',
-        element: <SingUp />,
+        element: <SingUp />
+    },
+    STATS: {
+        path: '/stats',
+        element: <StatsPage />,
     },
 };
