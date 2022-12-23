@@ -18,6 +18,10 @@ export const routes = {
         path: '/',
         element: <Home />,
     },
+      SIGNIN: {
+        path: '/sign-in',
+        element: <SignIn />,
+    },
     SONG: {
         path: '/song',
         element: <SongPage />,
