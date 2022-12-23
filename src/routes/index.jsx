@@ -1,10 +1,10 @@
 import Home from 'pages/Home';
 import SongPage from 'pages/song';
-import PlayList from 'pages/PlayList';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
 
+import PlayList from 'pages/PlayList';
 export const routes = {
     LAUNCHSCREEN: {
         path: '/',
