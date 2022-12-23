@@ -1,12 +1,12 @@
 import Home from 'pages/Home';
 import SongPage from 'pages/song';
-import PlayList from 'pages/PlayList';
 import { LaunchScreen } from 'pages/launchScreen';
 import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
+import PlayList from 'pages/PlayList';
 
 export const routes = {
-     LAUNCHSCREEN: {
+    LAUNCHSCREEN: {
         path: '/',
         element: <LaunchScreen />,
     },
@@ -15,10 +15,10 @@ export const routes = {
         element: <Welcome />,
     },
     HOME: {
-        path: '/',
+        path: '/Home',
         element: <Home />,
     },
-      SIGNIN: {
+    SIGNIN: {
         path: '/sign-in',
         element: <SignIn />,
     },
@@ -30,5 +30,4 @@ export const routes = {
         path: '/PlayList',
         element: <PlayList />,
     },
-
 };
