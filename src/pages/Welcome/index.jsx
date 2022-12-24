@@ -8,19 +8,20 @@ import mainImage from '../../assets/images/Welcome/img_girl.png';
 import './style.css';
 
 export function Welcome() {
+    const mainBoxStyles = {
+        bgcolor: 'primary.medium',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        backgroundImage: `url(${mainImage})`,
+        backgroundPositionY: '25%',
+        backgroundPositionX: 'center',
+        backgroundRepeat: 'no-repeat',
+    };
+
     return (
-        <Box
-            sx={{
-                bgcolor: 'primary.medium',
-                height: '100vh',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                backgroundImage: `url(${mainImage})`,
-                backgroundPositionY: '25%',
-                backgroundPositionX: 'center',
-                backgroundRepeat: 'no-repeat',
-            }}>
+        <Box sx={mainBoxStyles}>
             <Box display="flex" flexDirection="column">
                 <Box display="flex" justifyContent="space-between">
                     <img src={circle} alt="" className="circle big-circle" />

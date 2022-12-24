@@ -13,6 +13,7 @@ export function GoBackButton() {
                 paddingTop: '6rem',
                 paddingLeft: '1.5rem',
                 alignSelf: 'start',
+                cursor: 'pointer',
             }}
             onClick={() => navigate(-1)}
         />

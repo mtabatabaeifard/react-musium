@@ -9,6 +9,33 @@ import facebookLogo from '../../assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from '../../assets/images/SignInLogos/apple-icon.svg';
 
 export function SignIn() {
+    const beforeAfterLineStyle = {
+        color: '#fff',
+        fontSize: '1.6rem',
+        fontWeight: '500',
+        display: 'flex',
+        alignItems: 'end',
+        marginY: '2.5rem',
+        width: '100%',
+        justifyContent: 'center',
+        '&::before': {
+            content: '""',
+            display: 'inline-block',
+            borderTop: '1.5px solid #FFFFFF',
+            width: '15rem',
+            margin: '0 2rem',
+            transform: 'translateY(-1rem)',
+        },
+        '&::after': {
+            content: '""',
+            display: 'inline-block',
+            borderTop: '1.5px solid #FFFFFF',
+            width: '15rem',
+            margin: '0 2rem',
+            transform: 'translateY(-1rem)',
+        },
+    };
+
     return (
         <Box
             sx={{
@@ -56,35 +83,7 @@ export function SignIn() {
                     <img src={appleLogo} alt="Apple" />
                 </SignInButton>
             </Box>
-            <Typography
-                sx={{
-                    color: '#fff',
-                    fontSize: '1.6rem',
-                    fontWeight: '500',
-                    display: 'flex',
-                    alignItems: 'end',
-                    marginY: '2.5rem',
-                    width: '100%',
-                    justifyContent: 'center',
-                    '&::before': {
-                        content: '""',
-                        display: 'inline-block',
-                        borderTop: '1.5px solid #FFFFFF',
-                        width: '15rem',
-                        margin: '0 2rem',
-                        transform: 'translateY(-1rem)',
-                    },
-                    '&::after': {
-                        content: '""',
-                        display: 'inline-block',
-                        borderTop: '1.5px solid #FFFFFF',
-                        width: '15rem',
-                        margin: '0 2rem',
-                        transform: 'translateY(-1rem)',
-                    },
-                }}>
-                or
-            </Typography>
+            <Typography sx={beforeAfterLineStyle}>or</Typography>
             <Link to="/login" style={{ textDecoration: 'none' }}>
                 <Button>Log in with a password</Button>
             </Link>
