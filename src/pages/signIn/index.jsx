@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
 import { Button, SignInButton } from 'components';
 import { Link } from 'react-router-dom';
+import { GoBackButton } from 'components/shared/GoBackButton';
 import musiumLogo from '../../assets/images/LaunchScreen/musium logo.png';
 import googleLogo from '../../assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from '../../assets/images/SignInLogos/facebook-icon.svg';
@@ -12,30 +12,27 @@ export function SignIn() {
     return (
         <Box
             sx={{
-                backgroundColor: 'common.black',
+                backgroundColor: '#000',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                height: '100vh',
+                height: '100%',
             }}>
-            <KeyboardBackspaceRoundedIcon
-                sx={{
-                    color: 'common.white',
-                    width: '6rem',
-                    height: '4rem',
-                    paddingTop: '6.7rem',
-                    paddingLeft: '1.5rem',
-                    alignSelf: 'start',
-                }}
+            <GoBackButton />
+            <img
+                src={musiumLogo}
+                alt="Logo"
+                style={{ width: '100%', maxWidth: '40rem' }}
             />
-            <img src={musiumLogo} alt="Logo" />
             <Typography
                 sx={{
-                    color: 'common.white',
+                    color: '#fff',
                     fontWeight: '700',
                     fontSize: '4.4rem',
                     letterSpacing: '.2rem',
                     marginTop: '4rem',
+                    paddingX: '1.5rem',
+                    textAlign: 'center',
                 }}>
                 Let’s get you in
             </Typography>
@@ -47,8 +44,7 @@ export function SignIn() {
                     marginTop: '3.5rem',
                 }}>
                 <SignInButton>
-                    Continue wi
-                    Google
+                    Continue with Google
                     <img src={googleLogo} alt="Google" />
                 </SignInButton>
                 <SignInButton>
@@ -62,12 +58,14 @@ export function SignIn() {
             </Box>
             <Typography
                 sx={{
-                    color: 'common.white',
+                    color: '#fff',
                     fontSize: '1.6rem',
                     fontWeight: '500',
                     display: 'flex',
                     alignItems: 'end',
                     marginY: '2.5rem',
+                    width: '100%',
+                    justifyContent: 'center',
                     '&::before': {
                         content: '""',
                         display: 'inline-block',
@@ -87,12 +85,12 @@ export function SignIn() {
                 }}>
                 or
             </Typography>
-            <Link to="/" style={{ textDecoration: 'none' }}>
+            <Link to="/login" style={{ textDecoration: 'none' }}>
                 <Button>Log in with a password</Button>
             </Link>
             <Typography
                 sx={{
-                    color: 'common.white',
+                    color: '#fff',
                     fontSize: '1.6rem',
                     fontWeight: '400',
                     textShadow: '0px 2px 20px #06A0B5',
@@ -100,7 +98,7 @@ export function SignIn() {
                 }}>
                 Don’t have an account?
                 <Link
-                    to="/"
+                    to="/signup"
                     style={{
                         color: '#7CEEFF',
                         textDecoration: 'none',

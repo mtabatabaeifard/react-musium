@@ -17,9 +17,9 @@ export function Welcome() {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 backgroundImage: `url(${mainImage})`,
-                backgroundPositionY: '15rem',
+                backgroundPositionY: '25%',
+                backgroundPositionX: 'center',
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
             }}>
             <Box display="flex" flexDirection="column">
                 <Box display="flex" justifyContent="space-between">
@@ -30,27 +30,30 @@ export function Welcome() {
             </Box>
             <Box
                 sx={{
-                    bgcolor: 'common.black',
+                    bgcolor: '#000',
                     borderRadius: '54px 54px 0 0',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '40rem',
+                    padding: '2rem',
                 }}>
                 <Container
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
+                        height: '100%',
+                        justifyContent: 'space-evenly',
+                        padding: '0',
                     }}>
                     <Typography
                         sx={{
-                            color: 'common.white',
+                            color: '#fff',
                             fontSize: '2.6rem',
                             fontWeight: '600',
                             width: '93%',
-                            margin: '0 auto',
                             letterSpacing: '.2rem',
                             textAlign: 'center',
                             lineHeight: '3.7rem',
@@ -77,7 +80,7 @@ export function Welcome() {
                             now!
                         </SwiperSlider>
                     </Typography>
-                    <Link to="/sign-in" style={{ textDecoration: 'none' }}>
+                    <Link to="/signin" style={{ textDecoration: 'none' }}>
                         <Button>Get Started</Button>
                     </Link>
                 </Container>
