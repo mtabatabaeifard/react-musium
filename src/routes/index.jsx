@@ -7,6 +7,7 @@ import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
 
+import PlayList from 'pages/PlayList';
 export const routes = {
     LAUNCHSCREEN: {
         path: '/',
@@ -28,6 +29,11 @@ export const routes = {
         path: '/song',
         element: <SongPage />,
     },
+    PlayList: {
+        path: '/PlayList',
+        element: <PlayList />,
+    },
+
     Login: {
         path: '/login',
         element: <Login />,
