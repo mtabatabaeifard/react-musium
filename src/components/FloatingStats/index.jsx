@@ -8,8 +8,8 @@ import Tab from '@mui/material/Tab';
 import Zoom from '@mui/material/Zoom';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-import { StatsCart } from '../StatsCart';
-import { BottomDateBar } from '../ButtomDateBar';
+import { StatsCart } from '../shared/StatsCart';
+import { BottomDateBar } from '../shared/ButtomDateBar';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -155,7 +155,8 @@ export function FloatingStats() {
                             flexDirection: 'column',
                             gap: '18px',
                             pt: '25px',
-                            maxHeight: '980px',
+                            maxHeight: '800px',
+                            overflowY: 'scroll',
                         }}>
                         <StatsCart
                             number="#1"
@@ -191,6 +192,26 @@ export function FloatingStats() {
                             number="#7"
                             trackArtist="BLACKPINK"
                             trackName="Pink venom"
+                        />
+                        <StatsCart
+                            number="#8"
+                            trackArtist="Hurt"
+                            trackName="moods"
+                        />
+                        <StatsCart
+                            number="#8"
+                            trackArtist="Hurt"
+                            trackName="moods"
+                        />
+                        <StatsCart
+                            number="#8"
+                            trackArtist="Hurt"
+                            trackName="moods"
+                        />
+                        <StatsCart
+                            number="#8"
+                            trackArtist="Hurt"
+                            trackName="moods"
                         />
                         <StatsCart
                             number="#8"

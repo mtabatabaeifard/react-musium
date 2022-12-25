@@ -12,7 +12,7 @@ function LinkTab(props) {
                 fontWeight: 700,
                 lineHeight: '13px',
                 letterSpacing: '0.055rem',
-                marginTop: '110px',
+                marginTop: '130px',
             }}
             component="a"
             onClick={(event) => {
@@ -39,7 +39,7 @@ export function BottomDateBar() {
                 background:
                     'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 77.93%)',
                 position: 'absolute',
-                top: ' 660px',
+                top: ' 670px',
             }}>
             <Tabs
                 value={value}
