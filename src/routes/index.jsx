@@ -6,8 +6,8 @@ import StatsPage from 'pages/stats';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
-
 import PlayList from 'pages/PlayList';
+
 export const routes = {
     LAUNCHSCREEN: {
         path: '/',
@@ -40,7 +40,7 @@ export const routes = {
     },
     SingUp: {
         path: '/singup',
-        element: <SingUp />
+        element: <SingUp />,
     },
     STATS: {
         path: '/stats',
