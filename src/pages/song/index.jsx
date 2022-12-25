@@ -1,10 +1,15 @@
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { LyricsDrawer, MusicPlayerSlider } from 'components';
-import React from 'react';
+import React, { useEffect } from 'react';
 import image from 'assets/images/SongPic.png';
+import { useNavigate } from 'react-router-dom';
 
 function SongPage() {
     const theme = useTheme();
+
+    useEffect(() => {
+        const navigate = useNavigate();
+    }, []);
     return (
         <Box
             sx={{
@@ -33,7 +38,13 @@ function SongPage() {
                         }}>
                         PLAYING FROM PLAYLIST:
                     </Typography>
-                    <Box sx={{ color: '#7CEEFF' }}>
+                    <Box
+                        onClick={navigate('./PlayList')}
+                        sx={{
+                            color: '#7CEEFF',
+                            fontWeight: 600,
+                            fontSize: '1.2rem',
+                        }}>
                         Lofi Loft
                         <IconButton aria-label="Playlist">
                             <svg
