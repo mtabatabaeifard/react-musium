@@ -8,6 +8,7 @@ import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
 import PlayList from 'pages/PlayList';
 
+
 export const routes = {
     LAUNCHSCREEN: {
         path: '/',
@@ -38,7 +39,7 @@ export const routes = {
         element: <Login />,
     },
     SingUp: {
-        path: '/signup',
+        path: '/singup',
         element: <SingUp />,
     },
     STATS: {
