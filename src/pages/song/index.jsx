@@ -1,5 +1,5 @@
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import { Button, LyricsDrawer, MusicPlayerSlider } from 'components';
+import { LyricsDrawer, MusicPlayerSlider } from 'components';
 import React from 'react';
 import image from 'assets/images/SongPic.png';
 
@@ -33,7 +33,7 @@ function SongPage() {
                         }}>
                         PLAYING FROM PLAYLIST:
                     </Typography>
-                    <Button>
+                    <Box sx={{ color: '#7CEEFF' }}>
                         Lofi Loft
                         <IconButton aria-label="Playlist">
                             <svg
@@ -48,7 +48,7 @@ function SongPage() {
                                 />
                             </svg>
                         </IconButton>
-                    </Button>
+                    </Box>
                 </Box>
                 <IconButton aria-label="options" sx={{ paddingRight: 0 }}>
                     <svg
