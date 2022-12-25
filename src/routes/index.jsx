@@ -6,6 +6,7 @@ import StatsPage from 'pages/stats';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
+import Library from 'pages/Library';
 
 export const routes = {
     LAUNCHSCREEN: {
