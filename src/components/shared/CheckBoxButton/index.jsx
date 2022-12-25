@@ -12,13 +12,13 @@ export function CheckBoxButton(props) {
             '&.Mui-checked': {
                 color: ' #00C2CB',
             },
-        }
-    }
+        },
+    };
     return (
         <FormControlLabel
             sx={style.formControlLabel}
-            control={<Checkbox  defaultChecked labal sx={style.checkBox} />
-            } 
-             {...props}  />
-    )
+            control={<Checkbox defaultChecked labal sx={style.checkBox} />}
+            {...props}
+        />
+    );
 }

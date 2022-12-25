@@ -3,8 +3,8 @@ import Login from 'pages/login';
 import SingUp from 'pages/singup';
 import SongPage from 'pages/song';
 import StatsPage from 'pages/stats';
-import { LaunchScreen } from 'pages/LaunchScreen';
-import { Welcome } from 'pages/Welcome';
+import { LaunchScreen } from 'pages/launchScreen';
+import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
 import PlayList from 'pages/PlayList';
 
@@ -22,7 +22,7 @@ export const routes = {
         element: <Home />,
     },
     SIGNIN: {
-        path: '/sign-in',
+        path: '/signin',
         element: <SignIn />,
     },
     SONG: {
@@ -33,7 +33,6 @@ export const routes = {
         path: '/PlayList',
         element: <PlayList />,
     },
-
     Login: {
         path: '/login',
         element: <Login />,
