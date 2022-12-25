@@ -44,9 +44,9 @@ export function LyricsDrawer() {
                 paddingBottom: `${drawerState ? '25rem' : '1.5rem'}`,
                 bottom: `${drawerState ? '16.5rem' : '-8.8rem'}`,
                 lineHeight: `${drawerState ? '5rem' : '2.6rem'}`,
-                transition: 'all .8s ease-out .2s',
+                transition: 'all 1s ease-out .2s',
                 boxShadow: 'inset 0rem .4rem .4rem rgba(0, 0, 0, 0.25)',
-                overflow: `${drawerState ? 'scroll' : 'none'}`,
+                // overflow: `${drawerState ? 'scroll' : 'none'}`,
                 [theme.breakpoints.down('smallMobile')]: {
                     bottom: -154,
                 },
