@@ -7,9 +7,26 @@ import { useState } from 'react';
 export function LyricsDrawer() {
     const theme = useTheme();
     const [drawerState, setDrawerState] = useState(false);
+
+    window.onwheel = () => {
+        const scrollPosition = window.pageYOffset;
+        const windowSize = window.innerHeight;
+        const bodyHeight = document.body.offsetHeight;
+
+        const bottomDistance = Math.max(
+            bodyHeight - (scrollPosition + windowSize),
+            0,
+        );
+
+        if (bottomDistance === 0) {
+            setDrawerState(true);
+        } else if (scrollPosition === 0) {
+            setDrawerState(false);
+        }
+    };
+
     return (
         <Box
-            onClick={() => setDrawerState(!drawerState)}
             p={25 / 8}
             sx={{
                 background: theme.palette.primary.main,
