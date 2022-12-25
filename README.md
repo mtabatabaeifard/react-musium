@@ -1,4 +1,6 @@
-
+# React Musium
+## Music App With React 
+This App is a Mobile-first App(PWA) Built With React FrameWork.
 ## Available Scripts
 
 In the project directory, you can run:

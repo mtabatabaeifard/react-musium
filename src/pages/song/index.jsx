@@ -1,21 +1,22 @@
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
-import { Button, LyricsDrawer, MusicPlayerSlider } from 'components';
+import { LyricsDrawer, MusicPlayerSlider } from 'components';
 import React from 'react';
 import image from 'assets/images/SongPic.png';
+import { Link } from 'react-router-dom';
 
 function SongPage() {
     const theme = useTheme();
+    const mainBoxS = {
+        maxWidth: 433,
+        mx: 'auto',
+        background: '#000',
+        pt: 35 / 8,
+        position: 'relative',
+        overflow: 'hidden',
+        fontFamily: 'Century Gothic',
+    };
     return (
-        <Box
-            sx={{
-                maxWidth: 433,
-                mx: 'auto',
-                background: '#000',
-                pt: 35 / 8,
-                position: 'relative',
-                overflow: 'hidden',
-                fontFamily: 'Century Gothic',
-            }}>
+        <Box sx={mainBoxS}>
             <Box
                 sx={{
                     display: 'flex',
@@ -33,22 +34,30 @@ function SongPage() {
                         }}>
                         PLAYING FROM PLAYLIST:
                     </Typography>
-                    <Button>
-                        Lofi Loft
-                        <IconButton aria-label="Playlist">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="9"
-                                height="6"
-                                viewBox="0 0 9 6"
-                                fill="none">
-                                <path
-                                    d="M7.77757 0.185303H1.05268C0.924777 0.185246 0.799507 0.220346 0.69157 0.286486C0.583633 0.352625 0.497504 0.44706 0.443287 0.558712C0.389071 0.670365 0.369015 0.794603 0.385474 0.916854C0.401933 1.0391 0.454223 1.1543 0.536209 1.24891L3.89866 5.1378C3.96177 5.21075 4.04074 5.26943 4.12999 5.3097C4.21924 5.34997 4.31658 5.37084 4.41513 5.37084C4.51367 5.37084 4.61101 5.34997 4.70026 5.3097C4.78951 5.26943 4.86848 5.21075 4.9316 5.1378L8.29404 1.24891C8.37603 1.1543 8.42832 1.0391 8.44478 0.916854C8.46124 0.794603 8.44118 0.670365 8.38697 0.558712C8.33275 0.44706 8.24662 0.352625 8.13868 0.286486C8.03075 0.220346 7.90548 0.185246 7.77757 0.185303ZM4.41513 3.70993L2.48845 1.4816H6.34181L4.41513 3.70993Z"
-                                    fill="#979797"
-                                />
-                            </svg>
-                        </IconButton>
-                    </Button>
+                    <Link to="/PlayList">
+                        {' '}
+                        <Box
+                            sx={{
+                                color: '#7CEEFF',
+                                fontWeight: 500,
+                                fontSize: '1.2rem',
+                            }}>
+                            Lofi Loft
+                            <IconButton aria-label="Playlist">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="9"
+                                    height="6"
+                                    viewBox="0 0 9 6"
+                                    fill="none">
+                                    <path
+                                        d="M7.77757 0.185303H1.05268C0.924777 0.185246 0.799507 0.220346 0.69157 0.286486C0.583633 0.352625 0.497504 0.44706 0.443287 0.558712C0.389071 0.670365 0.369015 0.794603 0.385474 0.916854C0.401933 1.0391 0.454223 1.1543 0.536209 1.24891L3.89866 5.1378C3.96177 5.21075 4.04074 5.26943 4.12999 5.3097C4.21924 5.34997 4.31658 5.37084 4.41513 5.37084C4.51367 5.37084 4.61101 5.34997 4.70026 5.3097C4.78951 5.26943 4.86848 5.21075 4.9316 5.1378L8.29404 1.24891C8.37603 1.1543 8.42832 1.0391 8.44478 0.916854C8.46124 0.794603 8.44118 0.670365 8.38697 0.558712C8.33275 0.44706 8.24662 0.352625 8.13868 0.286486C8.03075 0.220346 7.90548 0.185246 7.77757 0.185303ZM4.41513 3.70993L2.48845 1.4816H6.34181L4.41513 3.70993Z"
+                                        fill="#979797"
+                                    />
+                                </svg>
+                            </IconButton>
+                        </Box>
+                    </Link>
                 </Box>
                 <IconButton aria-label="options" sx={{ paddingRight: 0 }}>
                     <svg
