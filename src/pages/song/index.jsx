@@ -15,14 +15,23 @@ function SongPage() {
         overflow: 'hidden',
         fontFamily: 'Century Gothic',
     };
+    const innerBoxS = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        px: 50 / 8,
+    };
+    const lyricsTypo = {
+        color: theme.palette.secondary.main,
+        fontSize: '1.4rem',
+        fontWeight: 600,
+        letterSpacing: '0.055em',
+        marginTop: '3rem',
+        marginBottom: '15.8rem',
+        marginLeft: '9.66%',
+    };
     return (
         <Box sx={mainBoxS}>
-            <Box
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    px: 50 / 8,
-                }}>
+            <Box sx={innerBoxS}>
                 <Box>
                     <Typography
                         sx={{
@@ -92,18 +101,7 @@ function SongPage() {
                     />
                 </svg>
             </IconButton>
-            <Typography
-                sx={{
-                    color: theme.palette.secondary.main,
-                    fontSize: '1.4rem',
-                    fontWeight: 600,
-                    letterSpacing: '0.055em',
-                    marginTop: '3rem',
-                    marginBottom: '15.8rem',
-                    marginLeft: '9.66%',
-                }}>
-                LYRICS
-            </Typography>
+            <Typography sx={lyricsTypo}>LYRICS</Typography>
             <LyricsDrawer />
         </Box>
     );

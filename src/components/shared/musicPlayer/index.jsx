@@ -24,6 +24,56 @@ export function MusicPlayerSlider() {
         const secondLeft = value - minute * 60;
         return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
     }
+
+    const sliderS = {
+        mx: 1.8,
+        height: 4,
+        borderRadius: 2 / 8,
+        maxWidth: '93%',
+        '& .MuiSlider-thumb': {
+            width: 12,
+            height: 12,
+            transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+            '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
+            },
+            '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                    theme.palette.mode === 'dark'
+                        ? 'rgb(255 255 255 / 16%)'
+                        : 'rgb(0 0 0 / 16%)'
+                }`,
+            },
+            '&.Mui-active': {
+                width: 20,
+                height: 20,
+            },
+        },
+        '& .MuiSlider-rail': {
+            opacity: 0.28,
+        },
+    };
+
+    const iconContainerS = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'end',
+        mt: 1 / 8,
+        mr: 0.4,
+        [theme.breakpoints.up('smallMobile')]: {
+            gap: 20 / 8,
+        },
+        [theme.breakpoints.down('smallMobile')]: {
+            gap: 12 / 8,
+        },
+        [theme.breakpoints.down('smallerMobile')]: {
+            gap: 4 / 8,
+        },
+        [theme.breakpoints.down('smallestMobile')]: {
+            gap: 1 / 8,
+        },
+    };
+
     return (
         <Box sx={{ overflow: 'hidden', px: 34 / 8, marginTop: '2.7rem' }}>
             <Box
@@ -92,34 +142,7 @@ export function MusicPlayerSlider() {
                 step={1}
                 max={duration}
                 onChange={(_, value) => setPosition(value)}
-                sx={{
-                    mx: 1.8,
-                    height: 4,
-                    borderRadius: 2 / 8,
-                    maxWidth: '93%',
-                    '& .MuiSlider-thumb': {
-                        width: 12,
-                        height: 12,
-                        transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-                        '&:before': {
-                            boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-                        },
-                        '&:hover, &.Mui-focusVisible': {
-                            boxShadow: `0px 0px 0px 8px ${
-                                theme.palette.mode === 'dark'
-                                    ? 'rgb(255 255 255 / 16%)'
-                                    : 'rgb(0 0 0 / 16%)'
-                            }`,
-                        },
-                        '&.Mui-active': {
-                            width: 20,
-                            height: 20,
-                        },
-                    },
-                    '& .MuiSlider-rail': {
-                        opacity: 0.28,
-                    },
-                }}
+                sx={sliderS}
             />
             <Box
                 sx={{
@@ -133,26 +156,7 @@ export function MusicPlayerSlider() {
                 <TinyText>{formatDuration(position)}</TinyText>
                 <TinyText>{formatDuration(duration)}</TinyText>
             </Box>
-            <Box
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'end',
-                    mt: 1 / 8,
-                    mr: 0.4,
-                    [theme.breakpoints.up('smallMobile')]: {
-                        gap: 20 / 8,
-                    },
-                    [theme.breakpoints.down('smallMobile')]: {
-                        gap: 12 / 8,
-                    },
-                    [theme.breakpoints.down('smallerMobile')]: {
-                        gap: 4 / 8,
-                    },
-                    [theme.breakpoints.down('smallestMobile')]: {
-                        gap: 1 / 8,
-                    },
-                }}>
+            <Box sx={iconContainerS}>
                 <IconButton aria-label="Shuffle">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +200,7 @@ export function MusicPlayerSlider() {
                         boxShadow: '0px 0px 2px #00C2CB',
                         height: '56px',
                         padding: '18px',
-                        paddingLeft: '20px',
+                        paddingLeft: '22px',
                     }}
                     aria-label="play">
                     <svg
