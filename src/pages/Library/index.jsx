@@ -29,16 +29,15 @@ function Library() {
     <ButtonsSlider ActiveBtnIs=""/>  
     <AddNewPlaylistBtn/>
     <YourLikedSongsBtn/>
-    <Box sx={{display:"flex", alignItems:"center",marginBottom:"2.7rem"}}>
+    <div style={{display:"flex", alignItems:"center",marginBottom:"2.7rem"}}>
     <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",margin:"0 .5rem 0 2.6rem"}}/>
     <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>Add New Playlist</Typography> 
-    <Box/>
+    </div>
     <SingerCard image={singerImg} name="conan gary" to='/'/>
     <AlbumLibraryCard image={album1} title="3:00am vibes" desc="18 songs" to='/'/>
     <AlbumLibraryCard image={album2} title="Wiped Out!" desc="The Neighbourhood" to='/'/>
     <AlbumLibraryCard image={album3} title="Extra Dynamic" desc="Updated Aug 10 • ur mom ashley" to='/'/>
     <PlayListFooter/>
-    </Box>
     </Box>
     </Container>
   )

@@ -32,7 +32,7 @@ function ButtonsSlider({ActiveBtnIs}) {
       Albums
       </Link>
       </SwiperSlide>
-      <SwiperSlide style={{display:"flex",width:"7.8rem"}}>
+      <SwiperSlide style={{display:"flex",width:"14.5rem"}}>
       <Link to="/" style={{width:"10.5rem",background: ActiveBtnIs === "Podcasts & Shows" && "linear-gradient(180deg, #15686B 0%, #06A0B5 100%)",color:"#FFFFFF",border: ActiveBtnIs === "Podcasts & Shows"? ".1rem solid trnsparent" : "1px solid #ffffff",borderRadius:"2.3rem",padding:".4rem 1.7rem ",fontSize:"1.2rem",fontFamily:"Century Gothic",textDecoration:"none"}}>
       Podcasts & Shows
       </Link>

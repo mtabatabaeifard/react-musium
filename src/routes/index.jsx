@@ -6,6 +6,8 @@ import StatsPage from 'pages/stats';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
+import PlayList from 'pages/PlayList';
+import Library from 'pages/Library';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -44,4 +46,8 @@ export const routes = {
         path: '/stats',
         element: <StatsPage />,
     },
+    LIBRARY: {
+        path: '/library',
+        element: <Library/>
+    }
 };
