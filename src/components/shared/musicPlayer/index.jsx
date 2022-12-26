@@ -8,8 +8,14 @@ import IconButton from '@mui/material/IconButton';
 export function MusicPlayerSlider() {
     const theme = useTheme();
     const duration = 163;
-    const [position, setPosition] = React.useState(32);
-    const [paused, setPaused] = React.useState(true);
+    const [position, setPosition] = React.useState(0);
+    const [paused, setPaused] = React.useState(false);
+
+    if (!paused) {
+        setTimeout(() => {
+            setPosition(position + 1);
+        }, 1000);
+    }
 
     const TinyText = styled(Typography)({
         opacity: 0.38,
@@ -24,6 +30,7 @@ export function MusicPlayerSlider() {
         const secondLeft = value - minute * 60;
         return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
     }
+
     return (
         <Box sx={{ overflow: 'hidden', px: 34 / 8, marginTop: '2.7rem' }}>
             <Box
