@@ -9,7 +9,7 @@ export function MusicPlayerSlider() {
     const theme = useTheme();
     const duration = 163;
     const [position, setPosition] = React.useState(0);
-    const [paused, setPaused] = React.useState(false);
+    const [paused, setPaused] = React.useState(true);
 
     if (!paused) {
         setTimeout(() => {
@@ -97,7 +97,18 @@ export function MusicPlayerSlider() {
                 min={0}
                 step={1}
                 max={duration}
-                onChange={(_, value) => setPosition(value)}
+                onMouseDown={(e) => {
+                    if (!paused) {
+                        setPaused(true);
+                    }
+                    setPosition(e.target.children[0].value);
+                }}
+                onChange={(_, value) => {
+                    if (!paused) {
+                        setPaused(true);
+                    }
+                    setPosition(value);
+                }}
                 sx={{
                     mx: 1.8,
                     height: 4,
