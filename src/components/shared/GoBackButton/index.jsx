@@ -2,7 +2,7 @@ import React from 'react';
 import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
 import { useNavigate } from 'react-router-dom';
 
-export function GoBackButton() {
+export function GoBackButton(paddingLeft, paddingTop) {
     const navigate = useNavigate();
     return (
         <KeyboardBackspaceRoundedIcon
@@ -10,8 +10,8 @@ export function GoBackButton() {
                 color: '#fff',
                 width: '5.6rem',
                 height: '3.6rem',
-                paddingTop: '6rem',
-                paddingLeft: '1.5rem',
+                paddingTop,
+                paddingLeft,
                 alignSelf: 'start',
                 cursor: 'pointer',
             }}
