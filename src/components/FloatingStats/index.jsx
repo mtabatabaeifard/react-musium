@@ -80,6 +80,7 @@ export function FloatingStats() {
                     sx={{
                         textShadow: '0px 0px 4px #39C0D4',
                         color: ' theme.palette.primary.main',
+                        backgroundColor: theme.palette.primary.dark,
                     }}
                     value={value}
                     onChange={handleChange}
