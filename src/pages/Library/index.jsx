@@ -1,49 +1,46 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Box, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import SearchIcon from '@mui/icons-material/Search';
+import ImportExportSharpIcon from '@mui/icons-material/ImportExportSharp';
+import AddNewPlaylistBtn from 'components/shared/AddNewPlaylistBtn';
+import YourLikedSongsBtn from 'components/shared/YourLikedSongsBtn';
+import SingerCard from 'components/shared/SingerCard';
+import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
+import ButtonsSlider from 'components/shared/buttonsSlider';
+import PlayListFooter from 'layout/footer/PlayListFooter';
 import image1 from '../../assets/images/library-musium-logo.png';
-
+import singerImg from '../../assets/images/conan-gary.png';
+import album1 from '../../assets/images/3amvibes.png';
+import album2 from '../../assets/images/wiped-out.png';
+import album3 from '../../assets/images/extra-dynamic.png';
 
 function Library() {
   return (
-    <Box sx={{backgroundColor:"#000000", maxWidth:433}}>
-      <Box sx={{display:"flex",alignItems:'center',pt:"28px",pb:"24px",mx:"20px"}}>
+    <Container sx={{backgroundColor:"#000000", height:"86.5rem"}}>
+    <Box sx={{backgroundColor:"#000000", maxWidth:"43.3rem", margin:"0 auto"}}>
+      <Box sx={{display:"flex",alignItems:'center',pt:"2.8rem",pb:"2.4rem",mx:"2rem"}}>
       <img src={image1} alt="logo"/>
-      <Box sx={{color:"#00C2CB",fontFamily:'Century Gothic',fontSize:"27px",flexGrow:"1",my:0}} component="h3">Your Library</Box>
-      <SearchIcon  sx={{ color:"#ffffff",fontSize: 20 }}/>
-      </Box>
-      <Swiper
-      spaceBetween={11}
-      slidesPerView="auto"
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      style={{paddingBottom:"30px",paddingLeft:"20px"}}
-    >
-      <SwiperSlide style={{color:"#FFFFFF",border:"2px solid #ffffff",borderRadius:"23px",padding:"4px 17px ",fontSize:"12px",fontFamily:"Century Gothic",flexdShrink: 1,width: "40px"}}>Folders</SwiperSlide>
-      <SwiperSlide style={{color:"#FFFFFF",border:"2px solid #ffffff",borderRadius:"23px",padding:"4px 17px ",fontSize:"12px",fontFamily:"Century Gothic",flexdShrink: 1,width: "40px"}}>Playlists</SwiperSlide>
-      <SwiperSlide style={{color:"#FFFFFF",border:"2px solid #ffffff",borderRadius:"23px",padding:"4px 17px ",fontSize:"12px",fontFamily:"Century Gothic",flexdShrink: 1,width: "40px"}}>Artists</SwiperSlide>
-      <SwiperSlide style={{color:"#FFFFFF",border:"2px solid #ffffff",borderRadius:"23px",padding:"4px 17px ",fontSize:"12px",fontFamily:"Century Gothic",flexdShrink: 1,width: "40px"}}>Albums</SwiperSlide>
-      <SwiperSlide style={{color:"#FFFFFF",border:"2px solid #ffffff",borderRadius:"23px",padding:"4px 17px ",fontSize:"12px",fontFamily:"Century Gothic",flexdShrink: 1,width: "105px"}}>Podcasts & Shows</SwiperSlide>
-    </Swiper>
-    <Link to="/playlists" style={{display:"flex", alignItems:"center",textDecoration: "none",marginBottom:25}}>
-        <Box sx={{width:56,height:56,background:"linear-gradient(180deg, #A6F3FF -15.18%, #00C2CB 84.82%)",borderRadius:"50%",boxShadow:"0px 0px 2px #00C2CB",display:"flex",justifyContent:"center",alignItems:"center",color:"#000000"}}>
-            <AddRoundedIcon sx={{fontSize: 20 }}/>         
-        </Box>
-        <Typography sx={{fontFamily:"Century Gothic",fontSize:20,color:"#ffffff",ml:"24px",textDecoration: "none"}}>Add New Playlist</Typography> 
-        <Typography/>  
-    </Link>
-    <Link to="/playlists" style={{display:"flex", alignItems:"center",textDecoration: "none"}}>
-        <Box sx={{width:56,height:56,background:"linear-gradient(180deg, #A6F3FF -15.18%, #00C2CB 84.82%)",borderRadius:"50%",boxShadow:"0px 0px 2px #00C2CB",display:"flex",justifyContent:"center",alignItems:"center",color:"#000000"}}>
-            <FavoriteBorderRoundedIcon sx={{fontSize: 20 }}/>           
-        </Box>
-        <Typography sx={{fontFamily:"Century Gothic",fontSize:20,color:"#ffffff",ml:"24px",textDecoration: "none"}}>Your Liked Songs</Typography> 
-        <Typography/>  
-    </Link>
+      <Box sx={{color:"#00C2CB",fontFamily:'Century Gothic',fontSize:"2.7rem",flexGrow:"1",my:0}} component="h3">Your Library</Box>
+      <Link to="/">
+      <SearchIcon  sx={{ color:"#ffffff",fontSize: "2rem" }}/>
+      </Link>
     </Box>
+    <ButtonsSlider ActiveBtnIs=""/>  
+    <AddNewPlaylistBtn/>
+    <YourLikedSongsBtn/>
+    <Box sx={{display:"flex", alignItems:"center",marginBottom:"2.7rem"}}>
+    <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",margin:"0 .5rem 0 2.6rem"}}/>
+    <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>Add New Playlist</Typography> 
+    <Box/>
+    <SingerCard image={singerImg} name="conan gary" to='/'/>
+    <AlbumLibraryCard image={album1} title="3:00am vibes" desc="18 songs" to='/'/>
+    <AlbumLibraryCard image={album2} title="Wiped Out!" desc="The Neighbourhood" to='/'/>
+    <AlbumLibraryCard image={album3} title="Extra Dynamic" desc="Updated Aug 10 • ur mom ashley" to='/'/>
+    <PlayListFooter/>
+    </Box>
+    </Box>
+    </Container>
   )
 }
 
