@@ -1,9 +1,10 @@
-.title{
+.title {
     text-align: center;
     color: #fff;
-    font-size: 1.6rem ;
+    font-size: 1.6rem;
 }
-.title::after{
+
+.title::after {
     content: '';
     margin: .5rem;
     margin-left: 1.5rem;
@@ -11,12 +12,22 @@
     display: inline-block;
     border: .01px solid #fff
 }
-.title::before{
+
+.title::before {
     content: '';
     margin: .5rem;
     margin-right: 1.5rem;
 
     width: 25%;
     display: inline-block;
-    border: .01px solid #fff 
+    border: .01px solid #fff
+}
+
+.forget-pasword { 
+    margin: 2.3rem 0rem 4.4rem 0rem ;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #39C0D4 !important;
 }
