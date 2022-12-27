@@ -8,8 +8,10 @@ import Tab from '@mui/material/Tab';
 import Zoom from '@mui/material/Zoom';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { StatsCart } from '../shared/StatsCart';
 import { BottomDateBar } from '../shared/ButtomDateBar';
+import tracksData from '../../db/tracks.json';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -32,14 +34,15 @@ TabPanel.propTypes = {
     index: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
 };
-
+[tracksData].map((item) => {
+    return console.log(item);
+});
 function a11yProps(index) {
     return {
         id: `action-tab-${index}`,
         'aria-controls': `action-tabpanel-${index}`,
     };
 }
-
 export function FloatingStats() {
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
@@ -74,6 +77,7 @@ export function FloatingStats() {
                 padding: '20px',
                 position: 'relative',
                 minHeight: 600,
+                fontFamily: 'Century Gothic',
             }}>
             <AppBar position="static" color="default">
                 <Tabs
@@ -100,7 +104,6 @@ export function FloatingStats() {
                             lineHeight: '20px',
                             textAlign: 'center',
                             letterSpacing: '0.06rem',
-                            fontFamily: 'Century Gothic',
                             fontStyle: 'normal',
                             fontWeight: 700,
                             textShadow: '0px 0px 4px #39C0D4',
@@ -115,7 +118,6 @@ export function FloatingStats() {
                             lineHeight: '20px',
                             textAlign: 'center',
                             letterSpacing: '0.06rem',
-                            fontFamily: 'Century Gothic',
                             fontStyle: 'normal',
                             fontWeight: 700,
                         }}
@@ -129,7 +131,6 @@ export function FloatingStats() {
                             lineHeight: '20px',
                             textAlign: 'center',
                             letterSpacing: '0.06rem',
-                            fontFamily: 'Century Gothic',
                             fontStyle: 'normal',
                             fontWeight: 700,
                         }}
@@ -159,66 +160,90 @@ export function FloatingStats() {
                             maxHeight: '800px',
                             overflowY: 'scroll',
                         }}>
-                        <StatsCart
-                            number="#1"
-                            trackArtist="swim"
-                            trackName="Chase Atlantic"
-                        />
-                        <StatsCart
-                            number="#2"
-                            trackArtist="Time"
-                            trackName="Nf"
-                        />
-                        <StatsCart
-                            number="#3"
-                            trackArtist="Movies"
-                            trackName="Conan Gray"
-                        />
-                        <StatsCart
-                            number="#4"
-                            trackArtist="lowkey"
-                            trackName="NIKI"
-                        />
-                        <StatsCart
-                            number="#5"
-                            trackArtist="Hurt"
-                            trackName="NewJeans"
-                        />
-                        <StatsCart
-                            number="#6"
-                            trackArtist="aespa"
-                            trackName="ILLUSION"
-                        />
-                        <StatsCart
-                            number="#7"
-                            trackArtist="BLACKPINK"
-                            trackName="Pink venom"
-                        />
-                        <StatsCart
-                            number="#8"
-                            trackArtist="Hurt"
-                            trackName="moods"
-                        />
-                        <StatsCart
-                            number="#8"
-                            trackArtist="Hurt"
-                            trackName="moods"
-                        />
-                        <StatsCart
-                            number="#8"
-                            trackArtist="Hurt"
-                            trackName="moods"
-                        />
-                        <StatsCart
-                            number="#8"
-                            trackArtist="Hurt"
-                            trackName="moods"
-                        />
-                        <StatsCart
-                            number="#8"
-                            trackArtist="Hurt"
-                            trackName="moods"
-                        />
+                        <Link to="/song">
+                            <StatsCart
+                                number="#1"
+                                trackArtist="swim"
+                                trackName="Chase Atlantic"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#2"
+                                trackArtist="Time"
+                                trackName="Nf"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#3"
+                                trackArtist="Movies"
+                                trackName="Conan Gray"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#4"
+                                trackArtist="lowkey"
+                                trackName="NIKI"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#5"
+                                trackArtist="Hurt"
+                                trackName="NewJeans"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#6"
+                                trackArtist="aespa"
+                                trackName="ILLUSION"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#7"
+                                trackArtist="BLACKPINK"
+                                trackName="Pink venom"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#8"
+                                trackArtist="Hurt"
+                                trackName="moods"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#8"
+                                trackArtist="Hurt"
+                                trackName="moods"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#8"
+                                trackArtist="Hurt"
+                                trackName="moods"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#8"
+                                trackArtist="Hurt"
+                                trackName="moods"
+                            />
+                        </Link>
+                        <Link to="/song">
+                            <StatsCart
+                                number="#8"
+                                trackArtist="Hurt"
+                                trackName="moods"
+                            />
+                        </Link>
                     </Box>
                 </Zoom>
             ))}
