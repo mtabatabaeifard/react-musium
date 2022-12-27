@@ -2,8 +2,7 @@ import { Box } from '@mui/system';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import AppleIcon from '@mui/icons-material/Apple';
 import googleIcon from 'assets/images/google-Icon.png';
-import { Link } from '@mui/material';
-import { Button } from 'components';
+import { Button, Link } from 'components';
 
 export function social() {
     const styles = {
@@ -28,6 +27,11 @@ export function social() {
             '&:hover': {
                 color: '#fff',
             },
+        },
+        link: {
+            display: 'flex',
+            alignItems: 'center',
+            color: '#7CEEFF !important',
         },
     };
     return (
@@ -59,16 +63,8 @@ export function social() {
                 paddingTop={4}
                 color="#fff"
                 fontSize={16}>
-                {' '}
-                <p>Don’t have an account?</p>{' '}
-                <Link
-                    underline="hover"
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        color: '#7CEEFF',
-                    }}
-                    href="/singup">
+                <p>Don’t have an account?</p>
+                <Link underline="hover" to="/signup">
                     Sign Up
                 </Link>{' '}
             </Box>

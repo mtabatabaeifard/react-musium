@@ -2,10 +2,9 @@ import { Box } from '@mui/system';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import AppleIcon from '@mui/icons-material/Apple';
 import googleIcon from 'assets/images/google-Icon.png';
-import { Link } from '@mui/material';
-import { Button } from 'components';
+import { Button, Link } from 'components';
 
-export function socialSingUp() {
+export function socialSignUp() {
     const styles = {
         icons: {
             display: 'flex',
@@ -31,7 +30,7 @@ export function socialSingUp() {
         },
     };
     return (
-        <Box pt={8.5}>
+        <Box pt={4.5}>
             <p className="title">or continue with</p>
             <Box
                 paddingTop={4.5}
@@ -59,18 +58,8 @@ export function socialSingUp() {
                 paddingTop={4}
                 color="#fff"
                 fontSize={16}>
-                {' '}
-                <p>Already have an account?</p>{' '}
-                <Link
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        color: '#7CEEFF',
-                    }}
-                    underline="hover"
-                    href="/login">
-                    Login
-                </Link>{' '}
+                <p>Already have an account?</p>
+                <Link to="/login">Login</Link>{' '}
             </Box>
         </Box>
     );
