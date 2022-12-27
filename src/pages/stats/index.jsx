@@ -1,5 +1,5 @@
 import { Box, useTheme } from '@mui/material';
-import { FloatingStats } from 'components';
+import { BottomDateBar, FloatingStats } from 'components';
 import { GoBackButton } from 'components/shared/GoBackButton';
 import React from 'react';
 
@@ -61,7 +61,7 @@ function StatsPage() {
                         sx={{
                             display: 'flex',
                             gap: '18px',
-                            mt:'9px'
+                            mt: '9px',
                         }}>
                         <Box>
                             <svg
@@ -92,6 +92,7 @@ function StatsPage() {
                     </Box>
                 </Box>
                 <FloatingStats />
+                <BottomDateBar />
             </Box>
         </Box>
     );
