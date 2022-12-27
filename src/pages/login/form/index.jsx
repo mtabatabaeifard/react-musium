@@ -1,5 +1,5 @@
 import IconButton from '@mui/material/IconButton';
-import { Box, FormControl, InputAdornment,  } from '@mui/material';
+import { Box, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -107,10 +107,12 @@ export function FormSection() {
                 </FormControl>
                 <CheckBoxButton label="Remember me" />
             </Box>
-            <Box display='flex' justifyContent='center'>
+            <Box display="flex" justifyContent="center">
                 <Button>Log in</Button>
             </Box>
-            <Link className='forget-pasword'  to ="/forgot-password" >Forgot the password?</Link>
+            <Link className="forget-pasword" to="/forgot-password">
+                Forgot the password?
+            </Link>
         </Box>
     );
 }
