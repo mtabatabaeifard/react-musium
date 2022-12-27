@@ -31,19 +31,21 @@ export function LyricsDrawer() {
     };
 
     const drawerS = {
-        background: theme.palette.primary.main,
+        background: 'linear-gradient(180deg, #39C0D4 0%, #7CEEFF 100%)',
         mx: 23 / 8,
         fontSize: '2rem',
-        fontWeight: '600',
+        fontWeight: 600,
         color: '#fff',
         borderRadius: '2.5rem',
         position: 'absolute',
         maxWidth: '381px',
         paddingBottom: `${drawerState ? '25rem' : '1.5rem'}`,
-        bottom: `${drawerState ? '16.5rem' : '-8.8rem'}`,
+        bottom: `${drawerState ? '16.5rem' : '-8.4rem'}`,
         lineHeight: `${drawerState ? '5rem' : '2.6rem'}`,
         transition: 'all 1s ease-out .2s',
-        boxShadow: 'inset 0rem .4rem .4rem rgba(0, 0, 0, 0.25)',
+        boxShadow: `inset 0rem .4rem .4rem rgba(0, 0, 0, 0.25)${
+            !drawerState ? ', inset 0rem -40rem 5rem -28rem #00000050' : ''
+        }`,
         [theme.breakpoints.down('smallMobile')]: {
             bottom: -154,
         },
