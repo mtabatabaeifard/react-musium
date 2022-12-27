@@ -13,6 +13,7 @@ function LinkTab(props) {
                 lineHeight: '13px',
                 letterSpacing: '0.055rem',
                 marginTop: '130px',
+                fontFamily: 'Century Gothic',
             }}
             component="a"
             onClick={(event) => {
@@ -33,19 +34,27 @@ export function BottomDateBar() {
     return (
         <Box
             sx={{
-                width: '100%',
+                width: '90%',
                 height: '207px',
                 padding: '2rem',
                 background:
                     'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 77.93%)',
                 position: 'absolute',
-                top: ' 670px',
+                top: ' 700px',
+                fontFamily: 'Century Gothic',
+                fontStyle: 'normal',
+                fontWeight: '700',
             }}>
             <Tabs
+                TabIndicatorProps={{
+                    sx: {
+                        backgroundColor: 'transparent',
+                    },
+                }}
                 value={value}
                 onChange={handleChange}
                 aria-label="nav tabs example">
-                <LinkTab label="30Days" href="/drafts" />
+                <LinkTab label="30 days" href="/drafts" />
                 <LinkTab label="6 Month" href="/trash" />
                 <LinkTab label="1 Year" href="/spam" />
                 <LinkTab label="Life Time" href="/spam" />
