@@ -11,26 +11,15 @@ import '../styles/style.css';
 export function FormSectionSingUP() {
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const [showPassword2, setShowPassword2] = React.useState(false);
+    const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
-    };
-    const styles = {
-        button: {
-            height: '5.9rem',
-            width: '90%',
-            background: '#06A0B5',
-            color: '#FFFFFF',
-            borderRadius: ' 50px',
-            fontSize: '1.6rem',
-            '&:hover': {
-                color: '#fff',
-            },
-        },
     };
 
     return (
         <Box paddingTop={4}>
-            <Box pb={8}>
+            <Box pb={5}>
                 <FormControl
                     variant="outlined"
                     sx={{
@@ -116,7 +105,7 @@ export function FormSectionSingUP() {
                     />
                     <TextField
                         placeholder="Password"
-                        type={showPassword ? 'text' : 'password'}
+                        type={showPassword2 ? 'text' : 'password'}
                         InputProps={{
                             style: {
                                 height: '100%',
@@ -128,10 +117,10 @@ export function FormSectionSingUP() {
                                         sx={{
                                             color: 'rgba(255, 255, 255, 0.27)',
                                         }}
-                                        onClick={handleClickShowPassword}
+                                        onClick={handleClickShowPassword2}
                                         onMouseDown={handleMouseDownPassword}
                                         edge="end">
-                                        {showPassword ? (
+                                        {showPassword2 ? (
                                             <VisibilityOff
                                                 fontSize="large"
                                                 sx={{
@@ -156,7 +145,7 @@ export function FormSectionSingUP() {
                                         sx={{
                                             color: 'rgba(255, 255, 255, 0.27)',
                                         }}>
-                                        {showPassword ? (
+                                        {showPassword2 ? (
                                             <VisibilityOff />
                                         ) : (
                                             <Visibility />
@@ -171,9 +160,7 @@ export function FormSectionSingUP() {
                 </FormControl>
             </Box>
             <Box display="flex" justifyContent="center">
-                <Button sx={styles.button} variant="outlined" size="medium">
-                    Singup
-                </Button>
+                <Button>Singup</Button>
             </Box>
         </Box>
     );
