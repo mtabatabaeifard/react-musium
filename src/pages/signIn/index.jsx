@@ -43,9 +43,10 @@ export function SignIn() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                justifyContent: 'center',
                 height: '100%',
             }}>
-            <GoBackButton />
+            <GoBackButton paddingTop="6rem" paddingLeft="1.5rem" />
             <img
                 src={musiumLogo}
                 alt="Logo"

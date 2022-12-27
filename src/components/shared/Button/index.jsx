@@ -15,7 +15,7 @@ export function Button(props) {
                 width: '85vw',
                 paddingY: '1rem',
                 textTransform: 'none',
-                maxWidth: '45rem',
+                maxWidth: '40rem',
             }}
             {...props}
         />
