@@ -8,7 +8,7 @@ import './styles/style.css';
 export default function Login() {
 
     return (
-        <Box sx={{
+        <Box pb={1} sx={{
             maxWidth: 428,
             mx: 'auto',
             background: '#000',
