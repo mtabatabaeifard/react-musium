@@ -22,7 +22,8 @@ export function LyricsDrawer() {
             if (e.deltaY >= 0) {
                 setDrawerState(true);
             }
-        } else if (scrollPosition === 0) {
+        }
+        if (scrollPosition === 0) {
             if (e.deltaY < 0) {
                 setDrawerState(false);
             }

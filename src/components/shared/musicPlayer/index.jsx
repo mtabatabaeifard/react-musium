@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -5,20 +6,49 @@ import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
+import music from 'assets/audio/8d82b5_Star_Wars_Main_Theme_Song.mp3';
 
 export function MusicPlayerSlider() {
     const theme = useTheme();
-    const duration = 163;
-    const [position, setPosition] = React.useState(32);
+    const [position, setPosition] = React.useState(0);
+    const [isPlaying, setIsPlaying] = React.useState(false);
+    const [duration, setDuration] = React.useState(0);
+    const [currentTime, setCurrentTime] = React.useState(0);
     const [like, setLike] = React.useState(false);
 
-    const TinyText = styled(Typography)({
-        opacity: 0.38,
-        fontWeight: 600,
-        letterSpacing: 0.2,
-        color: theme.palette.secondary.main,
-        fontSize: '1.2rem',
-    });
+    const audioRef = React.useRef();
+    const audio = audioRef.current;
+
+    const onChange = (e) => {
+        audio.currentTime = (audio.duration / 100) * e.target.value;
+        setPosition(e.target.value);
+    };
+
+    const play = () => {
+        if (!isPlaying) {
+            setIsPlaying(true);
+            audio.play();
+        }
+        if (isPlaying) {
+            setIsPlaying(false);
+            audio.pause();
+        }
+    };
+
+    const getCurrDuration = (e) => {
+        if (currentTime === duration) {
+            setIsPlaying(false);
+            audio.pause();
+        }
+        const percent = (
+            (e.currentTarget.currentTime / e.currentTarget.duration) *
+            100
+        ).toFixed(0);
+        const time = e.currentTarget.currentTime;
+
+        setPosition(+percent);
+        setCurrentTime(time.toFixed(0));
+    };
 
     function formatDuration(value) {
         const minute = Math.floor(value / 60);
@@ -54,6 +84,14 @@ export function MusicPlayerSlider() {
             opacity: 0.28,
         },
     };
+
+    const TinyText = styled(Typography)({
+        opacity: 0.38,
+        fontWeight: 600,
+        letterSpacing: 0.2,
+        color: theme.palette.secondary.main,
+        fontSize: '1.2rem',
+    });
 
     const iconContainerS = {
         display: 'flex',
@@ -138,12 +176,19 @@ export function MusicPlayerSlider() {
             <Slider
                 aria-label="time-indicator"
                 size="medium"
-                value={position}
                 min={0}
                 step={1}
-                max={duration}
-                onChange={(_, value) => setPosition(value)}
                 sx={sliderS}
+                onChange={onChange}
+                value={position}
+            />
+            <audio
+                src={music}
+                ref={audioRef}
+                onLoadedData={(e) => {
+                    setDuration(e.currentTarget.duration.toFixed(0));
+                }}
+                onTimeUpdate={getCurrDuration}
             />
             <Box
                 sx={{
@@ -154,7 +199,7 @@ export function MusicPlayerSlider() {
                     mt: -1.75,
                     maxWidth: '93%',
                 }}>
-                <TinyText>{formatDuration(position)}</TinyText>
+                <TinyText>{formatDuration(currentTime)}</TinyText>
                 <TinyText>{formatDuration(duration)}</TinyText>
             </Box>
             <Box sx={iconContainerS}>
@@ -195,26 +240,43 @@ export function MusicPlayerSlider() {
                     </svg>
                 </IconButton>
                 <IconButton
+                    onClick={play}
                     sx={{
                         background:
                             'linear-gradient(180deg, #A6F3FF -15.18%, #00C2CB 84.82%)',
                         boxShadow: '0px 0px 2px #00C2CB',
                         height: '56px',
-                        padding: '18px',
-                        paddingLeft: '22px',
+                        padding: `${!isPlaying ? '16px' : '18px'}`,
+                        paddingLeft: `${!isPlaying ? '20px' : '18px'}`,
                     }}
-                    aria-label="play">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 20 20"
-                        fill="none">
-                        <path
-                            d="M0.000297546 0.999978L0.000297546 19C0.000218088 19.1705 0.0437218 19.3381 0.126677 19.4871C0.209631 19.636 0.329282 19.7612 0.474266 19.8509C0.61925 19.9406 0.784752 19.9917 0.955053 19.9994C1.12535 20.0071 1.2948 19.9712 1.4473 19.895L19.4473 10.895C19.6023 10.8026 19.7306 10.6715 19.8197 10.5146C19.9088 10.3577 19.9557 10.1804 19.9557 9.99998C19.9557 9.81955 19.9088 9.64221 19.8197 9.48532C19.7306 9.32843 19.6023 9.19738 19.4473 9.10498L1.4473 0.104978C1.2948 0.0287753 1.12535 -0.00717704 0.955053 0.000535877C0.784752 0.00824879 0.61925 0.0593708 0.474266 0.149046C0.329282 0.238722 0.209631 0.363974 0.126677 0.512905C0.0437218 0.661836 0.000218088 0.829502 0.000297546 0.999978V0.999978ZM16.7643 9.99998L2.0003 17.382L2.0003 2.61798L16.7643 9.99998Z"
-                            fill="white"
-                        />
-                    </svg>
+                    aria-label={!isPlaying ? 'play' : 'pause'}>
+                    {!isPlaying ? (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none">
+                            <path
+                                d="M0.000297546 0.999978L0.000297546 19C0.000218088 19.1705 0.0437218 19.3381 0.126677 19.4871C0.209631 19.636 0.329282 19.7612 0.474266 19.8509C0.61925 19.9406 0.784752 19.9917 0.955053 19.9994C1.12535 20.0071 1.2948 19.9712 1.4473 19.895L19.4473 10.895C19.6023 10.8026 19.7306 10.6715 19.8197 10.5146C19.9088 10.3577 19.9557 10.1804 19.9557 9.99998C19.9557 9.81955 19.9088 9.64221 19.8197 9.48532C19.7306 9.32843 19.6023 9.19738 19.4473 9.10498L1.4473 0.104978C1.2948 0.0287753 1.12535 -0.00717704 0.955053 0.000535877C0.784752 0.00824879 0.61925 0.0593708 0.474266 0.149046C0.329282 0.238722 0.209631 0.363974 0.126677 0.512905C0.0437218 0.661836 0.000218088 0.829502 0.000297546 0.999978V0.999978ZM16.7643 9.99998L2.0003 17.382L2.0003 2.61798L16.7643 9.99998Z"
+                                fill="white"
+                            />
+                        </svg>
+                    ) : (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            id="i-pause"
+                            viewBox="0 0 32 32"
+                            fill="#fff"
+                            stroke="#fff"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="3"
+                            width="20px"
+                            height="20px">
+                            <path d="M23 2 L23 30 M9 2 L9 30" />
+                        </svg>
+                    )}
                 </IconButton>
                 <IconButton aria-label="next song">
                     <svg
