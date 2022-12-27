@@ -2,3 +2,6 @@ html {
   font-size: 62.5%;
   font-family: 'Lexend', sans-serif;
 }
+body{
+  background-color:rgba(30, 30, 30, 0.81);
+}

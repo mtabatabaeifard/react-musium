@@ -8,6 +8,7 @@ import { SignIn } from 'pages/signIn';
 import SignUp from 'pages/singup';
 import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/ResetPassword';
+import PlayList from 'pages/PlayList';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -23,12 +24,16 @@ export const routes = {
         element: <Home />,
     },
     SIGNIN: {
-        path: '/sign-in',
+        path: '/signin',
         element: <SignIn />,
     },
     SONG: {
         path: '/song',
         element: <SongPage />,
+    },
+    PlayList: {
+        path: '/PlayList',
+        element: <PlayList />,
     },
     Login: {
         path: '/login',

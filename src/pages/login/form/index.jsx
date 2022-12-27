@@ -6,7 +6,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React from 'react';
-import '../styles/style.css'
+import '../styles/style.css';
 import { CheckBoxButton } from 'components/shared/CheckBoxButton';
 import { Link } from 'components';
 
@@ -19,47 +19,87 @@ export function FormSection() {
 
     return (
         <Box paddingTop={4}>
-
             <Box>
-                <FormControl variant="outlined" sx={{
-                    display: 'flex', flexDirection: 'column', alignItems: 'center',
-                    gap: '2.3rem',
-                }}>
+                <FormControl
+                    variant="outlined"
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '2.3rem',
+                    }}>
                     <TextField
-                        placeholder='Email'
+                        placeholder="Email"
                         InputProps={{
                             style: {
-                                fontSize:'1.6rem',
-                                height: "100%",
-                              },
-                            startAdornment: <InputAdornment position="start"><MailOutlineIcon fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /></InputAdornment>,
+                                fontSize: '1.6rem',
+                                height: '100%',
+                            },
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <MailOutlineIcon
+                                        fontSize="large"
+                                        sx={{
+                                            color: 'rgba(255, 255, 255, 0.27)',
+                                        }}
+                                    />
+                                </InputAdornment>
+                            ),
                         }}
                         id="outlined-multiline-flexible"
                         maxRows={6}
                     />
-                    <TextField 
-                        placeholder='Password'
+                    <TextField
+                        placeholder="Password"
                         type={showPassword ? 'text' : 'password'}
                         InputProps={{
                             style: {
-                                fontSize:'1.6rem',
-                                height: "100%",
-                              },
-                            endAdornment: <InputAdornment position="end">
-                                <IconButton  sx={{ color: 'rgba(255, 255, 255, 0.27)' }}
-                                    fontSize='large'
-                                    onClick={handleClickShowPassword}
-                                    onMouseDown={handleMouseDownPassword}
-                                    edge="end"
-                                >
-                                    {showPassword ? <VisibilityOff fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /> : <Visibility fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} />}
-                                </IconButton>
-                            </InputAdornment>,
-                            startAdornment:  <InputAdornment position="start">
-                            <LockOutlinedIcon fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} >
-                                {showPassword ? <VisibilityOff /> : <Visibility />}
-                            </LockOutlinedIcon>
-                        </InputAdornment>
+                                fontSize: '1.6rem',
+                                height: '100%',
+                            },
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        sx={{
+                                            color: 'rgba(255, 255, 255, 0.27)',
+                                        }}
+                                        fontSize="large"
+                                        onClick={handleClickShowPassword}
+                                        onMouseDown={handleMouseDownPassword}
+                                        edge="end">
+                                        {showPassword ? (
+                                            <VisibilityOff
+                                                fontSize="large"
+                                                sx={{
+                                                    color: 'rgba(255, 255, 255, 0.27)',
+                                                }}
+                                            />
+                                        ) : (
+                                            <Visibility
+                                                fontSize="large"
+                                                sx={{
+                                                    color: 'rgba(255, 255, 255, 0.27)',
+                                                }}
+                                            />
+                                        )}
+                                    </IconButton>
+                                </InputAdornment>
+                            ),
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <LockOutlinedIcon
+                                        fontSize="large"
+                                        sx={{
+                                            color: 'rgba(255, 255, 255, 0.27)',
+                                        }}>
+                                        {showPassword ? (
+                                            <VisibilityOff />
+                                        ) : (
+                                            <Visibility />
+                                        )}
+                                    </LockOutlinedIcon>
+                                </InputAdornment>
+                            ),
                         }}
                         id="outlined-multiline-flexible"
                         maxRows={6}
@@ -72,5 +112,5 @@ export function FormSection() {
             </Box>
             <Link className='forget-pasword'  to ="/forgot-password" >Forgot the password?</Link>
         </Box>
-    )
+    );
 }

@@ -1,4 +1,4 @@
-import { Box } from "@mui/system";
+import { Box } from '@mui/system';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
 import AppleIcon from '@mui/icons-material/Apple';
 import googleIcon from 'assets/images/google-Icon.png';

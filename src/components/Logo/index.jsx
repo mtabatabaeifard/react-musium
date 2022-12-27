@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import LogoImage from 'assets/images/musium-logo.jpg';
 import { Box } from '@mui/system';
+import { GoBackButton } from 'components/shared/GoBackButton';
 
 export default function Logo({ title }) {
     Logo.propTypes = {
@@ -12,7 +12,7 @@ export default function Logo({ title }) {
     return (
         <Box>
             <Box display='flex' justifyContent='center' gap={2} >
-                <KeyboardBackspaceIcon fontSize="100%" sx={{ color: 'white', cursor: 'pointer', height: '3.5rem', width: '5rem' }} />
+                <GoBackButton fontSize="100%" sx={{ color: 'white', cursor: 'pointer', height: '3.5rem', width: '5rem' }} />
                 <Box width='80%' justifyContent='center'>
                     <img width='275px' height='215px' alt='sd' src={LogoImage} />
                 </Box>
