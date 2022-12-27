@@ -11,34 +11,20 @@ import '../styles/style.css';
 export function FormSectionSingUP() {
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const [showPassword2, setShowPassword2] = React.useState(false);
+    const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
-    };
-    const styles = {
-        button: {
-            height: '5.9rem',
-            width: '90%',
-            background: '#06A0B5',
-            color: '#FFFFFF',
-            borderRadius: ' 50px',
-            fontSize: '1.6rem',
-            '&:hover': {
-                color: '#fff',
-            },
-        },
     };
 
     return (
         <Box paddingTop={4}>
-            <Box pb={8}>
-                <FormControl
-                    variant="outlined"
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        gap: '2.3rem',
-                    }}>
+
+            <Box pb={5} >
+                <FormControl variant="outlined" sx={{
+                    display: 'flex', flexDirection: 'column', alignItems: 'center',
+                    gap: '2.3rem',
+                }}>
                     <TextField
                         placeholder="Email"
                         InputProps={{
@@ -114,66 +100,36 @@ export function FormSectionSingUP() {
                         id="outlined-multiline-flexible"
                         maxRows={6}
                     />
-                    <TextField
-                        placeholder="Password"
-                        type={showPassword ? 'text' : 'password'}
+                      <TextField 
+                        placeholder='Password'
+                        type={showPassword2 ? 'text' : 'password'}
                         InputProps={{
                             style: {
-                                height: '100%',
-                                fontSize: '1.6rem',
-                            },
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}
-                                        onClick={handleClickShowPassword}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end">
-                                        {showPassword ? (
-                                            <VisibilityOff
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        ) : (
-                                            <Visibility
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        )}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <LockOutlinedIcon
-                                        fontSize="large"
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}>
-                                        {showPassword ? (
-                                            <VisibilityOff />
-                                        ) : (
-                                            <Visibility />
-                                        )}
-                                    </LockOutlinedIcon>
-                                </InputAdornment>
-                            ),
+                                height: "100%",
+                                fontSize:'1.6rem'
+                              },
+                            endAdornment: <InputAdornment position="end">
+                                <IconButton sx={{ color: 'rgba(255, 255, 255, 0.27)' }}
+                                    onClick={handleClickShowPassword2}
+                                    onMouseDown={handleMouseDownPassword}
+                                    edge="end"
+                                >
+                                    {showPassword2 ? <VisibilityOff fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} /> : <Visibility fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} />}
+                                </IconButton>
+                            </InputAdornment>,
+                            startAdornment:  <InputAdornment position="start">
+                            <LockOutlinedIcon fontSize='large' sx={{ color: 'rgba(255, 255, 255, 0.27)' }} >
+                                {showPassword2 ? <VisibilityOff /> : <Visibility />}
+                            </LockOutlinedIcon>
+                        </InputAdornment>
                         }}
                         id="outlined-multiline-flexible"
                         maxRows={6}
                     />
-                </FormControl>
+                </FormControl>      
             </Box>
-            <Box display="flex" justifyContent="center">
-                <Button sx={styles.button} variant="outlined" size="medium">
-                    Singup
-                </Button>
+            <Box display='flex' justifyContent='center'>
+                <Button>Singup</Button>
             </Box>
         </Box>
     );

@@ -1,11 +1,13 @@
 import Home from 'pages/Home';
 import Login from 'pages/login';
-import SingUp from 'pages/singup';
 import SongPage from 'pages/song';
 import StatsPage from 'pages/stats';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
+import SignUp from 'pages/singup';
+import ForgotPassword from 'pages/forgotPassword';
+import ResetPassword from 'pages/ResetPassword';
 import PlayList from 'pages/PlayList';
 
 export const routes = {
@@ -38,11 +40,21 @@ export const routes = {
         element: <Login />,
     },
     SingUp: {
-        path: '/singup',
-        element: <SingUp />,
+        path: '/signup',
+        element: <SignUp />
     },
     STATS: {
         path: '/stats',
         element: <StatsPage />,
     },
+    ForgotPassword:{
+        path:'forgot-password',
+        element: <ForgotPassword />,
+
+    },
+    ResetPassword:{
+        path:'Reset-Password',
+        element: <ResetPassword />,
+
+    }
 };
