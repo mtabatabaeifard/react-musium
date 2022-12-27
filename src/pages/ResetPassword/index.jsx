@@ -13,7 +13,7 @@ export default function ResetPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
-            height:'85vh'
+            
 
         }
     }
@@ -21,12 +21,9 @@ export default function ResetPassword() {
 
     return (
 
-        <Box sx={style.main}>
+        <Box pb={44} sx={style.main}>
             <Logo title='OTP VERIFICATION' />
             {FirstFormSection()}
-      
-
-
         </Box>
 
 
