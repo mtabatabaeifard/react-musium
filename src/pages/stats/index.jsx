@@ -33,10 +33,7 @@ function StatsPage() {
                         <GoBackButton />
                     </Box>
                     <Box>
-                        <Box
-                            sx={{
-                                marginLeft: '23px',
-                            }}>
+                        <Box>
                             <Box
                                 sx={{
                                     fontSize: '20px',
@@ -64,6 +61,7 @@ function StatsPage() {
                         sx={{
                             display: 'flex',
                             gap: '18px',
+                            mt:'9px'
                         }}>
                         <Box>
                             <svg

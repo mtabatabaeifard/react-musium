@@ -1,0 +1,11 @@
+.link{
+text-decoration: none;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.6rem;
+color: #7CEEFF;
+}
+.link:hover{
+text-decoration: underline;
+}

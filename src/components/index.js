@@ -11,3 +11,5 @@ export * from 'components/SliderPictureCreator';
 export * from 'components/Slider';
 export * from 'components/shared/Button';
 export * from 'components/SignInButton';
+export * from 'components/shared/Link';
+
