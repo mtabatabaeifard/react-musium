@@ -13,7 +13,6 @@ export default function ForgotPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
-            height: '85vh',
         },
     };
 
