@@ -36,16 +36,20 @@ export function SignIn() {
         },
     };
 
+    const mainBoxStyle = {
+        backgroundColor: '#000',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        maxWidth: '43rem',
+        margin: '0 auto',
+        minHeight: '900px',
+    };
+
     return (
-        <Box
-            sx={{
-                backgroundColor: '#000',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-            }}>
+        <Box sx={mainBoxStyle}>
             <GoBackButton paddingTop="6rem" paddingLeft="1.5rem" />
             <img
                 src={musiumLogo}
