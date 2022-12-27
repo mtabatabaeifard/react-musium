@@ -9,6 +9,7 @@ import SignUp from 'pages/singup';
 import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/ResetPassword';
 import PlayList from 'pages/PlayList';
+import Library from 'pages/Library';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -41,20 +42,22 @@ export const routes = {
     },
     SingUp: {
         path: '/signup',
-        element: <SignUp />
+        element: <SignUp />,
     },
     STATS: {
         path: '/stats',
         element: <StatsPage />,
     },
-    ForgotPassword:{
-        path:'forgot-password',
+    ForgotPassword: {
+        path: 'forgot-password',
         element: <ForgotPassword />,
-
     },
-    ResetPassword:{
-        path:'Reset-Password',
+    ResetPassword: {
+        path: 'Reset-Password',
         element: <ResetPassword />,
-
-    }
+    },
+    LIBRARY: {
+        path: '/library',
+        element: <Library />,
+    },
 };

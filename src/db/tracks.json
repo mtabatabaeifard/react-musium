@@ -1,0 +1,61 @@
+{
+  "tracks": [
+    {
+      "number": "1",
+      "img": "",
+      "tracksName": "swim",
+      "tracksArtist": "Chase Atlantic",
+      "releaseDate": "2020"
+    },
+    {
+      "number": "2",
+      "img": "",
+      "tracksName": "Time",
+      "tracksArtist": "NF",
+      "releaseDate": "2020"
+    },
+    {
+      "number": "3",
+      "img": "",
+      "tracksName": "Movies",
+      "tracksArtist": "Conan Gray",
+      "releaseDate": "2020"
+    },
+    {
+      "number": "4",
+      "img": "",
+      "tracksName": "lowkey",
+      "tracksArtist": "NIKI",
+      "releaseDate": "2020"
+    },
+    {
+      "number": "5",
+      "img": "",
+      "tracksName": "Hurt",
+      "tracksArtist": "NewJeans",
+      "releaseDate": "2020"
+    },
+    {
+      "number": "6",
+      "img": "",
+      "tracksName": "aespa",
+      "tracksArtist": "ILLISION",
+      "releaseDate": "2020"
+    }
+    ,
+    {
+      "number": "7",
+      "img": "",
+      "tracksName": "BLACKPINK",
+      "tracksArtist": "Pink venom",
+      "releaseDate": "2020"
+    },
+    {
+      "number": "8",
+      "img": "",
+      "tracksName": "Hurt",
+      "tracksArtist": "moods",
+      "releaseDate": "2020"
+    }
+  ]
+}
