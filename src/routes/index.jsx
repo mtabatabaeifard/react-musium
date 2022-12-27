@@ -42,22 +42,22 @@ export const routes = {
     },
     SingUp: {
         path: '/signup',
-        element: <SignUp />
+        element: <SignUp />,
     },
     STATS: {
         path: '/stats',
         element: <StatsPage />,
     },
-    ForgotPassword:{
-        path:'forgot-password',
+    ForgotPassword: {
+        path: 'forgot-password',
         element: <ForgotPassword />,
-
     },
-    ResetPassword:{
-        path:'Reset-Password',
+    ResetPassword: {
+        path: 'Reset-Password',
         element: <ResetPassword />,
     },
     LIBRARY: {
         path: '/library',
-        element: <Library/>
+        element: <Library />,
+    },
 };
