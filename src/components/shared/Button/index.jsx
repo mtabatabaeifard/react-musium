@@ -6,14 +6,16 @@ export function Button(props) {
         <MuiButton
             sx={{
                 backgroundColor: '#06A0B5',
-                color: 'common.white',
+                color: '#fff',
+                display: 'flex',
                 fontSize: '1.6rem',
                 fontWeight: '400',
                 borderRadius: '5rem',
                 boxShadow: '0px 0px 10px 0.5px #39C0D4',
-                width: '37.7rem',
-                height: '6rem',
+                width: '85vw',
+                paddingY: '1rem',
                 textTransform: 'none',
+                maxWidth: '45rem',
             }}
             {...props}
         />

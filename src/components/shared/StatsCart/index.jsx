@@ -57,7 +57,7 @@ export function StatsCart({ number, trackArtist, trackName }) {
                         fontSize: '14px',
                         lineHeight: '17px',
                         letterSpacing: ' 0.055em',
-                        color:theme.palette.secondary.main ,
+                        color: theme.palette.secondary.main,
                     }}>
                     {trackArtist}
                 </Box>

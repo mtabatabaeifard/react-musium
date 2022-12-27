@@ -6,6 +6,7 @@ import StatsPage from 'pages/stats';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
+import PlayList from 'pages/PlayList';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -21,12 +22,16 @@ export const routes = {
         element: <Home />,
     },
     SIGNIN: {
-        path: '/sign-in',
+        path: '/signin',
         element: <SignIn />,
     },
     SONG: {
         path: '/song',
         element: <SongPage />,
+    },
+    PlayList: {
+        path: '/PlayList',
+        element: <PlayList />,
     },
     Login: {
         path: '/login',
@@ -34,7 +39,7 @@ export const routes = {
     },
     SingUp: {
         path: '/singup',
-        element: <SingUp />
+        element: <SingUp />,
     },
     STATS: {
         path: '/stats',
