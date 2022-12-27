@@ -9,6 +9,7 @@ import SignUp from 'pages/singup';
 import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/ResetPassword';
 import PlayList from 'pages/PlayList';
+import Library from 'pages/Library';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -55,6 +56,8 @@ export const routes = {
     ResetPassword:{
         path:'Reset-Password',
         element: <ResetPassword />,
-
-    }
+    },
+    LIBRARY: {
+        path: '/library',
+        element: <Library/>
 };
