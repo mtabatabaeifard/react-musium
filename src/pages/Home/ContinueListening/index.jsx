@@ -9,7 +9,7 @@ import homePicSixSectionOne from 'assets/images/homePic6-sectionOne.png';
 
 export function ContinueListening() {
     return (
-        <Box sx={{ margin: '0 1.6rem' }}>
+        <Box component="div" sx={{ margin: '0 1.6rem' }}>
             <TitleCreator title="Continue Listening" />
             <Box
                 sx={{

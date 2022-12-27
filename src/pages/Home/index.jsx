@@ -1,12 +1,13 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import { ContinueListening } from './continueListening';
+import { ContinueListening } from './ContinueListening';
 import { FirstSlider } from './FirstSlider';
 import { SecondSlider } from './SecondSlider';
 
 function Home() {
     return (
         <Box
+            component="div"
             sx={{
                 backgroundColor: '#000000',
                 width: '422px',
