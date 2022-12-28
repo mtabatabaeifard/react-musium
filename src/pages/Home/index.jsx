@@ -7,29 +7,29 @@ import { FirstSlider } from './FirstSlider';
 import { SecondSlider } from './SecondSlider';
 
 function Home() {
-  return (
-    <>
-      <Box
-        sx={{
-          backgroundColor: '#000000',
-          width: '422px',
-          margin: '0 auto'
-        }}>
-        <Header />
-        <ContinueListening />
-        <FirstSlider />
-        <SecondSlider />
-      </Box>
-      <Box
-        sx={{
-          backgroundColor: '#000000',
-          width: '422px',
-          margin: '0 auto'
-        }}>
-        <Footer />
-      </Box>
-    </>
-  );
+    return (
+        <>
+            <Box
+                sx={{
+                    backgroundColor: '#000000',
+                    width: '422px',
+                    margin: '0 auto',
+                }}>
+                <Header />
+                <ContinueListening />
+                <FirstSlider />
+                <SecondSlider />
+            </Box>
+            <Box
+                sx={{
+                    backgroundColor: '#000000',
+                    width: '422px',
+                    margin: '0 auto',
+                }}>
+                <Footer />
+            </Box>
+        </>
+    );
 }
 
 export default Home;
