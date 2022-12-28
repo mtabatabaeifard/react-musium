@@ -12,7 +12,7 @@ function LinkTab(props) {
                 fontWeight: 700,
                 lineHeight: '13px',
                 letterSpacing: '0.055rem',
-                marginTop: '130px',
+                marginTop: '110px',
                 fontFamily: 'Century Gothic',
             }}
             component="a"

@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom';
 import { StatsCart } from '../shared/StatsCart';
 // import { BottomDateBar } from '../shared/ButtomDateBar';
 import tracksData from '../../db/tracks.json';
+import './styles.css';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
     return (
         <Typography
             component="div"
@@ -153,6 +153,7 @@ export function FloatingStats() {
                     }}
                     unmountOnExit>
                     <Box
+                        className="tracksCart"
                         sx={{
                             display: 'flex',
                             flexDirection: 'column',
