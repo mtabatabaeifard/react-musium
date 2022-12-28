@@ -1,11 +1,11 @@
 import React from 'react';
+import Logo from 'components/Logo';
 import { Box } from '@mui/system';
-import { LogoSectionSingUp } from './logo';
 import { FormSectionSingUP } from './form';
-import { socialSingUp } from './social';
+import { socialSignUp } from './social';
 import './styles/style.css';
 
-export default function SingUp() {
+export default function SignUp() {
     return (
         <Box
             sx={{
@@ -17,9 +17,9 @@ export default function SingUp() {
                 overflow: 'hidden',
                 fontFamily: 'Century Gothic',
             }}>
-            {LogoSectionSingUp()}
+            <Logo title="Sign up an account " />
             {FormSectionSingUP()}
-            {socialSingUp()}
+            {socialSignUp()}
         </Box>
     );
 }

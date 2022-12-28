@@ -1,6 +1,6 @@
 import React from 'react';
+import Logo from 'components/Logo';
 import { Box } from '@mui/system';
-import { LogoSection } from './logo';
 import { FormSection } from './form';
 import { social } from './social';
 import './styles/style.css';
@@ -17,7 +17,7 @@ export default function Login() {
                 overflow: 'hidden',
                 fontFamily: 'Century Gothic',
             }}>
-            {LogoSection()}
+            <Logo title="Log in to your account" />
             {FormSection()}
             {social()}
         </Box>

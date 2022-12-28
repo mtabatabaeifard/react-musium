@@ -10,6 +10,9 @@ export function TextField(props) {
             backgroundColor: '#1E1E1E',
             color: theme.palette.secondary.main,
             borderRadius: '10px',
+            '& input::placeholder': {
+                color: '#fff ',
+            },
         },
     };
     return <MUTextField sx={styles.inputs} {...props} />;

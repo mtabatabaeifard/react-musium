@@ -12,10 +12,10 @@ export function Button(props) {
                 fontWeight: '400',
                 borderRadius: '5rem',
                 boxShadow: '0px 0px 10px 0.5px #39C0D4',
-                width: '85vw',
-                paddingY: '1rem',
+                paddingY: '1.5rem',
                 textTransform: 'none',
-                maxWidth: '45rem',
+                maxWidth: '40rem',
+                width: '87.5vw',
             }}
             {...props}
         />
