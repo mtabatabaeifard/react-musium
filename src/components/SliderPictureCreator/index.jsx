@@ -11,9 +11,9 @@ export function SliderPictureCreator({
     return (
         <Box
             sx={{
-                // padding: '.9rem 6rem 11rem 2.4rem',
                 backgroundImage: `url(${icon})`,
                 backgroundRepeat: ' no-repeat',
+                width: `${iconWidth}`,
             }}>
             <Box
                 sx={{
@@ -35,9 +35,16 @@ export function SliderPictureCreator({
     );
 }
 SliderPictureCreator.propTypes = {
-    icon: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    borderColor: PropTypes.string.isRequired,
-    iconWidth: PropTypes.string.isRequired,
-    iconHeight: PropTypes.string.isRequired,
+    icon: PropTypes.string,
+    title: PropTypes.string,
+    borderColor: PropTypes.string,
+    iconWidth: PropTypes.string,
+    iconHeight: PropTypes.string,
+};
+SliderPictureCreator.defaultProps = {
+    icon: '',
+    title: '',
+    borderColor: '',
+    iconWidth: '',
+    iconHeight: '',
 };

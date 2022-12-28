@@ -15,9 +15,11 @@ export function Welcome() {
         flexDirection: 'column',
         justifyContent: 'space-between',
         backgroundImage: `url(${mainImage})`,
-        backgroundPositionY: '25%',
+        backgroundPositionY: '30%',
         backgroundPositionX: 'center',
         backgroundRepeat: 'no-repeat',
+        maxWidth: '43rem',
+        margin: '0 auto',
     };
 
     return (

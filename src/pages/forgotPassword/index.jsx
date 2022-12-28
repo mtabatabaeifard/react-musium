@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box } from "@mui/system";
-import Logo from "components/Logo";
-import { FormSection } from "./firstFormSection";
-
+import { Box } from '@mui/system';
+import Logo from 'components/Logo';
+import { FormSection } from './firstFormSection';
 
 export default function ForgotPassword() {
     const style = {
@@ -14,19 +13,13 @@ export default function ForgotPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
-        }
-    }
+        },
+    };
 
     return (
-
-        <Box pb={41.35} sx={style.main}>
-            <Logo title='Forgot Password?' />
+        <Box sx={style.main}>
+            <Logo title="Forgot Password?" />
             {FormSection()}
-
-
         </Box>
-
-
-
-    )
+    );
 }
