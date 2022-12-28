@@ -160,7 +160,7 @@ export function FormSectionSingUP() {
                 </FormControl>
             </Box>
             <Box display="flex" justifyContent="center">
-                <Button>Singup</Button>
+                <Button>Sign up</Button>
             </Box>
         </Box>
     );

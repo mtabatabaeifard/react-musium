@@ -10,6 +10,10 @@ import homePicTwoSliderOne from 'assets/images/homePic2_sliderOne.png';
 import homePicThreeSliderOne from 'assets/images/homePic3_sliderOne.png';
 
 export function FirstSlider() {
+    const centerizeSwiperSlides = {
+        display: 'flex',
+        justifyContent: 'center',
+    };
     return (
         <Box sx={{ margin: '0 1.6rem' }}>
             <TitleCreator title="Your Top Mixes" />
@@ -23,9 +27,16 @@ export function FirstSlider() {
                     modules={[Navigation]}
                     spaceBetween={12}
                     slidesPerView={2.2}
+                    breakpoints={{
+                        380: {
+                            slidesPerView: '2.2',
+                        },
+                        150: {
+                            slidesPerView: '1.5',
+                        },
+                    }}
                     navigation>
-                    <SwiperSlide>
-                        {' '}
+                    <SwiperSlide style={centerizeSwiperSlides}>
                         <SliderPictureCreator
                             iconWidth="15rem"
                             iconHeight="15rem"
@@ -34,8 +45,7 @@ export function FirstSlider() {
                             borderColor="#FF7777"
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        {' '}
+                    <SwiperSlide style={centerizeSwiperSlides}>
                         <SliderPictureCreator
                             iconWidth="15rem"
                             iconHeight="15rem"
@@ -44,8 +54,7 @@ export function FirstSlider() {
                             borderColor="#FFFA77"
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        {' '}
+                    <SwiperSlide style={centerizeSwiperSlides}>
                         <SliderPictureCreator
                             iconWidth="15rem"
                             iconHeight="15rem"
@@ -54,8 +63,7 @@ export function FirstSlider() {
                             borderColor="#1DB83F"
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
-                        {' '}
+                    <SwiperSlide style={centerizeSwiperSlides}>
                         <SliderPictureCreator
                             iconWidth="15rem"
                             iconHeight="15rem"
@@ -64,7 +72,7 @@ export function FirstSlider() {
                             borderColor="#FF7777"
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide style={centerizeSwiperSlides}>
                         <SliderPictureCreator
                             iconWidth="15rem"
                             iconHeight="15rem"
@@ -73,7 +81,7 @@ export function FirstSlider() {
                             borderColor="#FFFA77"
                         />
                     </SwiperSlide>
-                    <SwiperSlide>
+                    <SwiperSlide style={centerizeSwiperSlides}>
                         <SliderPictureCreator
                             iconWidth="15rem"
                             iconHeight="15rem"
