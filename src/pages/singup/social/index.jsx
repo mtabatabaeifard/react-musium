@@ -1,8 +1,8 @@
 import { Box } from '@mui/system';
-import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
-import AppleIcon from '@mui/icons-material/Apple';
-import googleIcon from 'assets/images/google-Icon.png';
 import { Button, Link } from "components";
+import googleLogo from 'assets/images/SignInLogos/google-icon.svg';
+import facebookLogo from 'assets/images/SignInLogos/facebook-icon.svg';
+import appleLogo from 'assets/images/SignInLogos/apple-icon.svg';
 
 
 export function socialSignUp() {
@@ -27,9 +27,12 @@ export function socialSignUp() {
         <Box pt={4.5}>
             <p className='title'>or continue with</p>
             <Box paddingTop={4.5} display='flex' justifyContent='center' gap={7.5}>
-                <Button sx={styles.icons} ><img src={googleIcon} alt="" /></Button>
-                <Button sx={styles.icons} ><FacebookSharpIcon fontSize="large" sx={{ color: '#0165E1' }} /></Button>
-                <Button sx={styles.icons}>  <AppleIcon fontSize="large" sx={{ color: '#fff' }} /> </Button>
+                <Button sx={styles.icons} ><img src={googleLogo} alt="Google" />
+                </Button>
+                <Button sx={styles.icons} ><img src={facebookLogo} alt="Facebook" />
+                </Button>
+                <Button sx={styles.icons}>  <img src={appleLogo} alt="Apple" />
+                </Button>
             </Box>
             <Box display='flex' justifyContent='center' gap={.5} paddingTop={4} color='#fff' fontSize={16}>
                 <p>Already have an account?</p>
