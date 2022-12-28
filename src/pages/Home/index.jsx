@@ -1,5 +1,10 @@
+/* eslint-disable no-unused-vars */
 import { Box } from '@mui/material';
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper';
 import { ContinueListening } from './ContinueListening';
 import { FirstSlider } from './FirstSlider';
 import { SecondSlider } from './SecondSlider';
@@ -13,9 +18,36 @@ function Home() {
                 maxWidth: '422px',
                 margin: '0 auto',
             }}>
-            <ContinueListening />
-            <FirstSlider />
-            <SecondSlider />
+            <Swiper
+                style={{ maxHeight: '90vh' }}
+                // height='90vh'
+                modules={[Pagination]}
+                spaceBetween={12}
+                slidesPerView={3}
+                pagination
+                direction="vertical">
+                <SwiperSlide>
+                    <ContinueListening />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <FirstSlider />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SecondSlider />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <FirstSlider />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SecondSlider />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <FirstSlider />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <SecondSlider />
+                </SwiperSlide>
+            </Swiper>
         </Box>
     );
 }
