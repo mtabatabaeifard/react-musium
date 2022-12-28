@@ -18,12 +18,12 @@ export function LyricsDrawer() {
         );
 
         if (bottomDistance === 0 || bottomDistance === 1) {
-            if (e.deltaY > 0) {
+            if (e.deltaY >= 0) {
                 setDrawerState(true);
             }
         }
         if (scrollPosition === 0) {
-            if (e.deltaY <= 0) {
+            if (e.deltaY < 0) {
                 setDrawerState(false);
             }
         }
