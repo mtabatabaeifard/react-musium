@@ -14,6 +14,7 @@ export function ContinueListening() {
             <Box
                 sx={{
                     display: 'flex',
+                    justifyContent: 'center',
                     flexWrap: 'wrap',
                     gap: '.9rem',
                     margin: '1.2rem 0rem 3.5rem',

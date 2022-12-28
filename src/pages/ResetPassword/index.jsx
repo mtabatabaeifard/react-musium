@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box } from "@mui/system";
-import Logo from "components/Logo";
-import { FirstFormSection } from "./firstFormSection";
+import { Box } from '@mui/system';
+import Logo from 'components/Logo';
+import { FirstFormSection } from './firstFormSection';
 
 export default function ResetPassword() {
     const style = {
@@ -13,23 +13,14 @@ export default function ResetPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
-            height:'85vh'
-
-        }
-    }
-
+            height: '85vh',
+        },
+    };
 
     return (
-
         <Box sx={style.main}>
-            <Logo title='OTP VERIFICATION' />
+            <Logo title="OTP VERIFICATION" />
             {FirstFormSection()}
-      
-
-
         </Box>
-
-
-
-    )
+    );
 }

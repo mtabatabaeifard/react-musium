@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
@@ -34,32 +34,14 @@ function Library() {
     <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",margin:"0 .5rem 0 2.6rem"}}/>
     <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>Add New Playlist</Typography> 
     </div>
-    <Swiper
-      spaceBetween={0}
-      slidesPerView="auto"
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      direction="vertical"
-      pagination
-      style={{maxHeight:"400px"}}
-    >
-    <SwiperSlide>
     <SingerCard image={singerImg} name="conan gary" to='/'/>
-    </SwiperSlide>
-    <SwiperSlide>
     <AlbumLibraryCard image={album1} title="3:00am vibes" desc="18 songs" to='/'/>
-    </SwiperSlide>
-    <SwiperSlide>
     <AlbumLibraryCard image={album2} title="Wiped Out!" desc="The Neighbourhood" to='/'/>
-    </SwiperSlide>
-    <SwiperSlide>
     <AlbumLibraryCard image={album3} title="Extra Dynamic" desc="Updated Aug 10 • ur mom ashley" to='/'/>
-    </SwiperSlide> 
-    </Swiper>
     <PlayListFooter/>
     </Box>
     </Container>
   )
 }
 
-export default Library
+export default Library;

@@ -16,7 +16,6 @@ export function Button(props) {
                 textTransform: 'none',
                 maxWidth: '40rem',
                 width: '87.5vw',
-                
             }}
             {...props}
         />

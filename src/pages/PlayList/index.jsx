@@ -3,7 +3,7 @@ import { Box, Typography, useTheme } from '@mui/material';
 import PlayListHeader from 'layout/header/PlayListHeader';
 import PlayListImage1 from 'assets/images/PlayListImage1.png';
 import PlayListItems from 'components/PlayListItems';
-import PlayListFooter from 'layout/footer/PlayListFooter';
+import PlayListFooter from 'layout/core/PlayListFooter';
 
 function PlayList() {
     const theme = useTheme();
