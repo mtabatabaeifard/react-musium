@@ -2,16 +2,17 @@ import { Box } from '@mui/material';
 import PropTypes from 'prop-types';
 import theme from 'theme';
 
-// eslint-disable-next-line no-unused-vars
 export function TitleCreator({ title, className, addClassName }) {
     return <Box sx={{ ...className, ...addClassName }}>{title}</Box>;
 }
 TitleCreator.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     className: PropTypes.string,
-    addClassName: PropTypes.string.isRequired,
+    addClassName: PropTypes.string,
 };
 TitleCreator.defaultProps = {
+    title: '',
+    addClassName: '',
     className: {
         fontWeight: '700',
         fontSize: '2rem',

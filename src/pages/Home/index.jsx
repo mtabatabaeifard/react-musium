@@ -10,7 +10,7 @@ function Home() {
             component="div"
             sx={{
                 backgroundColor: '#000000',
-                width: '422px',
+                maxWidth: '422px',
                 margin: '0 auto',
             }}>
             <ContinueListening />
