@@ -17,7 +17,7 @@ export default function ForgotPassword() {
     };
 
     return (
-        <Box pb={41.35} sx={style.main}>
+        <Box sx={style.main}>
             <Logo title="Forgot Password?" />
             {FormSection()}
         </Box>
