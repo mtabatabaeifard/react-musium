@@ -1,5 +1,5 @@
 import { Box } from '@mui/material';
-import Footer from 'layout/footer';
+import Footer from 'layout/Footer';
 import Header from 'layout/header';
 import React from 'react';
 import { ContinueListening } from './ContinueListening';
