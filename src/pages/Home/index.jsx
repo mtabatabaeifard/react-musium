@@ -7,6 +7,7 @@ import { FirstSlider } from './FirstSlider';
 import { SecondSlider } from './SecondSlider';
 
 function Home() {
+<<<<<<< HEAD
   return (
     <>
       <Box
@@ -30,6 +31,21 @@ function Home() {
       </Box>
     </>
   );
+=======
+    return (
+        <Box
+            component="div"
+            sx={{
+                backgroundColor: '#000000',
+                maxWidth: '422px',
+                margin: '0 auto',
+            }}>
+            <ContinueListening />
+            <FirstSlider />
+            <SecondSlider />
+        </Box>
+    );
+>>>>>>> e5ca0a6675ada1ba7784156ed158402ad202c2c5
 }
 
 export default Home;

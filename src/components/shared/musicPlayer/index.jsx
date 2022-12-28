@@ -1,29 +1,120 @@
+/* eslint-disable jsx-a11y/media-has-caption */
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
+import { Link } from 'react-router-dom';
+import music from 'assets/audio/8d82b5_Star_Wars_Main_Theme_Song.mp3';
 
 export function MusicPlayerSlider() {
     const theme = useTheme();
-    const duration = 163;
-    const [position, setPosition] = React.useState(32);
-    const [paused, setPaused] = React.useState(true);
+    const [position, setPosition] = React.useState(0);
+    const [isPlaying, setIsPlaying] = React.useState(false);
+    const [duration, setDuration] = React.useState(0);
+    const [currentTime, setCurrentTime] = React.useState(0);
+    const [like, setLike] = React.useState(false);
 
-    const TinyText = styled(Typography)({
-        opacity: 0.38,
-        fontWeight: 600,
-        letterSpacing: 0.2,
-        color: theme.palette.secondary.main,
-        fontSize: '1.2rem',
-    });
+    const audioRef = React.useRef();
+    const audio = audioRef.current;
+
+    const onChange = (e) => {
+        audio.currentTime = (audio.duration / 100) * e.target.value;
+        setPosition(e.target.value);
+    };
+
+    const play = () => {
+        if (!isPlaying) {
+            setIsPlaying(true);
+            audio.play();
+        }
+        if (isPlaying) {
+            setIsPlaying(false);
+            audio.pause();
+        }
+    };
+
+    const getCurrDuration = (e) => {
+        if (currentTime === duration) {
+            setIsPlaying(false);
+            audio.pause();
+        }
+        const percent = (
+            (e.currentTarget.currentTime / e.currentTarget.duration) *
+            100
+        ).toFixed(0);
+        const time = e.currentTarget.currentTime;
+
+        setPosition(+percent);
+        setCurrentTime(time.toFixed(0));
+    };
 
     function formatDuration(value) {
         const minute = Math.floor(value / 60);
         const secondLeft = value - minute * 60;
         return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
     }
+
+    const sliderS = {
+        mx: 1.8,
+        height: 4,
+        borderRadius: 2 / 8,
+        color: '#7CEEFF',
+        maxWidth: '93%',
+        '& .MuiSlider-thumb': {
+            width: 12,
+            height: 12,
+            transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
+            '&:before': {
+                boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
+            },
+            '&:hover, &.Mui-focusVisible': {
+                boxShadow: `0px 0px 0px 8px ${
+                    theme.palette.mode === 'dark'
+                        ? 'rgb(255 255 255 / 16%)'
+                        : 'rgb(0 0 0 / 16%)'
+                }`,
+            },
+            '&.Mui-active': {
+                width: 20,
+                height: 20,
+            },
+        },
+        '& .MuiSlider-rail': {
+            opacity: 0.28,
+        },
+    };
+
+    const TinyText = styled(Typography)({
+        opacity: 0.38,
+        fontWeight: 600,
+        letterSpacing: 0.2,
+        color: '#8A9A9D',
+        fontSize: '1.2rem',
+        marginTop: '.1rem',
+    });
+
+    const iconContainerS = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'end',
+        mt: 1 / 8,
+        mr: 0.4,
+        [theme.breakpoints.up('smallMobile')]: {
+            gap: 20 / 8,
+        },
+        [theme.breakpoints.down('smallMobile')]: {
+            gap: 12 / 8,
+        },
+        [theme.breakpoints.down('smallerMobile')]: {
+            gap: 4 / 8,
+        },
+        [theme.breakpoints.down('smallestMobile')]: {
+            gap: 1 / 8,
+        },
+    };
+
     return (
         <Box sx={{ overflow: 'hidden', px: 34 / 8, marginTop: '2.7rem' }}>
             <Box
@@ -70,14 +161,15 @@ export function MusicPlayerSlider() {
                     </IconButton>
                     <IconButton aria-label="Like" sx={{ marginRight: 1 }}>
                         <svg
+                            onClick={() => setLike(!like)}
                             xmlns="http://www.w3.org/2000/svg"
-                            width="15"
-                            height="15"
-                            viewBox="0 0 15 15"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 16 16"
                             fill="none">
                             <path
                                 d="M13.521 2.26479C13.1332 1.79558 12.6462 1.41823 12.095 1.15991C11.5439 0.901587 10.9422 0.768731 10.3335 0.770911C9.29203 0.739375 8.27804 1.10821 7.5002 1.80154C6.72236 1.10821 5.70838 0.739375 4.66687 0.770911C4.05816 0.768731 3.45654 0.901587 2.90536 1.15991C2.35418 1.41823 1.86715 1.79558 1.47937 2.26479C0.804326 3.08362 0.0981175 4.56616 0.566326 6.98229C1.31362 10.8406 6.91724 14.0068 7.15383 14.1365C7.25929 14.1953 7.37804 14.2261 7.49879 14.2261C7.61953 14.2261 7.73828 14.1953 7.84374 14.1365C8.08174 14.004 13.6854 10.8377 14.4312 6.98229C14.9023 4.56616 14.1961 3.08362 13.521 2.26479ZM13.0436 6.71312C12.5152 9.44091 8.67462 11.9782 7.5002 12.6992C5.84553 11.7005 2.44128 9.19299 1.96033 6.71312C1.59695 4.83887 2.0942 3.75016 2.57587 3.16649C2.83059 2.85916 3.15017 2.612 3.51169 2.44275C3.8732 2.27351 4.2677 2.18636 4.66687 2.18758C5.09321 2.1556 5.52056 2.23465 5.90725 2.41701C6.29395 2.59937 6.62679 2.87882 6.87333 3.22812C6.93412 3.33999 7.02381 3.43351 7.13304 3.49893C7.24226 3.56435 7.36704 3.59928 7.49436 3.60007C7.62168 3.60087 7.74688 3.5675 7.85692 3.50345C7.96696 3.4394 8.05781 3.34701 8.11999 3.23591C8.36605 2.88389 8.6996 2.60208 9.08776 2.41825C9.47592 2.23441 9.90529 2.15491 10.3335 2.18758C10.7335 2.18563 11.129 2.27242 11.4914 2.44169C11.8539 2.61096 12.1742 2.85851 12.4295 3.16649C12.9097 3.75016 13.407 4.83887 13.0436 6.71312Z"
-                                fill="#39C0D4"
+                                fill={`${like ? '#ED2939' : '#39C0D4'}`}
                             />
                         </svg>
                     </IconButton>
@@ -86,39 +178,19 @@ export function MusicPlayerSlider() {
             <Slider
                 aria-label="time-indicator"
                 size="medium"
-                value={position}
                 min={0}
                 step={1}
-                max={duration}
-                onChange={(_, value) => setPosition(value)}
-                sx={{
-                    mx: 1.8,
-                    height: 4,
-                    borderRadius: 2 / 8,
-                    maxWidth: '93%',
-                    '& .MuiSlider-thumb': {
-                        width: 12,
-                        height: 12,
-                        transition: '0.3s cubic-bezier(.47,1.64,.41,.8)',
-                        '&:before': {
-                            boxShadow: '0 2px 12px 0 rgba(0,0,0,0.4)',
-                        },
-                        '&:hover, &.Mui-focusVisible': {
-                            boxShadow: `0px 0px 0px 8px ${
-                                theme.palette.mode === 'dark'
-                                    ? 'rgb(255 255 255 / 16%)'
-                                    : 'rgb(0 0 0 / 16%)'
-                            }`,
-                        },
-                        '&.Mui-active': {
-                            width: 20,
-                            height: 20,
-                        },
-                    },
-                    '& .MuiSlider-rail': {
-                        opacity: 0.28,
-                    },
+                sx={sliderS}
+                onChange={onChange}
+                value={position}
+            />
+            <audio
+                src={music}
+                ref={audioRef}
+                onLoadedData={(e) => {
+                    setDuration(e.currentTarget.duration.toFixed(0));
                 }}
+                onTimeUpdate={getCurrDuration}
             />
             <Box
                 sx={{
@@ -129,29 +201,10 @@ export function MusicPlayerSlider() {
                     mt: -1.75,
                     maxWidth: '93%',
                 }}>
-                <TinyText>{formatDuration(position)}</TinyText>
+                <TinyText>{formatDuration(currentTime)}</TinyText>
                 <TinyText>{formatDuration(duration)}</TinyText>
             </Box>
-            <Box
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'end',
-                    mt: 1 / 8,
-                    mr: 0.4,
-                    [theme.breakpoints.up('smallMobile')]: {
-                        gap: 20 / 8,
-                    },
-                    [theme.breakpoints.down('smallMobile')]: {
-                        gap: 12 / 8,
-                    },
-                    [theme.breakpoints.down('smallerMobile')]: {
-                        gap: 4 / 8,
-                    },
-                    [theme.breakpoints.down('smallestMobile')]: {
-                        gap: 1 / 8,
-                    },
-                }}>
+            <Box sx={iconContainerS}>
                 <IconButton aria-label="Shuffle">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -189,17 +242,17 @@ export function MusicPlayerSlider() {
                     </svg>
                 </IconButton>
                 <IconButton
+                    onClick={play}
                     sx={{
                         background:
                             'linear-gradient(180deg, #A6F3FF -15.18%, #00C2CB 84.82%)',
                         boxShadow: '0px 0px 2px #00C2CB',
                         height: '56px',
-                        padding: `${paused ? '16px' : '18px'}`,
-                        paddingLeft: `${paused ? '20px' : '18px'}`,
+                        padding: `${!isPlaying ? '16px' : '18px'}`,
+                        paddingLeft: `${!isPlaying ? '20px' : '18px'}`,
                     }}
-                    aria-label={paused ? 'play' : 'pause'}
-                    onClick={() => setPaused(!paused)}>
-                    {paused ? (
+                    aria-label={!isPlaying ? 'play' : 'pause'}>
+                    {!isPlaying ? (
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -242,32 +295,36 @@ export function MusicPlayerSlider() {
                         />
                     </svg>
                 </IconButton>
-                <IconButton aria-label="Equailizer">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="14"
-                        viewBox="0 0 12 14"
-                        fill="none">
-                        <path
-                            d="M5.99996 9.66658C5.84525 9.66658 5.69688 9.59635 5.58748 9.47132C5.47808 9.3463 5.41663 9.17673 5.41663 8.99992V0.999919C5.41663 0.823108 5.47808 0.653538 5.58748 0.528514C5.69688 0.40349 5.84525 0.333252 5.99996 0.333252C6.15467 0.333252 6.30304 0.40349 6.41244 0.528514C6.52183 0.653538 6.58329 0.823108 6.58329 0.999919V8.99992C6.58329 9.17673 6.52183 9.3463 6.41244 9.47132C6.30304 9.59635 6.15467 9.66658 5.99996 9.66658ZM1.91663 8.99992V4.33325C1.91663 4.15644 1.85517 3.98687 1.74577 3.86185C1.63638 3.73682 1.488 3.66658 1.33329 3.66658C1.17858 3.66658 1.03021 3.73682 0.920814 3.86185C0.811417 3.98687 0.749959 4.15644 0.749959 4.33325V8.99992C0.749959 9.17673 0.811417 9.3463 0.920814 9.47132C1.03021 9.59635 1.17858 9.66658 1.33329 9.66658C1.488 9.66658 1.63638 9.59635 1.74577 9.47132C1.85517 9.3463 1.91663 9.17673 1.91663 8.99992ZM3.66663 6.33325C3.51192 6.33325 3.36354 6.40349 3.25415 6.52851C3.14475 6.65354 3.08329 6.82311 3.08329 6.99992V8.99992C3.08329 9.17673 3.14475 9.3463 3.25415 9.47132C3.36354 9.59635 3.51192 9.66658 3.66663 9.66658C3.82134 9.66658 3.96971 9.59635 4.0791 9.47132C4.1885 9.3463 4.24996 9.17673 4.24996 8.99992V6.99992C4.24996 6.82311 4.1885 6.65354 4.0791 6.52851C3.96971 6.40349 3.82134 6.33325 3.66663 6.33325ZM8.33329 2.33325C8.17858 2.33325 8.03021 2.40349 7.92081 2.52851C7.81142 2.65354 7.74996 2.82311 7.74996 2.99992V8.99992C7.74996 9.17673 7.81142 9.3463 7.92081 9.47132C8.03021 9.59635 8.17858 9.66658 8.33329 9.66658C8.488 9.66658 8.63638 9.59635 8.74577 9.47132C8.85517 9.3463 8.91663 9.17673 8.91663 8.99992V2.99992C8.91663 2.82311 8.85517 2.65354 8.74577 2.52851C8.63638 2.40349 8.488 2.33325 8.33329 2.33325ZM11.25 8.99992V5.66658C11.25 5.48977 11.1885 5.3202 11.0791 5.19518C10.9697 5.07016 10.8213 4.99992 10.6666 4.99992C10.5119 4.99992 10.3635 5.07016 10.2541 5.19518C10.1447 5.3202 10.0833 5.48977 10.0833 5.66658V8.99992C10.0833 9.17673 10.1447 9.3463 10.2541 9.47132C10.3635 9.59635 10.5119 9.66658 10.6666 9.66658C10.8213 9.66658 10.9697 9.59635 11.0791 9.47132C11.1885 9.3463 11.25 9.17673 11.25 8.99992ZM0.166626 12.3333V13.6666H2.49996V12.3333L1.33329 10.9999L0.166626 12.3333ZM4.83329 12.3333V13.6666H7.16663V12.3333L5.99996 10.9999L4.83329 12.3333ZM9.49996 12.3333V13.6666H11.8333V12.3333L10.6666 10.9999L9.49996 12.3333Z"
-                            fill="#979797"
-                        />
-                    </svg>
-                </IconButton>
-                <IconButton aria-label="Add">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="13"
-                        viewBox="0 0 14 13"
-                        fill="none">
-                        <path
-                            d="M1.00028 5.875H6.33362V0.875C6.33362 0.70924 6.40386 0.550268 6.52888 0.433058C6.6539 0.315848 6.82347 0.25 7.00029 0.25C7.1771 0.25 7.34667 0.315848 7.47169 0.433058C7.59671 0.550268 7.66695 0.70924 7.66695 0.875V5.875H13.0003C13.1771 5.875 13.3467 5.94085 13.4717 6.05806C13.5967 6.17527 13.667 6.33424 13.667 6.5C13.667 6.66576 13.5967 6.82473 13.4717 6.94194C13.3467 7.05915 13.1771 7.125 13.0003 7.125H7.66695V12.125C7.66695 12.2908 7.59671 12.4497 7.47169 12.5669C7.34667 12.6842 7.1771 12.75 7.00029 12.75C6.82347 12.75 6.6539 12.6842 6.52888 12.5669C6.40386 12.4497 6.33362 12.2908 6.33362 12.125V7.125H1.00028C0.823474 7.125 0.653905 7.05915 0.52888 6.94194C0.403856 6.82473 0.333618 6.66576 0.333618 6.5C0.333618 6.33424 0.403856 6.17527 0.52888 6.05806C0.653905 5.94085 0.823474 5.875 1.00028 5.875Z"
-                            fill="white"
-                        />
-                    </svg>
-                </IconButton>
+                <Link to="/equalizer" style={{ textDecoration: 'none' }}>
+                    <IconButton aria-label="Equailizer">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="14"
+                            viewBox="0 0 12 14"
+                            fill="none">
+                            <path
+                                d="M5.99996 9.66658C5.84525 9.66658 5.69688 9.59635 5.58748 9.47132C5.47808 9.3463 5.41663 9.17673 5.41663 8.99992V0.999919C5.41663 0.823108 5.47808 0.653538 5.58748 0.528514C5.69688 0.40349 5.84525 0.333252 5.99996 0.333252C6.15467 0.333252 6.30304 0.40349 6.41244 0.528514C6.52183 0.653538 6.58329 0.823108 6.58329 0.999919V8.99992C6.58329 9.17673 6.52183 9.3463 6.41244 9.47132C6.30304 9.59635 6.15467 9.66658 5.99996 9.66658ZM1.91663 8.99992V4.33325C1.91663 4.15644 1.85517 3.98687 1.74577 3.86185C1.63638 3.73682 1.488 3.66658 1.33329 3.66658C1.17858 3.66658 1.03021 3.73682 0.920814 3.86185C0.811417 3.98687 0.749959 4.15644 0.749959 4.33325V8.99992C0.749959 9.17673 0.811417 9.3463 0.920814 9.47132C1.03021 9.59635 1.17858 9.66658 1.33329 9.66658C1.488 9.66658 1.63638 9.59635 1.74577 9.47132C1.85517 9.3463 1.91663 9.17673 1.91663 8.99992ZM3.66663 6.33325C3.51192 6.33325 3.36354 6.40349 3.25415 6.52851C3.14475 6.65354 3.08329 6.82311 3.08329 6.99992V8.99992C3.08329 9.17673 3.14475 9.3463 3.25415 9.47132C3.36354 9.59635 3.51192 9.66658 3.66663 9.66658C3.82134 9.66658 3.96971 9.59635 4.0791 9.47132C4.1885 9.3463 4.24996 9.17673 4.24996 8.99992V6.99992C4.24996 6.82311 4.1885 6.65354 4.0791 6.52851C3.96971 6.40349 3.82134 6.33325 3.66663 6.33325ZM8.33329 2.33325C8.17858 2.33325 8.03021 2.40349 7.92081 2.52851C7.81142 2.65354 7.74996 2.82311 7.74996 2.99992V8.99992C7.74996 9.17673 7.81142 9.3463 7.92081 9.47132C8.03021 9.59635 8.17858 9.66658 8.33329 9.66658C8.488 9.66658 8.63638 9.59635 8.74577 9.47132C8.85517 9.3463 8.91663 9.17673 8.91663 8.99992V2.99992C8.91663 2.82311 8.85517 2.65354 8.74577 2.52851C8.63638 2.40349 8.488 2.33325 8.33329 2.33325ZM11.25 8.99992V5.66658C11.25 5.48977 11.1885 5.3202 11.0791 5.19518C10.9697 5.07016 10.8213 4.99992 10.6666 4.99992C10.5119 4.99992 10.3635 5.07016 10.2541 5.19518C10.1447 5.3202 10.0833 5.48977 10.0833 5.66658V8.99992C10.0833 9.17673 10.1447 9.3463 10.2541 9.47132C10.3635 9.59635 10.5119 9.66658 10.6666 9.66658C10.8213 9.66658 10.9697 9.59635 11.0791 9.47132C11.1885 9.3463 11.25 9.17673 11.25 8.99992ZM0.166626 12.3333V13.6666H2.49996V12.3333L1.33329 10.9999L0.166626 12.3333ZM4.83329 12.3333V13.6666H7.16663V12.3333L5.99996 10.9999L4.83329 12.3333ZM9.49996 12.3333V13.6666H11.8333V12.3333L10.6666 10.9999L9.49996 12.3333Z"
+                                fill="#979797"
+                            />
+                        </svg>
+                    </IconButton>
+                </Link>
+                <Link to="/addToPlaylist" style={{ textDecoration: 'none' }}>
+                    <IconButton aria-label="Add">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="13"
+                            viewBox="0 0 14 13"
+                            fill="none">
+                            <path
+                                d="M1.00028 5.875H6.33362V0.875C6.33362 0.70924 6.40386 0.550268 6.52888 0.433058C6.6539 0.315848 6.82347 0.25 7.00029 0.25C7.1771 0.25 7.34667 0.315848 7.47169 0.433058C7.59671 0.550268 7.66695 0.70924 7.66695 0.875V5.875H13.0003C13.1771 5.875 13.3467 5.94085 13.4717 6.05806C13.5967 6.17527 13.667 6.33424 13.667 6.5C13.667 6.66576 13.5967 6.82473 13.4717 6.94194C13.3467 7.05915 13.1771 7.125 13.0003 7.125H7.66695V12.125C7.66695 12.2908 7.59671 12.4497 7.47169 12.5669C7.34667 12.6842 7.1771 12.75 7.00029 12.75C6.82347 12.75 6.6539 12.6842 6.52888 12.5669C6.40386 12.4497 6.33362 12.2908 6.33362 12.125V7.125H1.00028C0.823474 7.125 0.653905 7.05915 0.52888 6.94194C0.403856 6.82473 0.333618 6.66576 0.333618 6.5C0.333618 6.33424 0.403856 6.17527 0.52888 6.05806C0.653905 5.94085 0.823474 5.875 1.00028 5.875Z"
+                                fill="white"
+                            />
+                        </svg>
+                    </IconButton>
+                </Link>
             </Box>
         </Box>
     );

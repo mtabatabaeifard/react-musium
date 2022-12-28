@@ -17,7 +17,7 @@ export function SignInButton(props) {
                 textTransform: 'none',
                 direction: 'rtl',
                 gap: '1.5rem',
-                maxWidth: '45rem',
+                maxWidth: '40rem',
             }}
         />
     );

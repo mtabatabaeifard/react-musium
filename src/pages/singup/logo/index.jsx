@@ -27,7 +27,7 @@ export function LogoSectionSingUp() {
                 justifyContent="center"
                 alignItems="center"
                 fontWeight="700">
-                <p>Singup an account</p>
+                <p>Sign up an account</p>
             </Box>
         </Box>
     );
