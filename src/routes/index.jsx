@@ -49,15 +49,16 @@ export const routes = {
         element: <StatsPage />,
     },
     ForgotPassword:{
-        path:'forgot-password',
+        path:'/forgot-password',
         element: <ForgotPassword />,
 
     },
     ResetPassword:{
-        path:'Reset-Password',
+        path:'/Reset-Password',
         element: <ResetPassword />,
     },
     LIBRARY: {
         path: '/library',
         element: <Library/>
+    }
 };

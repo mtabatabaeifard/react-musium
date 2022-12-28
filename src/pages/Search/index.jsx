@@ -1,35 +1,39 @@
+
 import React from 'react'
-import { Box, Container, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
+import { Box, TextField, Typography } from '@mui/material';
 import ImportExportSharpIcon from '@mui/icons-material/ImportExportSharp';
-import AddNewPlaylistBtn from 'components/shared/AddNewPlaylistBtn';
-import YourLikedSongsBtn from 'components/shared/YourLikedSongsBtn';
 import SingerCard from 'components/shared/SingerCard';
 import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
-import ButtonsSlider from 'components/shared/buttonsSlider';
-import PlayListFooter from 'layout/footer/PlayListFooter';
+import { GoBackButton } from 'components/shared/GoBackButton';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import image1 from '../../assets/images/library-musium-logo.png';
 import singerImg from '../../assets/images/conan-gary.png';
 import album1 from '../../assets/images/3amvibes.png';
 import album2 from '../../assets/images/wiped-out.png';
-import album3 from '../../assets/images/extra-dynamic.png';
 
-function Library() {
+function Search() {   
   return (
-    <Container sx={{backgroundColor:"#000000", height:"86.5rem"}}>
-    <Box sx={{backgroundColor:"#000000", maxWidth:"43.3rem", margin:"0 auto"}}>
-      <Box sx={{display:"flex",alignItems:'center',pt:"2.8rem",pb:"2.4rem",mx:"2rem"}}>
-      <img src={image1} alt="logo"/>
-      <Box sx={{color:"#00C2CB",fontFamily:'Century Gothic',fontSize:"2.7rem",flexGrow:"1",my:0}} component="h3">Your Library</Box>
-      <Link to="/">
-      <SearchIcon  sx={{ color:"#ffffff",fontSize: "2rem" }}/>
-      </Link>
-    </Box>
-    <ButtonsSlider ActiveBtnIs=""/>  
-    <AddNewPlaylistBtn/>
-    <YourLikedSongsBtn/>
+    <Box sx={{backgroundColor:"#000000", maxWidth:"43.3rem", margin:"0 auto",pt:"4rem"}}>
+    <GoBackButton style={{paddingLeft:".4rem"}}/>
+    <TextField
+        variant="outlined"
+        sx={{border:"2px solid #ffffff",borderRadius:"2.3rem",width:"90%",padding:"0px",mb:"4rem",mt:"2rem",mx:"2rem",
+            "& .MuiInputLabel-root":
+            {
+                color:"#8A9A9D;",
+                fontSize:"1.3rem",
+                fontFamily: 'Century Gothic'
+            }
+            ,"& div":{
+                "& input ":
+                {
+                    "& .MuiInputBase-input":{
+                        padding:"1rem 2rem 1.5rem"
+                    }
+                }
+            }   
+        }}
+        
+        label='Browse Library' />
     <div style={{display:"flex", alignItems:"center",marginBottom:"2.7rem"}}>
     <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",margin:"0 .5rem 0 2.6rem"}}/>
     <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>Add New Playlist</Typography> 
@@ -53,13 +57,16 @@ function Library() {
     <AlbumLibraryCard image={album2} title="Wiped Out!" desc="The Neighbourhood" to='/'/>
     </SwiperSlide>
     <SwiperSlide>
-    <AlbumLibraryCard image={album3} title="Extra Dynamic" desc="Updated Aug 10 • ur mom ashley" to='/'/>
+    <AlbumLibraryCard image={album2} title="Wiped Out!" desc="The Neighbourhood" to='/'/>
     </SwiperSlide> 
+    <SwiperSlide>
+    <SingerCard image={singerImg} name="conan gary" to='/'/>
+    </SwiperSlide>
+
     </Swiper>
-    <PlayListFooter/>
+    
     </Box>
-    </Container>
   )
 }
 
-export default Library
+export default Search

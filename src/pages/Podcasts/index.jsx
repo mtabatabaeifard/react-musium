@@ -8,13 +8,13 @@ import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
 import ButtonsSlider from 'components/shared/buttonsSlider';
 import PlayListFooter from 'layout/footer/PlayListFooter';
 import image1 from '../../assets/images/library-musium-logo.png';
-import songPic1 from '../../assets/images/superache.png';
-import songPic2 from '../../assets/images/dawn-fm.png';
-import songPic3 from '../../assets/images/planet-her.png';
-import songPic4 from '../../assets/images/wiped-out.png';
-import songPic5 from '../../assets/images/bloom.png';
+import songPic1 from '../../assets/images/homePic2-sectionOne.png';
+import songPic2 from '../../assets/images/ask-me-another.png';
+import songPic3 from '../../assets/images/baking-a-mystery.png';
+import songPic4 from '../../assets/images/extra-dynamic.png';
+import songPic5 from '../../assets/images/teenager-therapy.png';
 
-function PlayLists() {
+function Podcasts() {
   return (
     <Container sx={{backgroundColor:"#000000", height:"86.5rem"}}>
     <Box sx={{backgroundColor:"#000000", maxWidth:"43.3rem", margin:"0 auto"}}>
@@ -25,17 +25,17 @@ function PlayLists() {
       <SearchIcon  sx={{ color:"#ffffff",fontSize: "2rem" }}/>
       </Link>
     </Box>
-    <ButtonsSlider ActiveBtnIs="Playlists"/>  
+    <ButtonsSlider ActiveBtnIs="Podcasts & Shows"/>  
     <YourLikedSongsBtn/>
     <div style={{display:"flex", alignItems:"center",marginBottom:"2.7rem"}}>
     <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",margin:"0 .5rem 0 2.6rem"}}/>
-    <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>Add New Playlist</Typography> 
+    <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>A - Z</Typography> 
     </div>
-    <AlbumLibraryCard image={songPic1} title="Superache" desc="Conan Gray" to='/'/>
-    <AlbumLibraryCard image={songPic2} title="DAWN FM" desc="The Weekend" to='/'/>
-    <AlbumLibraryCard image={songPic3} title="Planet Her" desc="Doja Cat" to='/'/>
-    <AlbumLibraryCard image={songPic4} title="Wiped Out!" desc="The Neighbourhood" to='/'/>
-    <AlbumLibraryCard image={songPic5} title="Bloom" desc="Troye Sivan" to='/'/>
+    <AlbumLibraryCard image={songPic1} title="Anything Goes" desc="Updated Aug 31 • Emma Chamberlain" to='/'/>
+    <AlbumLibraryCard image={songPic2} title="Ask Me Another" desc="Updated Aug 18 • NPR Studios" to='/'/>
+    <AlbumLibraryCard image={songPic3} title="Baking a Mystery" desc="Updated Aug 21• Stephanie Soo" to='/'/>
+    <AlbumLibraryCard image={songPic4} title="Extra Dynamic" desc="Updated Aug 10 • ur mom ashley" to='/'/>
+    <AlbumLibraryCard image={songPic5} title="Teenager Therapy" desc="Updated Aug 21• iHeart Studios" to='/'/>
     
     <PlayListFooter/>
     </Box>
@@ -43,4 +43,4 @@ function PlayLists() {
   )
 }
 
-export default PlayLists
+export default Podcasts
