@@ -20,7 +20,6 @@ function Home() {
             }}>
             <Swiper
                 style={{ maxHeight: '700px' }}
-                // height='90vh'
                 modules={[Pagination]}
                 spaceBetween={12}
                 slidesPerView={3}
