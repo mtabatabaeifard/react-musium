@@ -19,7 +19,7 @@ function Home() {
                 margin: '0 auto',
             }}>
             <Swiper
-                style={{ maxHeight: '90vh' }}
+                style={{ maxHeight: '700px' }}
                 // height='90vh'
                 modules={[Pagination]}
                 spaceBetween={12}
