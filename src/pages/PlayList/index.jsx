@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
-import PlayListHeader from 'layout/header/PlayListHeader';
+import PlayListHeader from 'layout/Header/PlayListHeader';
 import PlayListImage1 from 'assets/images/PlayListImage1.png';
 import PlayListItems from 'components/PlayListItems';
-import PlayListFooter from 'layout/footer/PlayListFooter';
+import PlayListFooter from 'layout/Footer/PlayListFooter';
 
 function PlayList() {
     const theme = useTheme();
