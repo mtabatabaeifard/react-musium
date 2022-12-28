@@ -61,7 +61,7 @@ function StatsPage() {
                         sx={{
                             display: 'flex',
                             gap: '18px',
-                            mt:'9px'
+                            mt: '9px',
                         }}>
                         <Box>
                             <svg

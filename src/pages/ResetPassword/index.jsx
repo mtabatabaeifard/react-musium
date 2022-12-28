@@ -13,11 +13,12 @@ export default function ResetPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
+            height: '85vh',
         },
     };
 
     return (
-        <Box pb={44} sx={style.main}>
+        <Box sx={style.main}>
             <Logo title="OTP VERIFICATION" />
             {FirstFormSection()}
         </Box>
