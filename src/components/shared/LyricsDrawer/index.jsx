@@ -13,18 +13,17 @@ export function LyricsDrawer() {
         const windowSize = window.innerHeight;
         const bodyHeight = document.body.offsetHeight;
 
-        const bottomDistance = Math.max(
+        const bottomDistance = Math.round(
             bodyHeight - (scrollPosition + windowSize),
-            0,
         );
 
-        if (bottomDistance === 0) {
-            if (e.deltaY >= 0) {
+        if (bottomDistance === 0 || bottomDistance === 1) {
+            if (e.deltaY > 0) {
                 setDrawerState(true);
             }
         }
         if (scrollPosition === 0) {
-            if (e.deltaY < 0) {
+            if (e.deltaY <= 0) {
                 setDrawerState(false);
             }
         }
@@ -58,7 +57,7 @@ export function LyricsDrawer() {
     };
 
     return (
-        <Box p={25 / 8} sx={drawerS}>
+        <Box p={25 / 8} sx={drawerS} onClick={() => setDrawerState(true)}>
             You never look at the sky <br />
             Cause you think it's too high <br />
             You never look at the stars <br />
