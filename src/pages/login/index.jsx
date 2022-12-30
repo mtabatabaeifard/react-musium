@@ -17,6 +17,7 @@ export default function Login() {
                 position: 'relative',
                 overflow: 'hidden',
                 fontFamily: 'Century Gothic',
+                fontWeight:'700',
             }}>
             <Logo title="Login to your account" />
             <FormSection/>

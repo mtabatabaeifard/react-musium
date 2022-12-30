@@ -15,7 +15,8 @@ export default function SignUp() {
       pt: 35 / 8,
       position: 'relative',
       overflow: 'hidden',
-      fontFamily: 'Century Gothic'
+      fontFamily: 'Century Gothic',
+      fontWeight:'700',
     }}>
       <Logo title='Singup an account ' />
       {FormSectionSingUP()}

@@ -13,20 +13,14 @@ export default function ResetPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
-            
-
+            fontWeight:'700',
         }
     }
-
-
     return (
 
         <Box pb={44} sx={style.main}>
             <Logo title='OTP VERIFICATION' />
-            {FirstFormSection()}
+            <FirstFormSection/>
         </Box>
-
-
-
     )
 }

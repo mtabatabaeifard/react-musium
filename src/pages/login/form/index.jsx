@@ -18,7 +18,7 @@ export function FormSection() {
     };
 
     return (
-        <Box paddingTop={4}>
+        <Box  paddingTop={4}>
             <Box>
                 <FormControl
                     variant="outlined"
