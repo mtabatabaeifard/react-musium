@@ -10,7 +10,7 @@ function PlayListHeader() {
                 sx={{
                     maxWidth: theme.breakpoints.values.smallMobile,
                     mx: 'auto',
-                    background: '#1E1E1E',
+                    background: theme.palette.primary.dark,
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -18,6 +18,7 @@ function PlayListHeader() {
                     px: ' 2.17rem',
                     pt: '3.4rem',
                 }}>
+                    
                 <ButtonBase>
                     <GoBackButton />
                 </ButtonBase>

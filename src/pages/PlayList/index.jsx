@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
-import PlayListHeader from 'layout/header/PlayListHeader';
+import PlayListHeader from 'pages/playList/playListHeader';
 import PlayListImage1 from 'assets/images/PlayListImage1.png';
 import PlayListItems from 'components/PlayListItems';
 import PlayListFooter from 'layout/core/PlayListFooter';
@@ -12,7 +12,7 @@ function PlayList() {
         Box: {
             maxWidth: theme.breakpoints.values.smallMobile,
             mx: 'auto',
-            background: '#1E1E1E',
+            background: theme.palette.primary.dark,
             textAlign: 'center',
             pt: '3.6rem',
         },

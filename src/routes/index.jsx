@@ -8,8 +8,9 @@ import { SignIn } from 'pages/signIn';
 import SignUp from 'pages/singup';
 import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/ResetPassword';
-import PlayList from 'pages/PlayList';
+import PlayList from 'pages/playList';
 import Library from 'pages/Library';
+ 
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -33,7 +34,7 @@ export const routes = {
         element: <SongPage />,
     },
     PlayList: {
-        path: '/PlayList',
+        path: '/playList',
         element: <PlayList />,
     },
     Login: {
