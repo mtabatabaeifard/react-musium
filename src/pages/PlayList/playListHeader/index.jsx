@@ -17,12 +17,10 @@ function PlayListHeader() {
                     boxSizing: ' border-box',
                     px: ' 2.17rem',
                     pt: '3.4rem',
-                }}>
-                    
+                }}> 
                 <ButtonBase>
                     <GoBackButton />
                 </ButtonBase>
-
                 <Typography
                     sx={{
                         color: theme.palette.text.primary,
@@ -33,7 +31,6 @@ function PlayListHeader() {
                     }}>
                     FROM “PLAYLISTS”
                 </Typography>
-
                 <ButtonBase>
                     <svg
                         width="24"

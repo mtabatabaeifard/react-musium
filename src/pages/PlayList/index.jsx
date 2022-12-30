@@ -8,7 +8,7 @@ import PlayListFooter from 'layout/core/PlayListFooter';
 function PlayList() {
     const theme = useTheme();
 
-    const style ={
+    const style = {
         Box: {
             maxWidth: theme.breakpoints.values.smallMobile,
             mx: 'auto',
