@@ -6,15 +6,22 @@ import PlayListItem4 from 'assets/images/PlayListItem4.png';
 import PlayListItem5 from 'assets/images/PlayListItem5.png';
 import PlayListItem6 from 'assets/images/PlayListItem6.png';
 import React from 'react';
+import { Box } from '@mui/material';
 
 function PlayListItems() {
+    const style = {
+        itemStyle: {
+            maxHeight: '57vh',
+            overflowY: 'scroll',
+            '&::-webkit-scrollbar': { display: 'none' },
+        },
+    };
     return (
-        <div>
+        <Box sx={style.itemStyle}>
             <PlayListItem
                 src={PlayListItem1}
                 textPrimary="grainy days"
                 textSecondary="moody."
-                style={{ paddingTop: '4rem' }}
             />
 
             <PlayListItem
@@ -47,7 +54,31 @@ function PlayListItems() {
                 textSecondary="moody."
                 style={{ background: '0,0,0,.3' }}
             />
-        </div>
+
+            <PlayListItem
+                src={PlayListItem4}
+                textPrimary="Tokyo"
+                textSecondary="SmYang"
+            />
+
+            <PlayListItem
+                src={PlayListItem4}
+                textPrimary="Tokyo"
+                textSecondary="SmYang"
+            />
+
+            <PlayListItem
+                src={PlayListItem4}
+                textPrimary="Tokyo"
+                textSecondary="SmYang"
+            />
+
+            <PlayListItem
+                src={PlayListItem4}
+                textPrimary="Tokyo"
+                textSecondary="SmYang"
+            />
+        </Box>
     );
 }
 
