@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
-import PlayListHeader from 'pages/playList/playListHeader';
+import PlayListHeader from 'pages/PlayList/playListHeader';
 import PlayListImage1 from 'assets/images/PlayListImage1.png';
 import PlayListItems from 'components/PlayListItems';
 import PlayListFooter from 'layout/core/PlayListFooter';
