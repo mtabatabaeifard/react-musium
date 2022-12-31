@@ -17,7 +17,7 @@ export function LyricsDrawer() {
             bodyHeight - (scrollPosition + windowSize),
         );
 
-        if (bottomDistance === 0 || bottomDistance === 1) {
+        if (bottomDistance <= 10 && bottomDistance >= -10) {
             if (e.deltaY >= 0) {
                 setDrawerState(true);
             }
