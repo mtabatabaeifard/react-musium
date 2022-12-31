@@ -17,7 +17,7 @@ function PlayListHeader() {
                     boxSizing: ' border-box',
                     px: ' 2.17rem',
                     pt: '3.4rem',
-                }}> 
+                }}>
                 <ButtonBase>
                     <GoBackButton />
                 </ButtonBase>
