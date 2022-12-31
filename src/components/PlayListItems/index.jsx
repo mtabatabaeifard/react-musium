@@ -7,15 +7,15 @@ import PlayListItem5 from 'assets/images/PlayListItem5.png';
 import PlayListItem6 from 'assets/images/PlayListItem6.png';
 import React from 'react';
 import { Box } from '@mui/material';
- 
+
 function PlayListItems() {
     const style = {
         itemStyle: {
             maxHeight: '57vh',
             overflowY: 'scroll',
-            '&::-webkit-scrollbar': {display: 'none'}
+            '&::-webkit-scrollbar': { display: 'none' },
         },
-    }
+    };
     return (
         <Box sx={style.itemStyle}>
             <PlayListItem
