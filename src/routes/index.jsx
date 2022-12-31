@@ -8,7 +8,7 @@ import { SignIn } from 'pages/signIn';
 import SignUp from 'pages/singup';
 import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/ResetPassword';
-import PlayList from 'pages/playList';
+import PlayList from 'pages/PlayList';
 import Library from 'pages/Library';
 
 export const routes = {
