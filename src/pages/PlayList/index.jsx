@@ -30,23 +30,17 @@ function PlayList() {
             color: theme.palette.secondary.main,
             fontFamily: 'Century Gothic',
             letterSpacing: '0.06em',
-            paddingBottom:'4rem',
-        }
-
-    }
+            paddingBottom: '4rem',
+        },
+    };
     return (
-        <div style={{ position: 'relative' , overflow: 'hidden'}}>
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
             <PlayListHeader />
 
-            <Box
-                sx={style.Box}>
+            <Box sx={style.Box}>
                 <img src={PlayListImage1} alt="song" />
-                <Typography
-                    sx={style.typography1}>
-                    Lofi Loft
-                </Typography>
-                <Typography
-                    sx={style.typography2}>
+                <Typography sx={style.typography1}>Lofi Loft</Typography>
+                <Typography sx={style.typography2}>
                     soft, chill, dreamy, lo-fi beats
                 </Typography>
             </Box>
