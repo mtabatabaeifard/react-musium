@@ -10,7 +10,6 @@ import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/ResetPassword';
 import PlayList from 'pages/playList';
 import Library from 'pages/Library';
- 
 
 export const routes = {
     LAUNCHSCREEN: {
