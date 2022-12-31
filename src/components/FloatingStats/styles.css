@@ -1,0 +1,13 @@
+.tracksCart::-webkit-scrollbar{
+   width: 5px;
+}
+.tracksCart::-webkit-scrollbar-thumb{
+    background-color: #000;
+    border-radius: 10px;
+    text-align: center;
+    height: 30vh;
+}
+.tracksCart a{
+    text-decoration: none;
+    
+}
