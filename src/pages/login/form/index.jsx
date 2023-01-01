@@ -1,14 +1,15 @@
 import IconButton from '@mui/material/IconButton';
-import { Box, FormControl, InputAdornment,  } from '@mui/material';
+import { Alert, Box, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/style.css';
 import { CheckBoxButton } from 'components/shared/CheckBoxButton';
 import { Link } from 'components';
+import { useNavigate } from "react-router-dom";
 
 export function FormSection() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -16,9 +17,29 @@ export function FormSection() {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+    const [form, setForm] = useState({
+        email: '',
+        password: ''
+    }
+    )
+    const navigate = useNavigate(); 
+    const handelLogin = (e) => {
+        e.preventDefault();
+        const path = `/home`; 
+        navigate(path);
+    }
 
+    const [emailState,setEmailState] = useState(false)
+    const [passwordState,setPasswordState] = useState(false)
+    const inputField = (e) => {
+        e.preventDefault();
+        if(!form.password)setPasswordState(true)
+        else setPasswordState(false)
+        if (!form.email) setEmailState(true)
+        else setEmailState(false)
+    }
     return (
-        <Box  paddingTop={4}>
+        <Box paddingTop={4}>
             <Box>
                 <FormControl
                     variant="outlined"
@@ -48,7 +69,14 @@ export function FormSection() {
                         }}
                         id="outlined-multiline-flexible"
                         maxRows={6}
+                        onChange={(e) => {
+                            setEmailState(false)
+                            setForm({
+                            ...form,
+                            email: e.target.value
+                        })}}
                     />
+                    {emailState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your email</Alert>}
                     <TextField
                         placeholder="Password"
                         type={showPassword ? 'text' : 'password'}
@@ -103,14 +131,23 @@ export function FormSection() {
                         }}
                         id="outlined-multiline-flexible"
                         maxRows={6}
+                        onChange={(e) => {
+                            setPasswordState(false)
+                            setForm({
+                            ...form,
+                            password: e.target.value
+                        })}}
                     />
+                    {passwordState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your pssword</Alert>}
                 </FormControl>
                 <CheckBoxButton label="Remember me" />
             </Box>
-            <Box display='flex' justifyContent='center'>
-                <Button>Log in</Button>
+            <Box display="flex" justifyContent="center">
+                <Button type='submit' onClick={form.email && form.password ? handelLogin : inputField}>Log in</Button>
             </Box>
-            <Link className='forget-pasword'  to ="/forgot-password" >Forgot the password?</Link>
+            <Link className="forget-pasword" to="/forgot-password">
+                Forgot the password?
+            </Link>
         </Box>
     );
 }

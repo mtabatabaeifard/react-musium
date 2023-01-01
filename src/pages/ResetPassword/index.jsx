@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box } from "@mui/system";
-import Logo from "components/Logo";
-import { FirstFormSection } from "./firstFormSection";
+import { Box } from '@mui/system';
+import Logo from 'components/Logo';
+import { FirstFormSection } from './firstFormSection';
 
 export default function ResetPassword() {
     const style = {

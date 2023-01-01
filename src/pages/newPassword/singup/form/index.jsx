@@ -3,42 +3,43 @@ import { Alert, Box, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React, { useState } from 'react';
 import '../styles/style.css';
+import { useNavigate } from 'react-router-dom';
 
 export function FormSection() {
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const [showconfirmPassword, setShowconfirmPassword] = React.useState(false);
-    const handleClickShowconfirmPassword = () => setShowconfirmPassword((show) => !show);
+    const [showPassword2, setShowPassword2] = React.useState(false);
+    const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-    const [form, setForm] = useState({
-        email: '',
-        password: '',
-        confirmPassword: ''
-        ,
-    }
-    )
-    const [emailState, setEmailState] = useState(false)
+    const [consfirnpasswordState, setConfirmPassword] = useState(false)
     const [passwordState, setPasswordState] = useState(false)
-    const [confirmPasswordState, setconfirmPasswordState] = useState(false)
     const [passwordComparison, setPasswordComparison] = useState(false)
-    const inputField = (e) => {
+    const [form, setForm] = useState({
+        confirmPassword: '',
+        password: ''
+    })
+    const emptyEntry = (e) => {
         e.preventDefault();
+        console.log(form);
         if (!form.password) setPasswordState(true)
         else setPasswordState(false)
-        if (!form.email) setEmailState(true)
-        else setEmailState(false)
-        if (!form.confirmPassword) setconfirmPasswordState(true)
-        else setconfirmPasswordState(false)
+        if (!form.confirmPassword) setConfirmPassword(true)
+        else setConfirmPassword(false)
     }
-    const handelSignUp = () => {
+    const navigate = useNavigate();
+    const handelResetPassword = (e) => {
+        e.preventDefault();
         if (form.password !== form.confirmPassword) setPasswordComparison(true)
+        const path = `/login`;
+        navigate(path);
     }
+
+
     return (
         <Box paddingTop={4}>
             <Box pb={5}>
@@ -50,40 +51,8 @@ export function FormSection() {
                         alignItems: 'center',
                         gap: '2.3rem',
                     }}>
-
                     <TextField
-                        placeholder="Email"
-                        InputProps={{
-                            style: {
-                                height: '100%',
-                                fontSize: '1.6rem',
-                            },
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <MailOutlineIcon
-                                        fontSize="large"
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}
-                                    />
-                                </InputAdornment>
-                            ),
-                        }}
-                        id="outlined-multiline-flexible"
-                        maxRows={6}
-                        onChange={(e) => {
-                            setEmailState(false)
-                            setForm({
-                                ...form,
-                                email: e.target.value
-                            })
-                        }}
-                    />
-                    {emailState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your email</Alert>}
-
-
-                    <TextField
-                        placeholder="Password"
+                        placeholder="Enter your new password"
                         type={showPassword ? 'text' : 'password'}
                         InputProps={{
                             style: {
@@ -136,34 +105,36 @@ export function FormSection() {
                         id="outlined-multiline-flexible"
                         maxRows={6}
                         onChange={(e) => {
-                            setPasswordState(false)
                             setPasswordComparison(false)
+                            setPasswordState(false)
                             setForm({
                                 ...form,
                                 password: e.target.value
                             })
                         }}
                     />
-                    {passwordState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your pssword</Alert>}
+                    {passwordState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your new pssword</Alert>}
                     {passwordComparison && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enterd values are not equal</Alert>}
+
                     <TextField
-                        placeholder="Password"
-                        type={showconfirmPassword ? 'text' : 'password'}
+                        placeholder="Confirm your new password"
+                        type={showPassword2 ? 'text' : 'password'}
                         InputProps={{
                             style: {
                                 height: '100%',
                                 fontSize: '1.6rem',
                             },
+
                             endAdornment: (
                                 <InputAdornment position="end">
                                     <IconButton
                                         sx={{
                                             color: 'rgba(255, 255, 255, 0.27)',
                                         }}
-                                        onClick={handleClickShowconfirmPassword}
+                                        onClick={handleClickShowPassword2}
                                         onMouseDown={handleMouseDownPassword}
                                         edge="end">
-                                        {showconfirmPassword ? (
+                                        {showPassword2 ? (
                                             <VisibilityOff
                                                 fontSize="large"
                                                 sx={{
@@ -188,7 +159,7 @@ export function FormSection() {
                                         sx={{
                                             color: 'rgba(255, 255, 255, 0.27)',
                                         }}>
-                                        {showconfirmPassword ? (
+                                        {showPassword2 ? (
                                             <VisibilityOff />
                                         ) : (
                                             <Visibility />
@@ -200,24 +171,22 @@ export function FormSection() {
                         id="outlined-multiline-flexible"
                         maxRows={6}
                         onChange={(e) => {
-                            setconfirmPasswordState(false)
                             setPasswordComparison(false)
+                            setConfirmPassword(false)
                             setForm({
                                 ...form,
                                 confirmPassword: e.target.value
                             })
                         }}
                     />
-                    {confirmPasswordState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your pssword</Alert>}
+                    {consfirnpasswordState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Confirm your new pssword</Alert>}
                     {passwordComparison && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enterd values are not equal</Alert>}
+
+
                 </FormControl>
             </Box>
             <Box display="flex" justifyContent="center">
-                <Button
-                    onClick={form.email && form.password && form.confirmPassword ? handelSignUp : inputField}
-                >
-                    Sign up
-                </Button>
+                <Button onClick={form.confirmPassword && form.password ? handelResetPassword : emptyEntry}>Reset password</Button>
             </Box>
         </Box>
     );

@@ -1,11 +1,11 @@
 import React from 'react';
 import Logo from 'components/Logo';
 import { Box } from '@mui/system';
-import { FormSection } from './form';
-import { Social} from './social';
+import { FormSection} from './form';
+import { Social } from './social';
 import './styles/style.css';
 
-export default function SignUp() {
+export default function NewPassword() {
 
   return (
     <Box sx={{

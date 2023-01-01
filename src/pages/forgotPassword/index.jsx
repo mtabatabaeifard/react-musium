@@ -1,8 +1,7 @@
 import React from 'react';
-import { Box } from "@mui/system";
-import Logo from "components/Logo";
-import { FormSection } from "./firstFormSection";
-
+import { Box } from '@mui/system';
+import Logo from 'components/Logo';
+import { FormSection } from './firstFormSection';
 
 export default function ForgotPassword() {
     const style = {
@@ -26,8 +25,5 @@ export default function ForgotPassword() {
 
 
         </Box>
-
-
-
-    )
+    );
 }

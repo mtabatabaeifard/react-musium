@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
@@ -8,7 +8,7 @@ import YourLikedSongsBtn from 'components/shared/YourLikedSongsBtn';
 import SingerCard from 'components/shared/SingerCard';
 import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
 import ButtonsSlider from 'components/shared/buttonsSlider';
-import PlayListFooter from 'layout/footer/PlayListFooter';
+import PlayListFooter from 'layout/core/PlayListFooter';
 import image1 from '../../assets/images/library-musium-logo.png';
 import singerImg from '../../assets/images/conan-gary.png';
 import album1 from '../../assets/images/3amvibes.png';
@@ -43,4 +43,4 @@ function Library() {
   )
 }
 
-export default Library
+export default Library;
