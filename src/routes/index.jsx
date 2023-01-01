@@ -54,7 +54,7 @@ export const routes = {
         element: <ForgotPassword />,
     },
     ResetPassword: {
-        path: 'Reset-Password',
+        path: 'reset-Password',
         element: <ResetPassword />,
     },
     LIBRARY: {
