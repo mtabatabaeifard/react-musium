@@ -12,7 +12,7 @@ function LinkTab(props) {
                 fontWeight: 700,
                 lineHeight: '13px',
                 letterSpacing: '0.055rem',
-                marginTop: '130px',
+                marginTop: '110px',
                 fontFamily: 'Century Gothic',
             }}
             component="a"
@@ -34,16 +34,13 @@ export function BottomDateBar() {
     return (
         <Box
             sx={{
-                width: '90%',
                 height: '207px',
-                padding: '2rem',
+                width: '400px',
                 background:
                     'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 77.93%)',
-                position: 'absolute',
-                top: ' 700px',
-                fontFamily: 'Century Gothic',
-                fontStyle: 'normal',
-                fontWeight: '700',
+                top: ' 810px',
+                position: 'fixed',
+                marginLeft: '15px',
             }}>
             <Tabs
                 TabIndicatorProps={{

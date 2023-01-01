@@ -34,7 +34,7 @@ export const routes = {
         element: <SongPage />,
     },
     PlayList: {
-        path: '/PlayList',
+        path: '/playList',
         element: <PlayList />,
     },
     Login: {
