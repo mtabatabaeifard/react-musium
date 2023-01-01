@@ -53,7 +53,7 @@ export function FormSection() {
                             height: '100%',
                         },
                     }}
-                    id="outlined-multiline-flexible"
+                    id="email-input"
                     maxRows={6}
                 />
                 {emailState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} > Enter your email</Alert>}

@@ -5,7 +5,7 @@ import StatsPage from 'pages/stats';
 import { LaunchScreen } from 'pages/LaunchScreen';
 import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
-import SignUp from 'pages/singup';
+import SignUp from 'pages/signup';
 import ForgotPassword from 'pages/forgotPassword';
 import ResetPassword from 'pages/resetPassword';
 import PlayList from 'pages/PlayList';

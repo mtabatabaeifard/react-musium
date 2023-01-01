@@ -102,7 +102,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="password-New-password"
                         maxRows={6}
                         onChange={(e) => {
                             setPasswordComparison(false)
@@ -168,7 +168,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="confirm-password-New-password"
                         maxRows={6}
                         onChange={(e) => {
                             setPasswordComparison(false)

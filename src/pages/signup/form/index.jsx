@@ -69,7 +69,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="email-sign-up"
                         maxRows={6}
                         onChange={(e) => {
                             setEmailState(false)
@@ -133,7 +133,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="password-sign-up"
                         maxRows={6}
                         onChange={(e) => {
                             setPasswordState(false)
@@ -197,7 +197,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="confirm-password-sign-up"
                         maxRows={6}
                         onChange={(e) => {
                             setconfirmPasswordState(false)

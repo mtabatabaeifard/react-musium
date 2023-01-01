@@ -3,7 +3,6 @@ import { Box } from '@mui/system';
 import { Button, Link, TextField } from 'components';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { MuiOtpInput } from 'mui-one-time-password-input'
 
 export function FirstFormSection() {
     const [varify, setVarify] = useState('')
@@ -47,7 +46,7 @@ export function FirstFormSection() {
                             height: '100%',
                         },
                     }}
-                    id="outlined-multiline-flexible"
+                    id="varify"
                     maxRows={6}
                     onChange={(e) => {
                         setVarifyState(false)
@@ -55,8 +54,6 @@ export function FirstFormSection() {
                     }}
                 />
                 {varifyState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem' }} > Enter varify code</Alert>}
-
-                {/* <MuiOtpInput length={6} value={value} onChange={handleChange} /> */}
             </Box>
             <Box display="flex" justifyContent="center" pt={5}>
                 <Link style={{ color: 'transparent' }} to="/Reset-password">

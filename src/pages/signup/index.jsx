@@ -17,7 +17,7 @@ export default function SignUp() {
       overflow: 'hidden',
       fontWeight:'700',
     }}>
-      <Logo title='Singup an account ' />
+      <Logo title='Signup an account ' />
       <FormSection/>
       <Social/>
     </Box>

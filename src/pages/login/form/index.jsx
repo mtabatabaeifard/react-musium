@@ -67,7 +67,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="email-input-login"
                         maxRows={6}
                         onChange={(e) => {
                             setEmailState(false)
@@ -78,9 +78,11 @@ export function FormSection() {
                     />
                     {emailState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your email</Alert>}
                     <TextField
+                        autoComplete='off'
                         placeholder="Password"
                         type={showPassword ? 'text' : 'password'}
                         InputProps={{
+                            
                             style: {
                                 fontSize: '1.6rem',
                                 height: '100%',
@@ -129,7 +131,7 @@ export function FormSection() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="password-input-login"
                         maxRows={6}
                         onChange={(e) => {
                             setPasswordState(false)
