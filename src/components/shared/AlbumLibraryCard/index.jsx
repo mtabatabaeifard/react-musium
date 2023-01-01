@@ -12,7 +12,7 @@ function AlbumLibraryCard({ title, desc, image, to }) {
                     alignItems: 'center',
                     margin: '0 0 2.7rem 2.8rem',
                 }}>
-                <img src={image} alt="conan gary" />
+                <img src={image} width="84px" height="82px" alt="conan gary" />
                 <div>
                     <Typography
                         sx={{

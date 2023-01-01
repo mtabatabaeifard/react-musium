@@ -1,11 +1,10 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
 import ImportExportSharpIcon from '@mui/icons-material/ImportExportSharp';
-import YourLikedSongsBtn from 'components/shared/YourLikedSongsBtn';
 import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
-import ButtonsSlider from 'components/shared/buttonsSlider';
+import { GoBackButton } from 'components/shared/GoBackButton';
+import AddNewPlaylistBtn from 'components/shared/AddNewPlaylistBtn';
 import Footer from 'layout/Footer';
-import LibraryPagesHeader from 'layout/libraryPagesHeader'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import songPic1 from '../../assets/images/homePic2-sectionOne.png';
 import songPic2 from '../../assets/images/ask-me-another.png';
@@ -13,16 +12,21 @@ import songPic3 from '../../assets/images/baking-a-mystery.png';
 import songPic4 from '../../assets/images/extra-dynamic.png';
 import songPic5 from '../../assets/images/teenager-therapy.png';
 
-function Folder() {
+function Podcasts() {
   return (
     <Box sx={{backgroundColor:"#000000", maxWidth:"43.3rem", margin:"0 auto"}}>
-    <LibraryPagesHeader/>
-    <ButtonsSlider ActiveBtnIs="Podcasts & Shows"/>  
-    <YourLikedSongsBtn/>
-    <div style={{display:"flex", alignItems:"center",marginBottom:"2.7rem"}}>
-    <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",margin:"0 .5rem 0 2.6rem"}}/>
-    <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>A - Z</Typography> 
-    </div>
+    <Box sx={{display:"flex",mb:"5rem",pt:"4rem"}}>
+       <GoBackButton style={{paddingLeft:".4rem"}}/>
+       <Typography sx={{color:"#ffffff",fontSize:"2.4rem",fontFamily:'Century Gothic',ml:"2.6rem",fontWeight:"700"}}>Moods</Typography>
+    </Box>  
+    <Box sx={{display:"flex", alignItems:"center" ,mb:"5rem",mt:".9rem"}}>
+      <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",fontWeight: 700,color:"#FFFFFF",flexGrow:1,marginLeft:"2.4rem"}}>Sort By </Typography> 
+      <div style={{display:"flex", alignItems:"center"}}>
+      <Typography sx={{fontFamily:"Century Gothic",fontSize:"1.6rem",color:"#39C0D4",fontWeight:700}}>Add New Playlist</Typography> 
+      <ImportExportSharpIcon sx={{fontSize: "1.7rem" }} style={{color:"#979797",marginRight:"1.7rem",marginLeft:".3rem"}}/>
+      </div>
+    </Box>
+    <AddNewPlaylistBtn/>
     <Swiper
       spaceBetween={0}
       slidesPerView="auto"
@@ -53,4 +57,4 @@ function Folder() {
   )
 }
 
-export default Folder
+export default Podcasts
