@@ -1,12 +1,11 @@
 import { Box } from '@mui/material';
 import Footer from 'layout/Footer';
-import Header from 'layout/Header';
+import Header from 'pages/home/Header';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper';
-// import theme from '../../theme';
 import { ContinueListening } from './ContinueListening';
 import { FirstSlider } from './FirstSlider';
 import { SecondSlider } from './SecondSlider';
