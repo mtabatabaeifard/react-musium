@@ -18,7 +18,6 @@ import Artists from 'pages/Artists';
 import Search from 'pages/Search';
 import Folder from 'pages/Folder';
 
-
 export const routes = {
     LAUNCHSCREEN: {
         path: '/',
@@ -66,37 +65,34 @@ export const routes = {
     },
     LIBRARY: {
         path: '/library',
-        element: <Library />
+        element: <Library />,
     },
     FOLDERS: {
         path: '/folders',
-        element: <Folders />
+        element: <Folders />,
     },
     PLAYLISTS: {
         path: '/playlists',
-        element: <PlayLists />
+        element: <PlayLists />,
     },
     ALBUMS: {
         path: '/albums',
-        element: <Albums />
+        element: <Albums />,
     },
     PODCASTS: {
         path: '/podcasts',
-        element: <Podcasts />
-
+        element: <Podcasts />,
     },
     ARTISTS: {
         path: '/artists',
-        element: <Artists />
-
+        element: <Artists />,
     },
     SEARCH: {
         path: '/search',
-        element: <Search />
-
+        element: <Search />,
     },
     FOLDER: {
         path: '/folder',
-        element: <Folder/>
-    }
+        element: <Folder />,
+    },
 };
