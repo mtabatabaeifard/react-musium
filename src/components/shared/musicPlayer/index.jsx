@@ -105,13 +105,13 @@ export function MusicPlayerSlider() {
             gap: 20 / 8,
         },
         [theme.breakpoints.down('smallMobile')]: {
-            gap: 12 / 8,
+            gap: 16 / 8,
         },
         [theme.breakpoints.down('smallerMobile')]: {
-            gap: 4 / 8,
+            gap: 12 / 8,
         },
         [theme.breakpoints.down('smallestMobile')]: {
-            gap: 1 / 8,
+            gap: 5 / 8,
         },
     };
 

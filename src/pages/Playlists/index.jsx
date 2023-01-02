@@ -2,20 +2,19 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import ImportExportSharpIcon from '@mui/icons-material/ImportExportSharp';
-import AddNewPlaylistBtn from 'components/shared/AddNewPlaylistBtn';
 import YourLikedSongsBtn from 'components/shared/YourLikedSongsBtn';
-import SingerCard from 'components/shared/SingerCard';
 import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
 import ButtonsSlider from 'components/shared/buttonsSlider';
 import Footer from 'layout/Footer';
 import LibraryPagesHeader from 'layout/libraryPagesHeader';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import singerImg from '../../assets/images/conan-gary.png';
-import album1 from '../../assets/images/3amvibes.png';
-import album2 from '../../assets/images/wiped-out.png';
-import album3 from '../../assets/images/extra-dynamic.png';
+import songPic1 from '../../assets/images/superache.png';
+import songPic2 from '../../assets/images/dawn-fm.png';
+import songPic3 from '../../assets/images/planet-her.png';
+import songPic4 from '../../assets/images/wiped-out.png';
+import songPic5 from '../../assets/images/bloom.png';
 
-function Library() {
+function PlayLists() {
     return (
         <Container>
             <Box
@@ -25,8 +24,7 @@ function Library() {
                     margin: '0 auto',
                 }}>
                 <LibraryPagesHeader />
-                <ButtonsSlider ActiveBtnIs="" />
-                <AddNewPlaylistBtn />
+                <ButtonsSlider ActiveBtnIs="Playlists" />
                 <YourLikedSongsBtn />
                 <div
                     style={{
@@ -57,23 +55,32 @@ function Library() {
                     pagination
                     style={{ maxHeight: '400px' }}>
                     <SwiperSlide>
-                        <SingerCard
-                            image={singerImg}
-                            name="conan gary"
+                        <AlbumLibraryCard
+                            image={songPic1}
+                            title="Superache"
+                            desc="onan Gray"
                             to="/"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <AlbumLibraryCard
-                            image={album1}
-                            title="3:00am vibes"
-                            desc="18 songs"
+                            image={songPic2}
+                            title="DAWN FM"
+                            desc="The Weekend"
                             to="/"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <AlbumLibraryCard
-                            image={album2}
+                            image={songPic3}
+                            title="Planet Her"
+                            desc="Doja Cat"
+                            to="/"
+                        />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <AlbumLibraryCard
+                            image={songPic4}
                             title="Wiped Out!"
                             desc="The Neighbourhood"
                             to="/"
@@ -81,16 +88,9 @@ function Library() {
                     </SwiperSlide>
                     <SwiperSlide>
                         <AlbumLibraryCard
-                            image={album3}
-                            title="Extra Dynamic"
-                            desc="Updated Aug 10 • ur mom ashley"
-                            to="/"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <SingerCard
-                            image={singerImg}
-                            name="conan gary"
+                            image={songPic5}
+                            title="Bloom"
+                            desc="Troye Sivan"
                             to="/"
                         />
                     </SwiperSlide>
@@ -101,4 +101,4 @@ function Library() {
     );
 }
 
-export default Library;
+export default PlayLists;

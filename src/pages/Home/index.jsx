@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import Footer from 'layout/Footer';
-import Header from 'layout/header';
+import Header from 'layout/Header';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
