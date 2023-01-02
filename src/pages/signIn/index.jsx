@@ -1,12 +1,13 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { Button, SignInButton } from 'components';
+import { Button } from 'components';
 import { Link } from 'react-router-dom';
 import { GoBackButton } from 'components/shared/GoBackButton';
 import musiumLogo from '../../assets/images/LaunchScreen/musium logo.png';
 import googleLogo from '../../assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from '../../assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from '../../assets/images/SignInLogos/apple-icon.svg';
+import { SignInButton } from './SignInButton/index';
 
 export function SignIn() {
     const beforeAfterLineStyle = {

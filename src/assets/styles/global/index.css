@@ -1,0 +1,16 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Lexend', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: rgba(30, 30, 30, 0.81);
+}
+
+code {
+    font-family: 'Lexend', sans-serif;
+}

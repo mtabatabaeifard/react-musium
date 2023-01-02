@@ -5,8 +5,8 @@ export function Button(props) {
     return (
         <MuiButton
             sx={{
-                backgroundColor: '#06A0B5',
-                color: '#fff',
+                backgroundColor: 'background.button',
+                color: 'text.primary',
                 display: 'flex',
                 fontSize: '1.6rem',
                 fontWeight: '400',

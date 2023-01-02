@@ -2,8 +2,8 @@ import Home from 'pages/Home';
 import Login from 'pages/login';
 import SongPage from 'pages/song';
 import StatsPage from 'pages/stats';
-import { LaunchScreen } from 'pages/LaunchScreen';
-import { Welcome } from 'pages/Welcome';
+import { LaunchScreen } from 'pages/launchScreen';
+import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
 import SignUp from 'pages/singup';
 import ForgotPassword from 'pages/forgotPassword';
@@ -17,11 +17,11 @@ export const routes = {
         element: <LaunchScreen />,
     },
     WELCOME: {
-        path: '/Welcome',
+        path: '/welcome',
         element: <Welcome />,
     },
     HOME: {
-        path: '/Home',
+        path: '/home',
         element: <Home />,
     },
     SIGNIN: {
@@ -53,7 +53,7 @@ export const routes = {
         element: <ForgotPassword />,
     },
     ResetPassword: {
-        path: 'Reset-Password',
+        path: 'reset-Password',
         element: <ResetPassword />,
     },
     LIBRARY: {
