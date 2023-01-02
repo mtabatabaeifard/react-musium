@@ -3,6 +3,8 @@ import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
 import { Link } from 'react-router-dom';
 import { GoBackButton } from 'components/shared/GoBackButton';
+// import { GoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
 import musiumLogo from '../../assets/images/LaunchScreen/musium logo.png';
 import googleLogo from '../../assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from '../../assets/images/SignInLogos/facebook-icon.svg';
@@ -49,6 +51,11 @@ export function SignIn() {
         minHeight: '900px',
     };
 
+    const login = useGoogleLogin({
+        onSuccess: (codeResponse) => console.log(codeResponse),
+        flow: 'auth-code',
+    });
+
     return (
         <Box sx={mainBoxStyle}>
             <GoBackButton paddingTop="6rem" paddingLeft="1.5rem" />
@@ -76,7 +83,7 @@ export function SignIn() {
                     gap: '2rem',
                     marginTop: '3.5rem',
                 }}>
-                <SignInButton>
+                <SignInButton onClick={() => login()}>
                     Continue with Google
                     <img src={googleLogo} alt="Google" />
                 </SignInButton>
