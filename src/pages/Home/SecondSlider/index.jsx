@@ -26,10 +26,6 @@ export function SecondSlider() {
             icon={homePicOneSliderTwo}
         />,
     ];
-    // const centerizeSwiperSlides = {
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    // };
     return (
         <Box sx={{ margin: '0 1.6rem' }}>
             <TitleCreator title="Based on your recent listening" />
