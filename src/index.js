@@ -11,7 +11,7 @@ import './assets/fonts/font.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <GoogleOAuthProvider clientId="129209152080-inqhjhnr350b02u4d6gh4had94jmo1s2.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="129209152080-enli8str8kvs1mtdnqi4evpnf4tniuvd.apps.googleusercontent.com">
             <ThemeProvider theme={theme}>
                 <BrowserRouter>
                     <App />
