@@ -1,4 +1,4 @@
-import Home from 'pages/home';
+import Home from 'pages/Home';
 import Login from 'pages/login';
 import SongPage from 'pages/song';
 import StatsPage from 'pages/stats';
