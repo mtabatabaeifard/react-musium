@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 export function FormSection() {
     const [email, setEmail] = useState('');
-    // const [varify, setVarify] = useState('')
     const [emailState, setEmailState] = useState(false)
     const emptyEntry = (e) => {
         e.preventDefault();

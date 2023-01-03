@@ -19,6 +19,7 @@ export function FormSection() {
     const [consfirnpasswordState, setConfirmPassword] = useState(false)
     const [passwordState, setPasswordState] = useState(false)
     const [passwordComparison, setPasswordComparison] = useState(false)
+    const [passwordHave8Character, setpasswordHave8Character] = useState(false)
     const [form, setForm] = useState({
         confirmPassword: '',
         password: ''
@@ -34,11 +35,14 @@ export function FormSection() {
     const navigate = useNavigate();
     const handelResetPassword = (e) => {
         e.preventDefault();
-        if (form.password !== form.confirmPassword) setPasswordComparison(true)
-        const path = `/login`;
-        navigate(path);
+        if (Number(form.password.length)!==8)setpasswordHave8Character(true);
+        else if (form.password !== form.confirmPassword) setPasswordComparison(true)
+        else{
+            const path = `/login`;
+            navigate(path);
+        }
     }
-
+ 
 
     return (
         <Box paddingTop={4}>
@@ -107,6 +111,7 @@ export function FormSection() {
                         onChange={(e) => {
                             setPasswordComparison(false)
                             setPasswordState(false)
+                            setpasswordHave8Character(false)
                             setForm({
                                 ...form,
                                 password: e.target.value
@@ -115,6 +120,8 @@ export function FormSection() {
                     />
                     {passwordState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enter your new pssword</Alert>}
                     {passwordComparison && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >Enterd values are not equal</Alert>}
+                    {passwordHave8Character && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} >password must have 8 character</Alert>}
+
 
                     <TextField
                         placeholder="Confirm your new password"
