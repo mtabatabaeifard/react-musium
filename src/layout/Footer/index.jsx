@@ -9,7 +9,6 @@ export default function Footer() {
             display: 'flex',
             flexDirection: 'column',
             gap: '0.5rem',
-            marginLeft: '2rem',
             '&:hover': {
                 svg: {
                     path: {
@@ -21,7 +20,7 @@ export default function Footer() {
         },
     };
     return (
-        <Box sx={{ display: 'flex', gap: '7rem' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
             <Button sx={styles.button}>
                 <svg
                     width="17"

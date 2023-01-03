@@ -1,11 +1,14 @@
 import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
+import theme from 'theme';
 
 export default function Header() {
     const stylebtn = {
         button: {
             color: 'common.white',
-            width: '1rem',
+            width: '2rem',
+            padding: '0',
+            minWidth: '0',
             height: '1.7rem',
             marginTop: '4.5rem',
             '&:hover': {
@@ -20,8 +23,10 @@ export default function Header() {
     };
     const strokebtn = {
         button: {
+            minWidth: '0',
             color: 'common.white',
-            width: '1rem',
+            width: '2rem',
+            padding: '0',
             height: '1.7rem',
             marginTop: '4.5rem',
             '&:hover': {
@@ -35,14 +40,14 @@ export default function Header() {
         },
     };
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
             <Box sx={{ display: 'flex', gap: '1.2rem' }}>
                 <Button
                     href="#profilepage"
                     sx={{
                         width: '3.4rem',
                         height: '3.4rem',
-                        margin: '3rem 0 2rem 2rem',
+                        margin: '3rem 0 2rem 0rem',
                         padding: '3rem 0.8rem',
                         border: '0.1rem solid #158085',
                         borderRadius: '50%',
@@ -69,7 +74,22 @@ export default function Header() {
                     </Typography>
                 </Box>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    [theme.breakpoints.down('smallMobile')]: {
+                        gap: '3.4rem',
+                    },
+                    [theme.breakpoints.down('smallerMobile')]: {
+                        gap: '2.4rem',
+                    },
+                    [theme.breakpoints.down('smallestMobile')]: {
+                        gap: '1.4rem',
+                    },
+                    [theme.breakpoints.up('smallMobile')]: {
+                        gap: '3.4rem',
+                    },
+                }}>
                 <Button sx={stylebtn.button}>
                     <svg
                         width="14"
