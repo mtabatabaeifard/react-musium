@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
-import image from 'assets/images/tracksPic/1.png';
+import image from 'assets/images/tracksPic/icon/1.svg';
 
 // eslint-disable-next-line react/prop-types
 export function StatsCart({ number, trackArtist, trackName }) {
