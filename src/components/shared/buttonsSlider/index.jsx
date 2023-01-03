@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,7 +14,7 @@ function ButtonsSlider({ ActiveBtnIs }) {
             style={{ paddingBottom: '3rem', paddingLeft: '2rem' }}>
             <SwiperSlide style={{ display: 'flex', width: '7.8rem' }}>
                 <Link
-                    to="/"
+                    to="/folders"
                     style={{
                         width: '4rem',
                         background:
@@ -35,7 +36,7 @@ function ButtonsSlider({ ActiveBtnIs }) {
             </SwiperSlide>
             <SwiperSlide style={{ display: 'flex', width: '7.8rem' }}>
                 <Link
-                    to="/"
+                    to="/playlists"
                     style={{
                         width: '4rem',
                         background:
@@ -57,7 +58,7 @@ function ButtonsSlider({ ActiveBtnIs }) {
             </SwiperSlide>
             <SwiperSlide style={{ display: 'flex', width: '7.8rem' }}>
                 <Link
-                    to="/"
+                    to="/artists"
                     style={{
                         width: '4rem',
                         background:
@@ -79,7 +80,7 @@ function ButtonsSlider({ ActiveBtnIs }) {
             </SwiperSlide>
             <SwiperSlide style={{ display: 'flex', width: '7.8rem' }}>
                 <Link
-                    to="/"
+                    to="/albums"
                     style={{
                         width: '4rem',
                         background:
@@ -101,7 +102,7 @@ function ButtonsSlider({ ActiveBtnIs }) {
             </SwiperSlide>
             <SwiperSlide style={{ display: 'flex', width: '14.5rem' }}>
                 <Link
-                    to="/"
+                    to="/podcasts"
                     style={{
                         width: '10.5rem',
                         background:

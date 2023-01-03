@@ -4,18 +4,14 @@ import { Box, Container, Typography } from '@mui/material';
 import ImportExportSharpIcon from '@mui/icons-material/ImportExportSharp';
 import AddNewPlaylistBtn from 'components/shared/AddNewPlaylistBtn';
 import YourLikedSongsBtn from 'components/shared/YourLikedSongsBtn';
-import SingerCard from 'components/shared/SingerCard';
 import AlbumLibraryCard from 'components/shared/AlbumLibraryCard';
 import ButtonsSlider from 'components/shared/buttonsSlider';
 import Footer from 'layout/Footer';
 import LibraryPagesHeader from 'layout/libraryPagesHeader';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import singerImg from '../../assets/images/conan-gary.png';
-import album1 from '../../assets/images/3amvibes.png';
-import album2 from '../../assets/images/wiped-out.png';
-import album3 from '../../assets/images/extra-dynamic.png';
+import folder from '../../assets/images/folder-picture.png';
 
-function Library() {
+function Folders() {
     return (
         <Container>
             <Box
@@ -25,7 +21,7 @@ function Library() {
                     margin: '0 auto',
                 }}>
                 <LibraryPagesHeader />
-                <ButtonsSlider ActiveBtnIs="" />
+                <ButtonsSlider ActiveBtnIs="Folders" />
                 <AddNewPlaylistBtn />
                 <YourLikedSongsBtn />
                 <div
@@ -57,40 +53,34 @@ function Library() {
                     pagination
                     style={{ maxHeight: '400px' }}>
                     <SwiperSlide>
-                        <SingerCard
-                            image={singerImg}
-                            name="conan gary"
+                        <AlbumLibraryCard
+                            image={folder}
+                            title="moods"
+                            desc="11 playlists"
                             to="/"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <AlbumLibraryCard
-                            image={album1}
-                            title="3:00am vibes"
-                            desc="18 songs"
+                            image={folder}
+                            title="blends"
+                            desc="8 playlists"
                             to="/"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <AlbumLibraryCard
-                            image={album2}
-                            title="Wiped Out!"
-                            desc="The Neighbourhood"
+                            image={folder}
+                            title="favs"
+                            desc="14 playlists"
                             to="/"
                         />
                     </SwiperSlide>
                     <SwiperSlide>
                         <AlbumLibraryCard
-                            image={album3}
-                            title="Extra Dynamic"
-                            desc="Updated Aug 10 • ur mom ashley"
-                            to="/"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <SingerCard
-                            image={singerImg}
-                            name="conan gary"
+                            image={folder}
+                            title="random?"
+                            desc="10 playlists"
                             to="/"
                         />
                     </SwiperSlide>
@@ -101,4 +91,4 @@ function Library() {
     );
 }
 
-export default Library;
+export default Folders;

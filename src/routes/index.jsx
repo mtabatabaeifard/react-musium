@@ -11,6 +11,13 @@ import ResetPassword from 'pages/resetPassword';
 import PlayList from 'pages/PlayList';
 import Library from 'pages/Library';
 import NewPassword from 'pages/newPassword/singup';
+import Folders from 'pages/Folders';
+import PlayLists from 'pages/Playlists';
+import Albums from 'pages/Albums';
+import Podcasts from 'pages/Podcasts';
+import Artists from 'pages/Artists';
+import Search from 'pages/Search';
+import Folder from 'pages/Folder';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -63,6 +70,34 @@ export const routes = {
     },
     NewPassword: {
         path: 'new-Password',
-        element: <NewPassword />,
+        element: <NewPassword />
+    },
+    FOLDERS: {
+        path: '/folders',
+        element: <Folders />,
+    },
+    PLAYLISTS: {
+        path: '/playlists',
+        element: <PlayLists />,
+    },
+    ALBUMS: {
+        path: '/albums',
+        element: <Albums />,
+    },
+    PODCASTS: {
+        path: '/podcasts',
+        element: <Podcasts />,
+    },
+    ARTISTS: {
+        path: '/artists',
+        element: <Artists />,
+    },
+    SEARCH: {
+        path: '/search',
+        element: <Search />,
+    },
+    FOLDER: {
+        path: '/folder',
+        element: <Folder />,
     },
 };
