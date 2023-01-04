@@ -70,7 +70,7 @@ export const routes = {
     },
     NewPassword: {
         path: 'new-Password',
-        element: <NewPassword />
+        element: <NewPassword />,
     },
     FOLDERS: {
         path: '/folders',
