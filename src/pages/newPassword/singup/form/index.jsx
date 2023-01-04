@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import IconButton from '@mui/material/IconButton';
 import { Alert, Box, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from 'components/shared/TextField';
