@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
+import { useLayoutEffect, useState } from 'react';
 import theme from 'theme';
 
 export default function Header() {
@@ -40,8 +41,13 @@ export default function Header() {
         },
     };
 
-    const headerUsername = localStorage.getItem('headerName');
-    const headerPicture = localStorage.getItem('headerPicture');
+    const [headerUsername, setHeaderUsername] = useState('');
+    const [headerPicture, setHeaderPicture] = useState('');
+
+    useLayoutEffect(() => {
+        setHeaderUsername(localStorage.getItem('headerName'));
+        setHeaderPicture(localStorage.getItem('headerPicture'));
+    }, []);
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
@@ -50,9 +56,8 @@ export default function Header() {
                     href="#profilepage"
                     sx={{
                         width: '3.4rem',
-                        height: '3.4rem',
                         margin: '3rem 0 2rem 0rem',
-                        padding: '3rem 0.8rem',
+                        padding: '.2rem',
                         border: '0.1rem solid #158085',
                         borderRadius: '50%',
                     }}>

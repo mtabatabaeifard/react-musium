@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
 import { Link, useNavigate } from 'react-router-dom';
 import { GoBackButton } from 'components/shared/GoBackButton';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useCookies } from 'react-cookie';
 import musiumLogo from '../../assets/images/LaunchScreen/musium logo.png';
 import googleLogo from '../../assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from '../../assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from '../../assets/images/SignInLogos/apple-icon.svg';
-import { SignInButton } from './SignInButton/index';
+import { SignInButton } from './SignInButton';
+import { Toastify } from '../../utils/toastContainer';
 
 export function SignIn() {
     const beforeAfterLineStyle = {
@@ -51,11 +54,23 @@ export function SignIn() {
         minHeight: '900px',
     };
 
+    const successNotify = () => toast.success('Login was successful !');
+    const errorNotify = () => toast.error('Login failed');
+
     const navigate = useNavigate();
+
+    const [cookies, setCookie] = useCookies(['accessToken']);
     const googleLogin = useGoogleLogin({
         onSuccess: async (tokenResponse) => {
-            console.log(tokenResponse);
-            navigate('/home');
+            setCookie(
+                'accessToken',
+                tokenResponse.access_token,
+                { maxAge: 14 * 24 * 3600 }, // 2 weeks
+            );
+            successNotify();
+            setTimeout(() => {
+                navigate('/home');
+            }, 3000);
             const userInfo = await axios.get(
                 'https://www.googleapis.com/oauth2/v3/userinfo',
                 {
@@ -67,11 +82,21 @@ export function SignIn() {
             localStorage.setItem('headerName', userInfo.data.given_name);
             localStorage.setItem('headerPicture', userInfo.data.picture);
         },
-        onError: (errorResponse) => console.log(errorResponse),
+        onError: (errorResponse) => {
+            errorNotify();
+            console.log(errorResponse);
+        },
     });
+
+    useLayoutEffect(() => {
+        if (cookies.accessToken) {
+            navigate('/home');
+        }
+    }, []);
 
     return (
         <Box sx={mainBoxStyle}>
+            <Toastify />
             <GoBackButton paddingTop="6rem" paddingLeft="1.5rem" />
             <img
                 src={musiumLogo}
