@@ -1,8 +1,8 @@
 import { Box } from '@mui/system';
+import { Button, Link } from 'components';
 import googleLogo from 'assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from 'assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from 'assets/images/SignInLogos/apple-icon.svg';
-import { Button, Link } from 'components';
 
 export function Social() {
     const styles = {
@@ -28,14 +28,9 @@ export function Social() {
                 color: '#fff',
             },
         },
-        link: {
-            display: 'flex',
-            alignItems: 'center',
-            color: '#7CEEFF !important',
-        },
     };
     return (
-        <Box>
+        <Box pt={4.5}>
             <p className="title">or continue with</p>
             <Box
                 paddingTop={4.5}
@@ -60,10 +55,8 @@ export function Social() {
                 paddingTop={4}
                 color="#fff"
                 fontSize={16}>
-                <p>Don’t have an account?</p>
-                <Link underline="hover" to="/signup">
-                    Sign Up
-                </Link>{' '}
+                <p>Already have an account?</p>
+                <Link to="/login">Login</Link>{' '}
             </Box>
         </Box>
     );

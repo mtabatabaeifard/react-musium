@@ -22,9 +22,9 @@ export default function Logo({ title }) {
                 />
                 <Box width="80%" justifyContent="center">
                     <img
-                        width="275px"
+                        width="80%"
                         height="215px"
-                        alt="sd"
+                        alt="logo"
                         src={LogoImage}
                     />
                 </Box>
