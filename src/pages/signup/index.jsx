@@ -1,8 +1,8 @@
 import React from 'react';
 import Logo from 'components/Logo';
 import { Box } from '@mui/system';
-import { FormSectionSingUP } from './form';
-import { socialSignUp } from './social';
+import { FormSection } from './form';
+import { Social } from './social';
 import './styles/style.css';
 
 export default function SignUp() {
@@ -15,11 +15,11 @@ export default function SignUp() {
                 pt: 35 / 8,
                 position: 'relative',
                 overflow: 'hidden',
-                fontFamily: 'Century Gothic',
+                fontWeight: '700',
             }}>
-            <Logo title="Sign up an account " />
-            {FormSectionSingUP()}
-            {socialSignUp()}
+            <Logo title="Signup an account " />
+            <FormSection />
+            <Social />
         </Box>
     );
 }
