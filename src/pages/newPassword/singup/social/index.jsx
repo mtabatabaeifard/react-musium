@@ -1,9 +1,8 @@
 import { Box } from '@mui/system';
-import { Button, Link } from "components";
+import { Button, Link } from 'components';
 import googleLogo from 'assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from 'assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from 'assets/images/SignInLogos/apple-icon.svg';
-
 
 export function Social() {
     const styles = {
@@ -32,13 +31,21 @@ export function Social() {
     };
     return (
         <Box pt={4.5}>
-            <p className='title'>or continue with</p>
-            <Box paddingTop={4.5} display='flex' justifyContent='center' gap={7.5}>
-                <Button sx={styles.icons} ><img src={googleLogo} alt="Google" />
+            <p className="title">or continue with</p>
+            <Box
+                paddingTop={4.5}
+                display="flex"
+                justifyContent="center"
+                gap={7.5}>
+                <Button sx={styles.icons}>
+                    <img src={googleLogo} alt="Google" />
                 </Button>
-                <Button sx={styles.icons} ><img src={facebookLogo} alt="Facebook" />
+                <Button sx={styles.icons}>
+                    <img src={facebookLogo} alt="Facebook" />
                 </Button>
-                <Button sx={styles.icons}>  <img src={appleLogo} alt="Apple" />
+                <Button sx={styles.icons}>
+                    {' '}
+                    <img src={appleLogo} alt="Apple" />
                 </Button>
             </Box>
             <Box
