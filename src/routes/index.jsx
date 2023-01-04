@@ -7,7 +7,7 @@ import { Welcome } from 'pages/Welcome';
 import { SignIn } from 'pages/signIn';
 import SignUp from 'pages/signup';
 import ForgotPassword from 'pages/forgotPassword';
-import ResetPassword from 'pages/resetPassword';
+import ResetPassword from 'pages/ResetPassword';
 import PlayList from 'pages/PlayList';
 import Library from 'pages/Library';
 import NewPassword from 'pages/newPassword/singup';
