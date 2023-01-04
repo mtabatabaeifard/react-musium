@@ -16,11 +16,11 @@ export default function Login() {
                 pt: 35 / 8,
                 position: 'relative',
                 overflow: 'hidden',
-                fontWeight:'700',
+                fontWeight: '700',
             }}>
             <Logo title="Login to your account" />
-            <FormSection/>
-            <Social/>
+            <FormSection />
+            <Social />
         </Box>
     );
 }
