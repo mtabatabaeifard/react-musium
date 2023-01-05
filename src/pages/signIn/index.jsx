@@ -82,9 +82,9 @@ export function SignIn() {
             localStorage.setItem('headerName', userInfo.data.given_name);
             localStorage.setItem('headerPicture', userInfo.data.picture);
         },
-        onError: (errorResponse) => {
+        onError: () => {
             errorNotify();
-            console.log(errorResponse);
+            // console.log(errorResponse);
         },
     });
 
