@@ -17,7 +17,7 @@ export default function NewPassword() {
                 overflow: 'hidden',
                 fontWeight: '700',
             }}>
-            <Logo title="Singup an account " />
+            <Logo title="Enter new password " />
             <FormSection />
             <Social />
         </Box>

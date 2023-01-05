@@ -55,8 +55,8 @@ export function Social() {
                 paddingTop={4}
                 color="#fff"
                 fontSize={16}>
-                <p>Already have an account?</p>
-                <Link to="/login">Login</Link>{' '}
+                <p>Don’t have an account?</p>
+                <Link to="/signup">Sign Up</Link>{' '}
             </Box>
         </Box>
     );
