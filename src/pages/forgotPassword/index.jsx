@@ -13,13 +13,14 @@ export default function ForgotPassword() {
             position: 'relative',
             overflow: 'hidden',
             fontFamily: 'Century Gothic',
+            fontWeight: '700',
         },
     };
 
     return (
-        <Box sx={style.main}>
+        <Box pb={41.35} sx={style.main}>
             <Logo title="Forgot Password?" />
-            {FormSection()}
+            <FormSection />
         </Box>
     );
 }

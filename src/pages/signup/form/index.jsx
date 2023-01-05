@@ -1,22 +1,43 @@
 import IconButton from '@mui/material/IconButton';
-import { Box, FormControl, InputAdornment } from '@mui/material';
+import { Alert, Box, FormControl, InputAdornment } from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/style.css';
 
-export function FormSectionSingUP() {
+export function FormSection() {
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
-    const [showPassword2, setShowPassword2] = React.useState(false);
-    const handleClickShowPassword2 = () => setShowPassword2((show) => !show);
+    const [showconfirmPassword, setShowconfirmPassword] = React.useState(false);
+    const handleClickShowconfirmPassword = () =>
+        setShowconfirmPassword((show) => !show);
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
-
+    const [form, setForm] = useState({
+        email: '',
+        password: '',
+        confirmPassword: '',
+    });
+    const [emailState, setEmailState] = useState(false);
+    const [passwordState, setPasswordState] = useState(false);
+    const [confirmPasswordState, setconfirmPasswordState] = useState(false);
+    const [passwordComparison, setPasswordComparison] = useState(false);
+    const inputField = (e) => {
+        e.preventDefault();
+        if (!form.password) setPasswordState(true);
+        else setPasswordState(false);
+        if (!form.email) setEmailState(true);
+        else setEmailState(false);
+        if (!form.confirmPassword) setconfirmPasswordState(true);
+        else setconfirmPasswordState(false);
+    };
+    const handelSignUp = () => {
+        if (form.password !== form.confirmPassword) setPasswordComparison(true);
+    };
     return (
         <Box paddingTop={4}>
             <Box pb={5}>
@@ -46,9 +67,24 @@ export function FormSectionSingUP() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="email-sign-up"
                         maxRows={6}
+                        onChange={(e) => {
+                            setEmailState(false);
+                            setForm({
+                                ...form,
+                                email: e.target.value,
+                            });
+                        }}
                     />
+                    {emailState && (
+                        <Alert
+                            severity="error"
+                            sx={{ width: '80%', fontSize: '1.2rem' }}>
+                            Enter your email
+                        </Alert>
+                    )}
+
                     <TextField
                         placeholder="Password"
                         type={showPassword ? 'text' : 'password'}
@@ -100,12 +136,34 @@ export function FormSectionSingUP() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="password-sign-up"
                         maxRows={6}
+                        onChange={(e) => {
+                            setPasswordState(false);
+                            setPasswordComparison(false);
+                            setForm({
+                                ...form,
+                                password: e.target.value,
+                            });
+                        }}
                     />
+                    {passwordState && (
+                        <Alert
+                            severity="error"
+                            sx={{ width: '80%', fontSize: '1.2rem' }}>
+                            Enter your pssword
+                        </Alert>
+                    )}
+                    {passwordComparison && (
+                        <Alert
+                            severity="error"
+                            sx={{ width: '80%', fontSize: '1.2rem' }}>
+                            Enterd values are not equal
+                        </Alert>
+                    )}
                     <TextField
                         placeholder="Password"
-                        type={showPassword2 ? 'text' : 'password'}
+                        type={showconfirmPassword ? 'text' : 'password'}
                         InputProps={{
                             style: {
                                 height: '100%',
@@ -117,10 +175,10 @@ export function FormSectionSingUP() {
                                         sx={{
                                             color: 'rgba(255, 255, 255, 0.27)',
                                         }}
-                                        onClick={handleClickShowPassword2}
+                                        onClick={handleClickShowconfirmPassword}
                                         onMouseDown={handleMouseDownPassword}
                                         edge="end">
-                                        {showPassword2 ? (
+                                        {showconfirmPassword ? (
                                             <VisibilityOff
                                                 fontSize="large"
                                                 sx={{
@@ -145,7 +203,7 @@ export function FormSectionSingUP() {
                                         sx={{
                                             color: 'rgba(255, 255, 255, 0.27)',
                                         }}>
-                                        {showPassword2 ? (
+                                        {showconfirmPassword ? (
                                             <VisibilityOff />
                                         ) : (
                                             <Visibility />
@@ -154,13 +212,42 @@ export function FormSectionSingUP() {
                                 </InputAdornment>
                             ),
                         }}
-                        id="outlined-multiline-flexible"
+                        id="confirm-password-sign-up"
                         maxRows={6}
+                        onChange={(e) => {
+                            setconfirmPasswordState(false);
+                            setPasswordComparison(false);
+                            setForm({
+                                ...form,
+                                confirmPassword: e.target.value,
+                            });
+                        }}
                     />
+                    {confirmPasswordState && (
+                        <Alert
+                            severity="error"
+                            sx={{ width: '80%', fontSize: '1.2rem' }}>
+                            Enter your pssword
+                        </Alert>
+                    )}
+                    {passwordComparison && (
+                        <Alert
+                            severity="error"
+                            sx={{ width: '80%', fontSize: '1.2rem' }}>
+                            Enterd values are not equal
+                        </Alert>
+                    )}
                 </FormControl>
             </Box>
             <Box display="flex" justifyContent="center">
-                <Button>Sign up</Button>
+                <Button
+                    onClick={
+                        form.email && form.password && form.confirmPassword
+                            ? handelSignUp
+                            : inputField
+                    }>
+                    Sign up
+                </Button>
             </Box>
         </Box>
     );

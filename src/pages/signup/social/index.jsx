@@ -1,10 +1,10 @@
 import { Box } from '@mui/system';
-import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
-import AppleIcon from '@mui/icons-material/Apple';
-import googleIcon from 'assets/images/google-Icon.png';
 import { Button, Link } from 'components';
+import googleLogo from 'assets/images/SignInLogos/google-icon.svg';
+import facebookLogo from 'assets/images/SignInLogos/facebook-icon.svg';
+import appleLogo from 'assets/images/SignInLogos/apple-icon.svg';
 
-export function socialSignUp() {
+export function Social() {
     const styles = {
         icons: {
             display: 'flex',
@@ -38,17 +38,14 @@ export function socialSignUp() {
                 justifyContent="center"
                 gap={7.5}>
                 <Button sx={styles.icons}>
-                    <img src={googleIcon} alt="" />
+                    <img src={googleLogo} alt="Google" />
                 </Button>
                 <Button sx={styles.icons}>
-                    <FacebookSharpIcon
-                        fontSize="large"
-                        sx={{ color: '#0165E1' }}
-                    />
+                    <img src={facebookLogo} alt="Facebook" />
                 </Button>
                 <Button sx={styles.icons}>
                     {' '}
-                    <AppleIcon fontSize="large" sx={{ color: '#fff' }} />{' '}
+                    <img src={appleLogo} alt="Apple" />
                 </Button>
             </Box>
             <Box

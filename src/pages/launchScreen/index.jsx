@@ -20,7 +20,7 @@ export function LaunchScreen() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 height: '100vh',
-                bgcolor: '#000',
+                bgcolor: 'primary.dark',
             }}>
             <Container
                 sx={{

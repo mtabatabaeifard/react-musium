@@ -5,10 +5,9 @@ import { FormSection } from './form';
 import { Social } from './social';
 import './styles/style.css';
 
-export default function Login() {
+export default function NewPassword() {
     return (
         <Box
-            pb={1}
             sx={{
                 maxWidth: 428,
                 mx: 'auto',
@@ -18,7 +17,7 @@ export default function Login() {
                 overflow: 'hidden',
                 fontWeight: '700',
             }}>
-            <Logo title="Login to your account" />
+            <Logo title="Singup an account " />
             <FormSection />
             <Social />
         </Box>
