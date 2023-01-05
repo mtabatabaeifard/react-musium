@@ -1,18 +1,29 @@
 import { Alert } from '@mui/material';
 import { Box } from '@mui/system';
-import { Button, Link, TextField } from 'components';
+import { Button, TextField } from 'components';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function FormSection() {
     const [email, setEmail] = useState('');
     const [emailState, setEmailState] = useState(false);
+    const [emailError, setemailError] = useState(false);
     const emptyEntry = (e) => {
         e.preventDefault();
         if (!email) setEmailState(true);
         else setEmailState(false);
     };
+    function isValidEmail(mail) {
+        return /\S+@\S+\.\S+/.test(mail);
+    }
+    const navigate = useNavigate();
     const handelForgotPasssword = () => {
-        localStorage.setItem('email', JSON.stringify(email));
+        if (!isValidEmail(email)) setemailError(true)
+        else {
+            localStorage.setItem('email', JSON.stringify(email));
+            const path = '/reset-Password'
+            navigate(path)
+        }
     };
 
     return (
@@ -39,6 +50,7 @@ export function FormSection() {
                 gap={4}>
                 <TextField
                     onChange={(e) => {
+                        setemailError(false)
                         setEmailState(false);
                         setEmail(e.target.value);
                     }}
@@ -60,14 +72,21 @@ export function FormSection() {
                         Enter your email
                     </Alert>
                 )}
+                {emailError && (
+                    <Alert
+                        severity="error"
+                        sx={{ width: '80%', fontSize: '1.2rem' }}>
+                        {' '}
+                        Email is invalid
+                    </Alert>
+                )}
             </Box>
             <Box display="flex" justifyContent="center" pt={5}>
-                <Link to="/Reset-password" style={{ color: 'transparent' }}>
-                    <Button
-                        onClick={email ? handelForgotPasssword : emptyEntry}>
-                        Continue
-                    </Button>
-                </Link>
+
+                <Button
+                    onClick={email ? handelForgotPasssword : emptyEntry}>
+                    Continue
+                </Button>
             </Box>
         </Box>
     );
