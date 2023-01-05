@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Box } from '@mui/system';
 import { Button, Link } from 'components';
 import googleLogo from 'assets/images/SignInLogos/google-icon.svg';
@@ -7,7 +8,14 @@ import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export function Social() {
+export default function Social({divName,buttonName,linkTo}) {
+    Social.propTypes = {
+        divName: PropTypes.string.isRequired,
+        buttonName: PropTypes.string.isRequired,
+        linkTo: PropTypes.string.isRequired,
+
+    };
+
     const styles = {
         icons: {
             display: 'flex',
@@ -75,8 +83,8 @@ export function Social() {
                 paddingTop={4}
                 color="#fff"
                 fontSize={16}>
-                <p>Don’t have an account?</p>
-                <Link to="/signup">Sign Up</Link>{' '}
+                <p>{divName}</p>
+                <Link to={linkTo}>{buttonName}</Link>{' '}
             </Box>
         </Box>
     );
