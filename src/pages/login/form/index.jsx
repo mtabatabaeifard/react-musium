@@ -81,6 +81,7 @@ export function FormSection() {
                         id="email-input-login"
                         maxRows={6}
                         onChange={(e) => {
+                            setemailError(false)
                             setEmailState(false);
                             setForm({
                                 ...form,

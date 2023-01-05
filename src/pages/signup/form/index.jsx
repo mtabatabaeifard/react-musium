@@ -169,6 +169,7 @@ export function FormSection() {
                             id="email-sign-up"
                             maxRows={6}
                             onChange={(e) => {
+                                setemailError(false)
                                 setEmailState(false);
                                 setForm({
                                     ...form,
