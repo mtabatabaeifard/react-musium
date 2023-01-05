@@ -5,18 +5,15 @@ import { useState } from 'react';
 
 export function FormSection() {
     const [email, setEmail] = useState('');
-    const [emailState, setEmailState] = useState(false)
+    const [emailState, setEmailState] = useState(false);
     const emptyEntry = (e) => {
         e.preventDefault();
-        if (!email) setEmailState(true)
-        else setEmailState(false)
-    }
-    const handelForgotPasssword =()=>{
-        localStorage.setItem(
-            'email',
-            JSON.stringify(email),
-        )
-    }
+        if (!email) setEmailState(true);
+        else setEmailState(false);
+    };
+    const handelForgotPasssword = () => {
+        localStorage.setItem('email', JSON.stringify(email));
+    };
 
     return (
         <Box height="100%">
@@ -42,8 +39,8 @@ export function FormSection() {
                 gap={4}>
                 <TextField
                     onChange={(e) => {
-                        setEmailState(false)
-                        setEmail(e.target.value)
+                        setEmailState(false);
+                        setEmail(e.target.value);
                     }}
                     placeholder=" Enter your email"
                     InputProps={{
@@ -55,8 +52,14 @@ export function FormSection() {
                     id="email-input"
                     maxRows={6}
                 />
-                {emailState && <Alert severity="error" sx={{ width: '80%',fontSize:'1.2rem'}} > Enter your email</Alert>}
-
+                {emailState && (
+                    <Alert
+                        severity="error"
+                        sx={{ width: '80%', fontSize: '1.2rem' }}>
+                        {' '}
+                        Enter your email
+                    </Alert>
+                )}
             </Box>
             <Box display="flex" justifyContent="center" pt={5}>
                 <Link to="/Reset-password" style={{ color: 'transparent' }}>
@@ -69,5 +72,3 @@ export function FormSection() {
         </Box>
     );
 }
-
-

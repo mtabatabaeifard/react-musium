@@ -10,10 +10,23 @@ export default function Logo({ title }) {
 
     return (
         <Box>
-            <Box display='flex' justifyContent='center' gap={2} >
-                <GoBackButton fontSize="100%" sx={{ color: 'white', cursor: 'pointer', height: '3.5rem', width: '5rem' }} />
-                <Box width='80%' justifyContent='center'>
-                    <img width='80%' height='215px' alt='logo' src={LogoImage} />
+            <Box display="flex" justifyContent="center" gap={2}>
+                <GoBackButton
+                    fontSize="100%"
+                    sx={{
+                        color: 'white',
+                        cursor: 'pointer',
+                        height: '3.5rem',
+                        width: '5rem',
+                    }}
+                />
+                <Box width="80%" justifyContent="center">
+                    <img
+                        width="80%"
+                        height="215px"
+                        alt="logo"
+                        src={LogoImage}
+                    />
                 </Box>
             </Box>
             <Box

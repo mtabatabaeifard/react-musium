@@ -11,15 +11,15 @@ export function FirstFormSection() {
     const [varifyState, setVarifyState] = useState(false)
     const emptyEntry = (e) => {
         e.preventDefault();
-        if (!varify) setVarifyState(true)
-        else setVarifyState(false)
-    }
+        if (!varify) setVarifyState(true);
+        else setVarifyState(false);
+    };
     const navigate = useNavigate();
     const handelLinkTOReset = (e) => {
         e.preventDefault();
         const path = `/new-password`;
         navigate(path);
-    }
+    };
     const email = JSON.parse(localStorage.getItem('email'));
 
     useEffect(() => {
@@ -55,8 +55,8 @@ export function FirstFormSection() {
                     id="varify"
                     maxRows={6}
                     onChange={(e) => {
-                        setVarifyState(false)
-                        setVarify(e.target.value)
+                        setVarifyState(false);
+                        setVarify(e.target.value);
                     }}
                 />
                 {varifyState && <Alert severity="error" sx={{ width: '80%', fontSize: '1.2rem' }} > Enter varify code</Alert>}
@@ -73,7 +73,9 @@ export function FirstFormSection() {
             </Box>
             <Box display="flex" justifyContent="center" pt={5}>
                 <Link style={{ color: 'transparent' }} to="/Reset-password">
-                    <Button onClick={varify ? handelLinkTOReset : emptyEntry}>Submit</Button>
+                    <Button onClick={varify ? handelLinkTOReset : emptyEntry}>
+                        Submit
+                    </Button>
                 </Link>
             </Box>
         </Box>
