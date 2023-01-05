@@ -60,6 +60,7 @@ export default function Header() {
                         padding: '.2rem',
                         border: '0.1rem solid #158085',
                         borderRadius: '50%',
+                        height: '6.4rem',
                     }}>
                     <img
                         src={headerPicture || null}
