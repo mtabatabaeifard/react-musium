@@ -67,6 +67,8 @@ export function FormSection() {
                 ;
         }
     };
+    const name = [form.firstName  , form.lastName].join(' ');
+    localStorage.setItem('headerName',name)
     return (
         <Box paddingTop={4}>
             {loder ? <Box display='flex' justifyContent='center' paddingBottom='5rem'><CircularProgress /> </Box>
