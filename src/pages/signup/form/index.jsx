@@ -26,10 +26,12 @@ export function FormSection() {
         password: '',
         confirmPassword: '',
     });
+    const [firstNemeState, setFirstNemeState] = useState(false);
+    const [lastNameState, setLastNameState] = useState(false);
     const [emailState, setEmailState] = useState(false);
     const [emailError, setemailError] = useState(false);
     const [passwordState, setPasswordState] = useState(false);
-    const [confirmPasswordState, setconfirmPasswordState] = useState(false);
+    const [confirmPasswordState, setConfirmPasswordState] = useState(false);
     const [passwordComparison, setPasswordComparison] = useState(false);
     const [loder, setLoder] = useState(false);
     const [passwordHave8Character, setpasswordHave8Character] = useState(false);
@@ -39,8 +41,12 @@ export function FormSection() {
         else setPasswordState(false);
         if (!form.email) setEmailState(true);
         else setEmailState(false);
-        if (!form.confirmPassword) setconfirmPasswordState(true);
-        else setconfirmPasswordState(false);
+        if (!form.confirmPassword) setConfirmPasswordState(true);
+        else setConfirmPasswordState(false);
+        if (!form.lastName) setLastNameState(true);
+        else setLastNameState(false);
+        if (!form.firstName) setFirstNemeState(true);
+        else setFirstNemeState(false);
     };
     function isValidEmail(email) {
         return /\S+@\S+\.\S+/.test(email);
@@ -94,12 +100,20 @@ export function FormSection() {
                                 ),
                             }}
                             onChange={(e) => {
+                                setFirstNemeState(false)
                                 setForm({
                                     ...form,
                                     firstName: e.target.value,
                                 });
                             }}
                         />
+                        {firstNemeState && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enter your first name
+                            </Alert>
+                        )}
                         <TextField
                             placeholder="Last name"
                             InputProps={{
@@ -120,12 +134,20 @@ export function FormSection() {
                                 ),
                             }}
                             onChange={(e) => {
+                                setLastNameState(false)
                                 setForm({
                                     ...form,
                                     lastName: e.target.value,
                                 });
                             }}
                         />
+                        {lastNameState && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enter your last name
+                            </Alert>
+                        )}
                         <TextField
                             placeholder="Email"
                             InputProps={{
@@ -306,7 +328,7 @@ export function FormSection() {
                             id="confirm-password-sign-up"
                             maxRows={6}
                             onChange={(e) => {
-                                setconfirmPasswordState(false);
+                                setConfirmPasswordState(false);
                                 setPasswordComparison(false);
                                 setForm({
                                     ...form,
