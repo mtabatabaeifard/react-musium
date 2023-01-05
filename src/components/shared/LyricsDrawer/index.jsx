@@ -13,12 +13,11 @@ export function LyricsDrawer() {
         const windowSize = window.innerHeight;
         const bodyHeight = document.body.offsetHeight;
 
-        const bottomDistance = Math.max(
+        const bottomDistance = Math.round(
             bodyHeight - (scrollPosition + windowSize),
-            0,
         );
 
-        if (bottomDistance === 0) {
+        if (bottomDistance <= 10 && bottomDistance >= -10) {
             if (e.deltaY >= 0) {
                 setDrawerState(true);
             }

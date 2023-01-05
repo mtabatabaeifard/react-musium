@@ -16,9 +16,6 @@ export default function Footer() {
     const path = ""
     navigate(path)
   };
-
-
- 
   const styles = {
     button: {
       color:'common.white',

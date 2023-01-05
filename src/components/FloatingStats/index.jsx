@@ -10,12 +10,12 @@ import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { StatsCart } from '../shared/StatsCart';
-import { BottomDateBar } from '../shared/ButtomDateBar';
+// import { BottomDateBar } from '../shared/ButtomDateBar';
 import tracksData from '../../db/tracks.json';
+import './styles.css';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
     return (
         <Typography
             component="div"
@@ -35,6 +35,7 @@ TabPanel.propTypes = {
     value: PropTypes.number.isRequired,
 };
 [tracksData].map((item) => {
+    // eslint-disable-next-line no-console
     return console.log(item);
 });
 function a11yProps(index) {
@@ -152,6 +153,7 @@ export function FloatingStats() {
                     }}
                     unmountOnExit>
                     <Box
+                        className="tracksCart"
                         sx={{
                             display: 'flex',
                             flexDirection: 'column',
@@ -247,7 +249,6 @@ export function FloatingStats() {
                     </Box>
                 </Zoom>
             ))}
-            <BottomDateBar />
         </Box>
     );
 }

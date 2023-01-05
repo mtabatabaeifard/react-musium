@@ -19,7 +19,7 @@ function PlayListItem({ src, textPrimary, textSecondary, style }) {
                 sx={{
                     maxWidth: theme.breakpoints.values.smallMobile,
                     mx: 'auto',
-                    background: '#1E1E1E',
+                    background: theme.palette.primary.dark,
                     boxSizing: 'border-box',
                     px: '3.3rem',
                 }}>

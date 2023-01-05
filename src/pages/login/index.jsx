@@ -2,12 +2,13 @@ import React from 'react';
 import Logo from 'components/Logo';
 import { Box } from '@mui/system';
 import { FormSection } from './form';
-import { social } from './social';
+import { Social } from './social';
 import './styles/style.css';
 
 export default function Login() {
     return (
         <Box
+            pb={1}
             sx={{
                 maxWidth: 428,
                 mx: 'auto',
@@ -15,11 +16,11 @@ export default function Login() {
                 pt: 35 / 8,
                 position: 'relative',
                 overflow: 'hidden',
-                fontFamily: 'Century Gothic',
+                fontWeight: '700',
             }}>
-            <Logo title="Log in to your account" />
-            {FormSection()}
-            {social()}
+            <Logo title="Login to your account" />
+            <FormSection />
+            <Social />
         </Box>
     );
 }

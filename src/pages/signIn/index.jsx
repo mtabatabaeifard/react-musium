@@ -1,12 +1,15 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { Button, SignInButton } from 'components';
-import { Link } from 'react-router-dom';
+import { Button } from 'components';
+import { Link, useNavigate } from 'react-router-dom';
 import { GoBackButton } from 'components/shared/GoBackButton';
+import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 import musiumLogo from '../../assets/images/LaunchScreen/musium logo.png';
 import googleLogo from '../../assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from '../../assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from '../../assets/images/SignInLogos/apple-icon.svg';
+import { SignInButton } from './SignInButton/index';
 
 export function SignIn() {
     const beforeAfterLineStyle = {
@@ -42,11 +45,30 @@ export function SignIn() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%',
+        height: '100vh',
         maxWidth: '43rem',
         margin: '0 auto',
         minHeight: '900px',
     };
+
+    const navigate = useNavigate();
+    const googleLogin = useGoogleLogin({
+        onSuccess: async (tokenResponse) => {
+            console.log(tokenResponse);
+            navigate('/home');
+            const userInfo = await axios.get(
+                'https://www.googleapis.com/oauth2/v3/userinfo',
+                {
+                    headers: {
+                        Authorization: `Bearer ${tokenResponse.access_token}`,
+                    },
+                },
+            );
+            localStorage.setItem('headerName', userInfo.data.given_name);
+            localStorage.setItem('headerPicture', userInfo.data.picture);
+        },
+        onError: (errorResponse) => console.log(errorResponse),
+    });
 
     return (
         <Box sx={mainBoxStyle}>
@@ -75,7 +97,7 @@ export function SignIn() {
                     gap: '2rem',
                     marginTop: '3.5rem',
                 }}>
-                <SignInButton>
+                <SignInButton onClick={() => googleLogin()}>
                     Continue with Google
                     <img src={googleLogo} alt="Google" />
                 </SignInButton>

@@ -1,0 +1,48 @@
+.circle {
+    mix-blend-mode: soft-light;
+    box-shadow: inset 0px 0px 8px 0px #06a0b5;
+}
+
+.big-circle {
+    padding-top: 3.2rem;
+    padding-left: 2.5rem;
+}
+
+.small-circle {
+    padding-top: 7.8rem;
+    padding-right: 5rem;
+    height: 78px;
+    width: 78px;
+}
+
+.medium-circle {
+    padding-top: 7rem;
+    padding-right: 2.5rem;
+    align-self: end;
+    height: 103px;
+    width: 103px;
+}
+
+.swiper-pagination {
+    position: sticky;
+    padding: 3rem 0;
+}
+
+.swiper-pagination-bullet {
+    width: 6rem;
+    border-radius: 5rem;
+    background-color: #DBE7E8;
+    opacity: 1;
+    border: solid black;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #00C2CB;
+    opacity: 1;
+    width: 8rem;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: -1rem;
+}
