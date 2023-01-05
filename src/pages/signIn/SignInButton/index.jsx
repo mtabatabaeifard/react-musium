@@ -6,12 +6,12 @@ export function SignInButton(props) {
         <MuiButton
             {...props}
             sx={{
-                backgroundColor: '#1E1E1E',
+                backgroundColor: 'background.gray',
                 borderRadius: '1rem',
                 border: '0.2px solid #DBE7E8',
                 width: '85vw',
                 paddingY: '1rem',
-                color: '#fff',
+                color: 'text.primary',
                 fontSize: '1.6rem',
                 fontWeight: '500',
                 textTransform: 'none',

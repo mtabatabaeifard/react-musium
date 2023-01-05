@@ -39,6 +39,10 @@ export default function Header() {
             },
         },
     };
+
+    const headerUsername = localStorage.getItem('headerName');
+    const headerPicture = localStorage.getItem('headerPicture');
+
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
             <Box sx={{ display: 'flex', gap: '1.2rem' }}>
@@ -52,15 +56,23 @@ export default function Header() {
                         border: '0.1rem solid #158085',
                         borderRadius: '50%',
                     }}>
-                    hi
+                    <img
+                        src={headerPicture || null}
+                        alt=""
+                        style={{ overflow: 'hidden', borderRadius: '50%' }}
+                    />
                 </Button>
-                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}>
                     <Typography
                         sx={{
                             color: 'common.white',
                             weight: '700',
                             fontSize: '1.5rem',
-                            marginTop: '3.7rem',
+                            marginTop: '35%',
                         }}>
                         Welcome Back !
                     </Typography>
@@ -70,7 +82,7 @@ export default function Header() {
                             weight: '700',
                             fontSize: '1.1rem',
                         }}>
-                        chandrama
+                        {headerUsername || 'User'}
                     </Typography>
                 </Box>
             </Box>

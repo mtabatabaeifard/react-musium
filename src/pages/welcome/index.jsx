@@ -33,7 +33,7 @@ export function Welcome() {
             </Box>
             <Box
                 sx={{
-                    bgcolor: '#000',
+                    bgcolor: 'primary.dark',
                     borderRadius: '54px 54px 0 0',
                     display: 'flex',
                     flexDirection: 'column',
@@ -53,7 +53,7 @@ export function Welcome() {
                     }}>
                     <Typography
                         sx={{
-                            color: '#fff',
+                            color: 'text.primary',
                             fontSize: '2.6rem',
                             fontWeight: '600',
                             width: '93%',
@@ -63,11 +63,15 @@ export function Welcome() {
                         }}>
                         <SwiperSlider style={{ color: 'white' }}>
                             From the{' '}
-                            <Box component="span" sx={{ color: '#76D7E6' }}>
+                            <Box
+                                component="span"
+                                sx={{ color: 'primary.light' }}>
                                 latest{' '}
                             </Box>{' '}
                             to the{' '}
-                            <Box component="span" sx={{ color: '#7CEEFF' }}>
+                            <Box
+                                component="span"
+                                sx={{ color: 'primary.light' }}>
                                 greatest{' '}
                             </Box>
                             hits, play your favorite on
