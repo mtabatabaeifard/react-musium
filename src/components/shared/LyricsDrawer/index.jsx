@@ -58,6 +58,7 @@ export function LyricsDrawer() {
 
     return (
         <Box p={25 / 8} sx={drawerS}>
+            {/* {lyrics} */}
             You never look at the sky <br />
             Cause you think it's too high <br />
             You never look at the stars <br />

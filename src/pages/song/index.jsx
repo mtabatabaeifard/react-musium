@@ -1,11 +1,21 @@
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { LyricsDrawer, MusicPlayerSlider } from 'components';
 import React from 'react';
-import image from 'assets/images/SongPic.png';
 import { Link } from 'react-router-dom';
+import data from 'db/tracks.json';
 
 function SongPage() {
     const theme = useTheme();
+
+    const [idValue, setIdValue] = React.useState(2);
+    // const [click, setClick] = React.useState(false);
+
+    const music = data.songs;
+    const choseMusic = music.filter((track) => track.id === idValue)[0];
+
+    const { source, img, name, artist, lyrics } = choseMusic;
+    // const { playlist } = choseMusic;
+
     const mainBoxS = {
         maxWidth: 433,
         mx: 'auto',
@@ -51,6 +61,7 @@ function SongPage() {
                                 fontWeight: 500,
                                 fontSize: '1.2rem',
                             }}>
+                            {/* {`${playlist[0] ? playlist[0] : 'None'}`} */}
                             Lofi Loft
                             <IconButton aria-label="Playlist">
                                 <svg
@@ -84,10 +95,28 @@ function SongPage() {
                     </IconButton>
                 </Link>
             </Box>
-            <Box sx={{ textAlign: 'center', marginTop: '4rem' }}>
-                <img src={image} alt="song" />
+            <Box
+                sx={{
+                    textAlign: 'center',
+                    marginTop: '4rem',
+                    width: '34.5rem',
+                    height: '33rem',
+                    marginLeft: '4rem',
+                    overflow: 'hidden',
+                }}>
+                <img
+                    style={{ width: '345px', height: '330px' }}
+                    src={img}
+                    alt="song"
+                />
             </Box>
-            <MusicPlayerSlider />
+            <MusicPlayerSlider
+                idValue={idValue}
+                setIdValue={setIdValue}
+                name={name}
+                artist={artist}
+                source={source}
+            />
             <IconButton
                 aria-label="Download"
                 sx={{ marginTop: '2.8rem', marginLeft: '72.58%' }}>
@@ -104,7 +133,7 @@ function SongPage() {
                 </svg>
             </IconButton>
             <Typography sx={lyricsTypo}>LYRICS</Typography>
-            <LyricsDrawer />
+            <LyricsDrawer lyrics={lyrics} />
         </Box>
     );
 }

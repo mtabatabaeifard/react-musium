@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/media-has-caption */
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
@@ -6,27 +7,20 @@ import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
-import data from 'db/tracks.json';
 
-export function MusicPlayerSlider() {
+export function MusicPlayerSlider({
+    idValue,
+    setIdValue,
+    source,
+    name,
+    artist,
+}) {
     const theme = useTheme();
     const [position, setPosition] = React.useState(0);
     const [isPlaying, setIsPlaying] = React.useState(false);
     const [duration, setDuration] = React.useState(0);
     const [currentTime, setCurrentTime] = React.useState(0);
     const [like, setLike] = React.useState(false);
-    const [idValue] = React.useState(0);
-    // const [click, setClick] = React.useState(false);
-
-    const music = data.songs;
-    const choseMusic = music.filter((track) => track.id === idValue)[0];
-    const src = choseMusic.source;
-    const playlist = choseMusic.playlist;
-    const img = choseMusic.img;
-    const name = choseMusic.name;
-    const artist = choseMusic.artist;
-    const artist = choseMusic.artist;
-    console.log(src);
 
     const audioRef = React.useRef();
     const audio = audioRef.current;
@@ -49,8 +43,9 @@ export function MusicPlayerSlider() {
 
     const getCurrDuration = (e) => {
         if (currentTime === duration) {
+            audio.currentTime = 0;
             setIsPlaying(false);
-            audio.pause();
+            setIdValue(idValue + 1);
         }
         const percent = (
             (e.currentTarget.currentTime / e.currentTarget.duration) *
@@ -143,7 +138,7 @@ export function MusicPlayerSlider() {
                                 color: '#fff',
                                 fontWeight: '500',
                             }}>
-                            grainy days
+                            {name}
                         </b>
                     </Typography>
                     <Typography
@@ -154,7 +149,7 @@ export function MusicPlayerSlider() {
                             color: theme.palette.secondary.main,
                             fontWeight: '600',
                         }}>
-                        moody.
+                        {artist}
                     </Typography>
                 </Box>
                 <Box>
@@ -197,6 +192,7 @@ export function MusicPlayerSlider() {
                 value={position}
             />
             <audio
+                src={source}
                 ref={audioRef}
                 onLoadedData={(e) => {
                     setDuration(e.currentTarget.duration.toFixed(0));
