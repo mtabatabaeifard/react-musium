@@ -7,11 +7,11 @@ import data from 'db/tracks.json';
 function SongPage() {
     const theme = useTheme();
     const [idValue, setIdValue] = React.useState(0);
+    const [like, setLike] = React.useState(false);
 
     const music = data.songs;
     const choseMusic = music.filter((track) => track.id === idValue)[0];
-
-    const { source, img, name, artist, lyrics } = choseMusic;
+    const { source, img, name, artist, lyrics, isliked } = choseMusic;
     // const { playlist } = choseMusic;
 
     const mainBoxS = {
@@ -114,6 +114,9 @@ function SongPage() {
                 name={name}
                 artist={artist}
                 source={source}
+                isliked={isliked}
+                like={like}
+                setLike={setLike}
             />
             <IconButton
                 aria-label="Download"

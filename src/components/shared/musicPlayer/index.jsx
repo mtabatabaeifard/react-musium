@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 export function MusicPlayerSlider({
     idValue,
     setIdValue,
+    like,
+    setLike,
     source,
     name,
     artist,
@@ -20,7 +22,6 @@ export function MusicPlayerSlider({
     const [isPlaying, setIsPlaying] = React.useState(false);
     const [duration, setDuration] = React.useState(0);
     const [currentTime, setCurrentTime] = React.useState(0);
-    const [like, setLike] = React.useState(false);
 
     const audioRef = React.useRef();
     const audio = audioRef.current;
@@ -172,7 +173,9 @@ export function MusicPlayerSlider({
                     </IconButton>
                     <IconButton aria-label="Like" sx={{ marginRight: 1 }}>
                         <svg
-                            onClick={() => setLike(!like)}
+                            onClick={() => {
+                                setLike(!like);
+                            }}
                             xmlns="http://www.w3.org/2000/svg"
                             width="18"
                             height="18"
