@@ -1,9 +1,15 @@
 import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
 import { useLayoutEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import theme from 'theme';
 
 export default function Header() {
+    const navigate = useNavigate();
+    const handelGoToSetting = () => {
+        const path = '/setting';
+        navigate(path);
+    };
     const stylebtn = {
         button: {
             color: 'common.white',
@@ -137,7 +143,7 @@ export default function Header() {
                         />
                     </svg>
                 </Button>
-                <Button sx={strokebtn.button}>
+                <Button sx={strokebtn.button} onClick={handelGoToSetting}>
                     <svg
                         width="18"
                         height="20"

@@ -1,10 +1,21 @@
+/* eslint-disable no-console */
+import PropTypes from 'prop-types';
 import { Box } from '@mui/system';
 import { Button, Link } from 'components';
 import googleLogo from 'assets/images/SignInLogos/google-icon.svg';
 import facebookLogo from 'assets/images/SignInLogos/facebook-icon.svg';
 import appleLogo from 'assets/images/SignInLogos/apple-icon.svg';
+import { useGoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-export function Social() {
+export default function Social({ divName, buttonName, linkTo }) {
+    Social.propTypes = {
+        divName: PropTypes.string.isRequired,
+        buttonName: PropTypes.string.isRequired,
+        linkTo: PropTypes.string.isRequired,
+    };
+
     const styles = {
         icons: {
             display: 'flex',
@@ -29,6 +40,24 @@ export function Social() {
             },
         },
     };
+    const navigate = useNavigate();
+    const googleLogin = useGoogleLogin({
+        onSuccess: async (tokenResponse) => {
+            console.log(tokenResponse);
+            navigate('/home');
+            const userInfo = await axios.get(
+                'https://www.googleapis.com/oauth2/v3/userinfo',
+                {
+                    headers: {
+                        Authorization: `Bearer ${tokenResponse.access_token}`,
+                    },
+                },
+            );
+            localStorage.setItem('headerName', userInfo.data.given_name);
+            localStorage.setItem('headerPicture', userInfo.data.picture);
+        },
+        onError: (errorResponse) => console.log(errorResponse),
+    });
     return (
         <Box pt={4.5}>
             <p className="title">or continue with</p>
@@ -37,7 +66,7 @@ export function Social() {
                 display="flex"
                 justifyContent="center"
                 gap={7.5}>
-                <Button sx={styles.icons}>
+                <Button onClick={googleLogin} sx={styles.icons}>
                     <img src={googleLogo} alt="Google" />
                 </Button>
                 <Button sx={styles.icons}>
@@ -55,8 +84,8 @@ export function Social() {
                 paddingTop={4}
                 color="#fff"
                 fontSize={16}>
-                <p>Already have an account?</p>
-                <Link to="/login">Login</Link>{' '}
+                <p>{divName}</p>
+                <Link to={linkTo}>{buttonName}</Link>{' '}
             </Box>
         </Box>
     );
