@@ -1,5 +1,11 @@
 import IconButton from '@mui/material/IconButton';
-import { Alert, Box, CircularProgress, FormControl, InputAdornment } from '@mui/material';
+import {
+    Alert,
+    Box,
+    CircularProgress,
+    FormControl,
+    InputAdornment,
+} from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -29,16 +35,15 @@ export function FormSection() {
     const navigate = useNavigate();
     const handelLogin = (e) => {
         e.preventDefault();
-        if (!isValidEmail(form.email)) setemailError(true)
+        if (!isValidEmail(form.email)) setemailError(true);
         else {
-            setLoder(true)
+            setLoder(true);
             setTimeout(() => {
-                setLoder(false)
+                setLoder(false);
                 const path = `/home`;
-                navigate(path)
-            }, 2000)
+                navigate(path);
+            }, 2000);
         }
-        ;
     };
     const [emailState, setEmailState] = useState(false);
     const [passwordState, setPasswordState] = useState(false);
@@ -51,132 +56,143 @@ export function FormSection() {
     };
     return (
         <Box paddingTop={4}>
-            {loder ? <Box display='flex' justifyContent='center' paddingBottom='5rem'> <CircularProgress /> </Box> : <Box>
-                <FormControl
-                    variant="outlined"
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        gap: '2.3rem',
-                    }}>
-                    <TextField
-                        placeholder="Email"
-                        InputProps={{
-                            style: {
-                                fontSize: '1.6rem',
-                                height: '100%',
-                            },
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <MailOutlineIcon
-                                        fontSize="large"
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}
-                                    />
-                                </InputAdornment>
-                            ),
-                        }}
-                        id="email-input-login"
-                        maxRows={6}
-                        onChange={(e) => {
-                            setemailError(false)
-                            setEmailState(false);
-                            setForm({
-                                ...form,
-                                email: e.target.value,
-                            });
-                        }}
-                    />
-                    {emailState && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Enter your email
-                        </Alert>
-                    )}
-                    {emailError && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Email is invalid
-                        </Alert>
-                    )}
-                    <TextField
-                        autoComplete="off"
-                        placeholder="Password"
-                        type={showPassword ? 'text' : 'password'}
-                        InputProps={{
-                            style: {
-                                fontSize: '1.6rem',
-                                height: '100%',
-                            },
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}
-                                        fontSize="large"
-                                        onClick={handleClickShowPassword}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end">
-                                        {showPassword ? (
-                                            <VisibilityOff
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        ) : (
-                                            <Visibility
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        )}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <LockOutlinedIcon
-                                        fontSize="large"
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}>
-                                        {showPassword ? (
-                                            <VisibilityOff />
-                                        ) : (
-                                            <Visibility />
-                                        )}
-                                    </LockOutlinedIcon>
-                                </InputAdornment>
-                            ),
-                        }}
-                        id="password-input-login"
-                        maxRows={6}
-                        onChange={(e) => {
-                            setPasswordState(false);
-                            setForm({
-                                ...form,
-                                password: e.target.value,
-                            });
-                        }}
-                    />
-                    {passwordState && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Enter your pssword
-                        </Alert>
-                    )}
-                </FormControl>
-                <CheckBoxButton label="Remember me" />
-            </Box>
-            }
+            {loder ? (
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    paddingBottom="5rem">
+                    {' '}
+                    <CircularProgress />{' '}
+                </Box>
+            ) : (
+                <Box>
+                    <FormControl
+                        variant="outlined"
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '2.3rem',
+                        }}>
+                        <TextField
+                            placeholder="Email"
+                            InputProps={{
+                                style: {
+                                    fontSize: '1.6rem',
+                                    height: '100%',
+                                },
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <MailOutlineIcon
+                                            fontSize="large"
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}
+                                        />
+                                    </InputAdornment>
+                                ),
+                            }}
+                            id="email-input-login"
+                            maxRows={6}
+                            onChange={(e) => {
+                                setemailError(false);
+                                setEmailState(false);
+                                setForm({
+                                    ...form,
+                                    email: e.target.value,
+                                });
+                            }}
+                        />
+                        {emailState && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enter your email
+                            </Alert>
+                        )}
+                        {emailError && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Email is invalid
+                            </Alert>
+                        )}
+                        <TextField
+                            autoComplete="off"
+                            placeholder="Password"
+                            type={showPassword ? 'text' : 'password'}
+                            InputProps={{
+                                style: {
+                                    fontSize: '1.6rem',
+                                    height: '100%',
+                                },
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}
+                                            fontSize="large"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={
+                                                handleMouseDownPassword
+                                            }
+                                            edge="end">
+                                            {showPassword ? (
+                                                <VisibilityOff
+                                                    fontSize="large"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.27)',
+                                                    }}
+                                                />
+                                            ) : (
+                                                <Visibility
+                                                    fontSize="large"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.27)',
+                                                    }}
+                                                />
+                                            )}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <LockOutlinedIcon
+                                            fontSize="large"
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}>
+                                            {showPassword ? (
+                                                <VisibilityOff />
+                                            ) : (
+                                                <Visibility />
+                                            )}
+                                        </LockOutlinedIcon>
+                                    </InputAdornment>
+                                ),
+                            }}
+                            id="password-input-login"
+                            maxRows={6}
+                            onChange={(e) => {
+                                setPasswordState(false);
+                                setForm({
+                                    ...form,
+                                    password: e.target.value,
+                                });
+                            }}
+                        />
+                        {passwordState && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enter your pssword
+                            </Alert>
+                        )}
+                    </FormControl>
+                    <CheckBoxButton label="Remember me" />
+                </Box>
+            )}
 
             <Box display="flex" justifyContent="center">
                 <Button
@@ -190,6 +206,6 @@ export function FormSection() {
             <Link className="forget-pasword" to="/forgot-password">
                 Forgot the password?
             </Link>
-        </Box >
+        </Box>
     );
 }
