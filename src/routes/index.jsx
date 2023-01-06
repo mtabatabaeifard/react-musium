@@ -18,6 +18,7 @@ import Podcasts from 'pages/Podcasts';
 import Artists from 'pages/Artists';
 import Search from 'pages/Search';
 import Folder from 'pages/Folder';
+import Setting from 'pages/Setting';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -100,4 +101,8 @@ export const routes = {
         path: '/folder',
         element: <Folder />,
     },
+    SETTING: {
+        path: '/setting',
+        element: <Setting />,
+    }
 };
