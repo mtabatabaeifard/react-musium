@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Slider from '@mui/material/Slider';
 import IconButton from '@mui/material/IconButton';
 import { Link } from 'react-router-dom';
-import music from 'assets/audio/8d82b5_Star_Wars_Main_Theme_Song.mp3';
+import data from 'db/tracks.json';
 
 export function MusicPlayerSlider() {
     const theme = useTheme();
@@ -15,6 +15,18 @@ export function MusicPlayerSlider() {
     const [duration, setDuration] = React.useState(0);
     const [currentTime, setCurrentTime] = React.useState(0);
     const [like, setLike] = React.useState(false);
+    const [idValue] = React.useState(0);
+    // const [click, setClick] = React.useState(false);
+
+    const music = data.songs;
+    const choseMusic = music.filter((track) => track.id === idValue)[0];
+    const src = choseMusic.source;
+    const playlist = choseMusic.playlist;
+    const img = choseMusic.img;
+    const name = choseMusic.name;
+    const artist = choseMusic.artist;
+    const artist = choseMusic.artist;
+    console.log(src);
 
     const audioRef = React.useRef();
     const audio = audioRef.current;
@@ -185,7 +197,6 @@ export function MusicPlayerSlider() {
                 value={position}
             />
             <audio
-                src={music}
                 ref={audioRef}
                 onLoadedData={(e) => {
                     setDuration(e.currentTarget.duration.toFixed(0));
