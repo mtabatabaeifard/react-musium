@@ -18,11 +18,11 @@ export function FormSection() {
     }
     const navigate = useNavigate();
     const handelForgotPasssword = () => {
-        if (!isValidEmail(email)) setemailError(true)
+        if (!isValidEmail(email)) setemailError(true);
         else {
             localStorage.setItem('email', JSON.stringify(email));
-            const path = '/reset-Password'
-            navigate(path)
+            const path = '/reset-Password';
+            navigate(path);
         }
     };
 
@@ -50,7 +50,7 @@ export function FormSection() {
                 gap={4}>
                 <TextField
                     onChange={(e) => {
-                        setemailError(false)
+                        setemailError(false);
                         setEmailState(false);
                         setEmail(e.target.value);
                     }}
@@ -82,9 +82,7 @@ export function FormSection() {
                 )}
             </Box>
             <Box display="flex" justifyContent="center" pt={5}>
-
-                <Button
-                    onClick={email ? handelForgotPasssword : emptyEntry}>
+                <Button onClick={email ? handelForgotPasssword : emptyEntry}>
                     Continue
                 </Button>
             </Box>
