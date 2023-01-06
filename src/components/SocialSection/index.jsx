@@ -8,12 +8,11 @@ import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function Social({divName,buttonName,linkTo}) {
+export default function Social({ divName, buttonName, linkTo }) {
     Social.propTypes = {
         divName: PropTypes.string.isRequired,
         buttonName: PropTypes.string.isRequired,
         linkTo: PropTypes.string.isRequired,
-
     };
 
     const styles = {
@@ -56,7 +55,8 @@ export default function Social({divName,buttonName,linkTo}) {
             localStorage.setItem('headerName', userInfo.data.given_name);
             localStorage.setItem('headerPicture', userInfo.data.picture);
         },
-        onError: (errorResponse) => console.log(errorResponse),})
+        onError: (errorResponse) => console.log(errorResponse),
+    });
     return (
         <Box pt={4.5}>
             <p className="title">or continue with</p>
