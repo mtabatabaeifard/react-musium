@@ -45,7 +45,11 @@ export function MusicPlayerSlider({
         if (currentTime === duration) {
             audio.currentTime = 0;
             setIsPlaying(false);
-            setIdValue(idValue + 1);
+            if (idValue !== 10) {
+                setIdValue(idValue + 1);
+            } else {
+                setIdValue(0);
+            }
         }
         const percent = (
             (e.currentTarget.currentTime / e.currentTarget.duration) *
@@ -233,7 +237,15 @@ export function MusicPlayerSlider({
                         />
                     </svg>
                 </IconButton>
-                <IconButton aria-label="previous song">
+                <IconButton
+                    aria-label="previous song"
+                    onClick={() => {
+                        if (idValue !== 0) {
+                            setIdValue(idValue - 1);
+                        } else {
+                            setIdValue(10);
+                        }
+                    }}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="17"
@@ -287,7 +299,15 @@ export function MusicPlayerSlider({
                         </svg>
                     )}
                 </IconButton>
-                <IconButton aria-label="next song">
+                <IconButton
+                    aria-label="next song"
+                    onClick={() => {
+                        if (idValue !== 10) {
+                            setIdValue(idValue + 1);
+                        } else {
+                            setIdValue(0);
+                        }
+                    }}>
                     <svg
                         width="17"
                         height="20"

@@ -6,9 +6,7 @@ import data from 'db/tracks.json';
 
 function SongPage() {
     const theme = useTheme();
-
-    const [idValue, setIdValue] = React.useState(2);
-    // const [click, setClick] = React.useState(false);
+    const [idValue, setIdValue] = React.useState(0);
 
     const music = data.songs;
     const choseMusic = music.filter((track) => track.id === idValue)[0];
