@@ -1,6 +1,12 @@
 /* eslint-disable no-console */
 import IconButton from '@mui/material/IconButton';
-import { Alert, Box, CircularProgress, FormControl, InputAdornment } from '@mui/material';
+import {
+    Alert,
+    Box,
+    CircularProgress,
+    FormControl,
+    InputAdornment,
+} from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -42,191 +48,203 @@ export function FormSection() {
         else if (form.password !== form.confirmPassword)
             setPasswordComparison(true);
         else {
-            setLoder(true)
+            setLoder(true);
             setTimeout(() => {
-                setLoder(false)
+                setLoder(false);
                 const path = `/login`;
-                navigate(path)
-            }, 2000)
-                ;
+                navigate(path);
+            }, 2000);
         }
     };
 
     return (
         <Box paddingTop={4}>
-            {loder ? <Box display='flex' justifyContent='center' paddingBottom='5rem'><CircularProgress /> </Box> : <Box pb={5}>
-                <FormControl
-                    variant="outlined"
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        gap: '2.3rem',
-                    }}>
-                    <TextField
-                        placeholder="Enter your new password"
-                        type={showPassword ? 'text' : 'password'}
-                        InputProps={{
-                            style: {
-                                height: '100%',
-                                fontSize: '1.6rem',
-                            },
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}
-                                        onClick={handleClickShowPassword}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end">
-                                        {showPassword ? (
-                                            <VisibilityOff
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        ) : (
-                                            <Visibility
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        )}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <LockOutlinedIcon
-                                        fontSize="large"
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}>
-                                        {showPassword ? (
-                                            <VisibilityOff />
-                                        ) : (
-                                            <Visibility />
-                                        )}
-                                    </LockOutlinedIcon>
-                                </InputAdornment>
-                            ),
-                        }}
-                        id="password-New-password"
-                        maxRows={6}
-                        onChange={(e) => {
-                            setPasswordComparison(false);
-                            setPasswordState(false);
-                            setpasswordHave8Character(false);
-                            setForm({
-                                ...form,
-                                password: e.target.value,
-                            });
-                        }}
-                    />
-                    {passwordState && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Enter your new pssword
-                        </Alert>
-                    )}
-                    {passwordComparison && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Enterd values are not equal
-                        </Alert>
-                    )}
-                    {passwordHave8Character && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Password must be at least 8 characters
-                        </Alert>
-                    )}
+            {loder ? (
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    paddingBottom="5rem">
+                    <CircularProgress />{' '}
+                </Box>
+            ) : (
+                <Box pb={5}>
+                    <FormControl
+                        variant="outlined"
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            gap: '2.3rem',
+                        }}>
+                        <TextField
+                            placeholder="Enter your new password"
+                            type={showPassword ? 'text' : 'password'}
+                            InputProps={{
+                                style: {
+                                    height: '100%',
+                                    fontSize: '1.6rem',
+                                },
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={
+                                                handleMouseDownPassword
+                                            }
+                                            edge="end">
+                                            {showPassword ? (
+                                                <VisibilityOff
+                                                    fontSize="large"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.27)',
+                                                    }}
+                                                />
+                                            ) : (
+                                                <Visibility
+                                                    fontSize="large"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.27)',
+                                                    }}
+                                                />
+                                            )}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <LockOutlinedIcon
+                                            fontSize="large"
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}>
+                                            {showPassword ? (
+                                                <VisibilityOff />
+                                            ) : (
+                                                <Visibility />
+                                            )}
+                                        </LockOutlinedIcon>
+                                    </InputAdornment>
+                                ),
+                            }}
+                            id="password-New-password"
+                            maxRows={6}
+                            onChange={(e) => {
+                                setPasswordComparison(false);
+                                setPasswordState(false);
+                                setpasswordHave8Character(false);
+                                setForm({
+                                    ...form,
+                                    password: e.target.value,
+                                });
+                            }}
+                        />
+                        {passwordState && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enter your new pssword
+                            </Alert>
+                        )}
+                        {passwordComparison && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enterd values are not equal
+                            </Alert>
+                        )}
+                        {passwordHave8Character && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Password must be at least 8 characters
+                            </Alert>
+                        )}
 
-                    <TextField
-                        placeholder="Confirm your new password"
-                        type={showPassword2 ? 'text' : 'password'}
-                        InputProps={{
-                            style: {
-                                height: '100%',
-                                fontSize: '1.6rem',
-                            },
+                        <TextField
+                            placeholder="Confirm your new password"
+                            type={showPassword2 ? 'text' : 'password'}
+                            InputProps={{
+                                style: {
+                                    height: '100%',
+                                    fontSize: '1.6rem',
+                                },
 
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}
-                                        onClick={handleClickShowPassword2}
-                                        onMouseDown={handleMouseDownPassword}
-                                        edge="end">
-                                        {showPassword2 ? (
-                                            <VisibilityOff
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        ) : (
-                                            <Visibility
-                                                fontSize="large"
-                                                sx={{
-                                                    color: 'rgba(255, 255, 255, 0.27)',
-                                                }}
-                                            />
-                                        )}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <LockOutlinedIcon
-                                        fontSize="large"
-                                        sx={{
-                                            color: 'rgba(255, 255, 255, 0.27)',
-                                        }}>
-                                        {showPassword2 ? (
-                                            <VisibilityOff />
-                                        ) : (
-                                            <Visibility />
-                                        )}
-                                    </LockOutlinedIcon>
-                                </InputAdornment>
-                            ),
-                        }}
-                        id="confirm-password-New-password"
-                        maxRows={6}
-                        onChange={(e) => {
-                            setPasswordComparison(false);
-                            setConfirmPassword(false);
-                            setForm({
-                                ...form,
-                                confirmPassword: e.target.value,
-                            });
-                        }}
-                    />
-                    {consfirnpasswordState && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Confirm your new pssword
-                        </Alert>
-                    )}
-                    {passwordComparison && (
-                        <Alert
-                            severity="error"
-                            sx={{ width: '80%', fontSize: '1.2rem' }}>
-                            Enterd values are not equal
-                        </Alert>
-                    )}
-                </FormControl>
-            </Box>}
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}
+                                            onClick={handleClickShowPassword2}
+                                            onMouseDown={
+                                                handleMouseDownPassword
+                                            }
+                                            edge="end">
+                                            {showPassword2 ? (
+                                                <VisibilityOff
+                                                    fontSize="large"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.27)',
+                                                    }}
+                                                />
+                                            ) : (
+                                                <Visibility
+                                                    fontSize="large"
+                                                    sx={{
+                                                        color: 'rgba(255, 255, 255, 0.27)',
+                                                    }}
+                                                />
+                                            )}
+                                        </IconButton>
+                                    </InputAdornment>
+                                ),
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <LockOutlinedIcon
+                                            fontSize="large"
+                                            sx={{
+                                                color: 'rgba(255, 255, 255, 0.27)',
+                                            }}>
+                                            {showPassword2 ? (
+                                                <VisibilityOff />
+                                            ) : (
+                                                <Visibility />
+                                            )}
+                                        </LockOutlinedIcon>
+                                    </InputAdornment>
+                                ),
+                            }}
+                            id="confirm-password-New-password"
+                            maxRows={6}
+                            onChange={(e) => {
+                                setPasswordComparison(false);
+                                setConfirmPassword(false);
+                                setForm({
+                                    ...form,
+                                    confirmPassword: e.target.value,
+                                });
+                            }}
+                        />
+                        {consfirnpasswordState && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Confirm your new pssword
+                            </Alert>
+                        )}
+                        {passwordComparison && (
+                            <Alert
+                                severity="error"
+                                sx={{ width: '80%', fontSize: '1.2rem' }}>
+                                Enterd values are not equal
+                            </Alert>
+                        )}
+                    </FormControl>
+                </Box>
+            )}
 
             <Box display="flex" justifyContent="center">
                 <Button
