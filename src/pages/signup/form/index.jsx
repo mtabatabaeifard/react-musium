@@ -1,6 +1,12 @@
 import IconButton from '@mui/material/IconButton';
 import PersonIcon from '@mui/icons-material/Person';
-import { Alert, Box, CircularProgress, FormControl, InputAdornment } from '@mui/material';
+import {
+    Alert,
+    Box,
+    CircularProgress,
+    FormControl,
+    InputAdornment,
+} from '@mui/material';
 import { TextField } from 'components/shared/TextField';
 import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
@@ -53,26 +59,33 @@ export function FormSection() {
     }
     const navigate = useNavigate();
     const handelSignUp = (e) => {
-        e.preventDefault()
-        if (!isValidEmail(form.email)) setemailError(true)
-        else if (Number(form.password.length) < 8) setpasswordHave8Character(true);
-        else if (form.password !== form.confirmPassword) setPasswordComparison(true);
+        e.preventDefault();
+        if (!isValidEmail(form.email)) setemailError(true);
+        else if (Number(form.password.length) < 8)
+            setpasswordHave8Character(true);
+        else if (form.password !== form.confirmPassword)
+            setPasswordComparison(true);
         else {
-            setLoder(true)
+            setLoder(true);
             setTimeout(() => {
-                setLoder(false)
+                setLoder(false);
                 const path = `/home`;
-                navigate(path)
-            }, 3000)
-                ;
+                navigate(path);
+            }, 3000);
         }
     };
-    const name = [form.firstName  , form.lastName].join(' ');
-    localStorage.setItem('headerName',name)
+    const name = [form.firstName, form.lastName].join(' ');
+    localStorage.setItem('headerName', name);
     return (
         <Box paddingTop={4}>
-            {loder ? <Box display='flex' justifyContent='center' paddingBottom='5rem'><CircularProgress /> </Box>
-                :
+            {loder ? (
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    paddingBottom="5rem">
+                    <CircularProgress />{' '}
+                </Box>
+            ) : (
                 <Box pb={5}>
                     <FormControl
                         variant="outlined"
@@ -98,11 +111,10 @@ export function FormSection() {
                                             }}
                                         />
                                     </InputAdornment>
-
                                 ),
                             }}
                             onChange={(e) => {
-                                setFirstNemeState(false)
+                                setFirstNemeState(false);
                                 setForm({
                                     ...form,
                                     firstName: e.target.value,
@@ -132,11 +144,10 @@ export function FormSection() {
                                             }}
                                         />
                                     </InputAdornment>
-
                                 ),
                             }}
                             onChange={(e) => {
-                                setLastNameState(false)
+                                setLastNameState(false);
                                 setForm({
                                     ...form,
                                     lastName: e.target.value,
@@ -171,7 +182,7 @@ export function FormSection() {
                             id="email-sign-up"
                             maxRows={6}
                             onChange={(e) => {
-                                setemailError(false)
+                                setemailError(false);
                                 setEmailState(false);
                                 setForm({
                                     ...form,
@@ -208,7 +219,9 @@ export function FormSection() {
                                                 color: 'rgba(255, 255, 255, 0.27)',
                                             }}
                                             onClick={handleClickShowPassword}
-                                            onMouseDown={handleMouseDownPassword}
+                                            onMouseDown={
+                                                handleMouseDownPassword
+                                            }
                                             edge="end">
                                             {showPassword ? (
                                                 <VisibilityOff
@@ -249,7 +262,7 @@ export function FormSection() {
                             onChange={(e) => {
                                 setPasswordState(false);
                                 setPasswordComparison(false);
-                                setpasswordHave8Character(false)
+                                setpasswordHave8Character(false);
                                 setForm({
                                     ...form,
                                     password: e.target.value,
@@ -291,8 +304,12 @@ export function FormSection() {
                                             sx={{
                                                 color: 'rgba(255, 255, 255, 0.27)',
                                             }}
-                                            onClick={handleClickShowconfirmPassword}
-                                            onMouseDown={handleMouseDownPassword}
+                                            onClick={
+                                                handleClickShowconfirmPassword
+                                            }
+                                            onMouseDown={
+                                                handleMouseDownPassword
+                                            }
                                             edge="end">
                                             {showconfirmPassword ? (
                                                 <VisibilityOff
@@ -354,8 +371,8 @@ export function FormSection() {
                             </Alert>
                         )}
                     </FormControl>
-                </Box>}
-
+                </Box>
+            )}
 
             <Box display="flex" justifyContent="center">
                 <Button
