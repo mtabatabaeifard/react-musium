@@ -104,5 +104,5 @@ export const routes = {
     SETTING: {
         path: '/setting',
         element: <Setting />,
-    }
+    },
 };
