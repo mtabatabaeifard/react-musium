@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom';
 
 export function FirstFormSection() {
     const theme = useTheme();
-    const [resendCode, setResendCode] = useState(false)
-    const [varify, setVarify] = useState('')
-    const [varifyState, setVarifyState] = useState(false)
+    const [resendCode, setResendCode] = useState(false);
+    const [varify, setVarify] = useState('');
+    const [varifyState, setVarifyState] = useState(false);
     const emptyEntry = (e) => {
         e.preventDefault();
         if (!varify) setVarifyState(true);
@@ -22,9 +22,7 @@ export function FirstFormSection() {
     };
     const email = JSON.parse(localStorage.getItem('email'));
 
-    useEffect(() => {
-        
-    }, [resendCode])
+    useEffect(() => {}, [resendCode]);
 
     return (
         <Box height="100%">
@@ -59,16 +57,35 @@ export function FirstFormSection() {
                         setVarify(e.target.value);
                     }}
                 />
-                {varifyState && <Alert severity="error" sx={{ width: '80%', fontSize: '1.2rem' }} > Enter varify code</Alert>}
-                <Box display='flex' alignItems='start'>
-
+                {varifyState && (
+                    <Alert
+                        severity="error"
+                        sx={{ width: '80%', fontSize: '1.2rem' }}>
+                        {' '}
+                        Enter varify code
+                    </Alert>
+                )}
+                <Box display="flex" alignItems="start">
                     <Typography
-                        sx={{ fontSize: '1.4rem', color: theme.palette.primary.main }}>Didnt get the varify code?</Typography>
-                    <Button sx={{
-                        color: theme.palette.primary.main, backgroundColor: 'trasnsparent', textDecoration: 'underline', '&:hover': {
-                            backgroundColor: 'trasnsparent !important', textDecoration: 'underline'
-                        }
-                    }} onClick={()=>setResendCode(true)}>resend</Button>
+                        sx={{
+                            fontSize: '1.4rem',
+                            color: theme.palette.primary.main,
+                        }}>
+                        Didnt get the varify code?
+                    </Typography>
+                    <Button
+                        sx={{
+                            color: theme.palette.primary.main,
+                            backgroundColor: 'trasnsparent',
+                            textDecoration: 'underline',
+                            '&:hover': {
+                                backgroundColor: 'trasnsparent !important',
+                                textDecoration: 'underline',
+                            },
+                        }}
+                        onClick={() => setResendCode(true)}>
+                        resend
+                    </Button>
                 </Box>
             </Box>
             <Box display="flex" justifyContent="center" pt={5}>
