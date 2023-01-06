@@ -1,7 +1,21 @@
 import { Box } from '@mui/system';
 import { Button } from 'components';
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer() {
+    const navigate = useNavigate();
+    const handelGoToHome = () => {
+        const path = '/home';
+        navigate(path);
+    };
+    const handelGoToLibrary = () => {
+        const path = '/library';
+        navigate(path);
+    };
+    const handelGoToExplore = () => {
+        const path = '';
+        navigate(path);
+    };
     const styles = {
         button: {
             color: 'common.white',
@@ -9,6 +23,7 @@ export default function Footer() {
             display: 'flex',
             flexDirection: 'column',
             gap: '0.5rem',
+            marginLeft: '2rem',
             '&:hover': {
                 svg: {
                     path: {
@@ -20,8 +35,8 @@ export default function Footer() {
         },
     };
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
-            <Button sx={styles.button}>
+        <Box sx={{ display: 'flex', gap: '7rem' }}>
+            <Button sx={styles.button} onClick={handelGoToHome}>
                 <svg
                     width="17"
                     height="15"
@@ -35,7 +50,7 @@ export default function Footer() {
                 </svg>
                 Home
             </Button>
-            <Button sx={styles.button}>
+            <Button sx={styles.button} onClick={handelGoToExplore}>
                 <svg
                     width="17"
                     height="17"
@@ -49,7 +64,7 @@ export default function Footer() {
                 </svg>
                 Explore
             </Button>
-            <Button sx={styles.button}>
+            <Button sx={styles.button} onClick={handelGoToLibrary}>
                 <svg
                     width="17"
                     height="13"
