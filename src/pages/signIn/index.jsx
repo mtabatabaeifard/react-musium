@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useLayoutEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
