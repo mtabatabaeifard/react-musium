@@ -13,7 +13,8 @@
       "tags": ["alternativ","pop","2017"],
       "genre": ["pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 1,
@@ -28,7 +29,8 @@
       "tags": ["NF","hipHop","Time","2019"],
       "genre": ["hipHop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 2,
@@ -43,7 +45,8 @@
       "tags": ["Conan Gray","Movies","Pop","2022"],
       "genre": ["Pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 3,
@@ -58,7 +61,8 @@
       "tags": ["niki","lowkey","R&B","neo-R&B","2019"],
       "genre": ["R&B"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 4,
@@ -73,7 +77,8 @@
       "tags": ["Hurt","New Jeans","k-pop","2022"],
       "genre": ["k-pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 5,
@@ -88,7 +93,8 @@
       "tags": ["ILLUSION","aespa","Korean","pop"],
       "genre": ["Korean Dance", "K-Pop","2022"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 6,
@@ -103,7 +109,8 @@
       "tags": ["BirdSetFree","sia","pop","2016"],
       "genre": ["pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 7,
@@ -118,7 +125,8 @@
       "tags": ["A Sky Full of Stars","ColdPlay","Alternative/Indie","Dance/Electronic","Pop"],
       "genre": ["Alternative/Indie", "Dance/Electronic", "Pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 8,
@@ -133,7 +141,8 @@
       "tags": ["JustTheTwoOfUs","Bill Withers","Nostalgia"],
       "genre": ["Jazz", "Soul", "Rhythm" ,"blues"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 9,
@@ -148,13 +157,14 @@
       "tags": ["SiavashGhomayshi","parandeMohajer","2008","Ragbar"],
       "genre": ["Pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     },
     {
       "id": 10,
       "name": "Blinding Lights",
       "artist": "The Weeknd",
-      "album": "Blinding Lights",
+      "album": "After Hours",
       "date": "2019",
       "source": "https://dl.musicdel.ir/Music/1400/05/the_weeknd_blinding_lights%20128.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
@@ -163,7 +173,8 @@
       "tags": ["Blinding Lights","TheWeeknd"],
       "genre": [ "R&B/Soul", "Synthwave", "Pop"],
       "ispodcast&show": false,
-      "isliked": false
+      "isliked": false,
+      "lyrics": ""
     }
   ]
 }
