@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from 'components/Logo';
-import  Social  from 'components/SocialSection';
+import Social from 'components/SocialSection';
 import { Box } from '@mui/system';
 import { FormSection } from './form';
 import './styles/style.css';
@@ -19,9 +19,11 @@ export default function SignUp() {
             }}>
             <Logo title="Signup an account " />
             <FormSection />
-            <Social  divName='Already have an account?'
-                buttonName=' Login' 
-                linkTo='/login'/>
+            <Social
+                divName="Already have an account?"
+                buttonName=" Login"
+                linkTo="/login"
+            />
         </Box>
     );
 }
