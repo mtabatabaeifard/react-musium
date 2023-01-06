@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { useTheme } from '@emotion/react';
 import { useState } from 'react';
 
-export function LyricsDrawer() {
+export function LyricsDrawer(name) {
     const theme = useTheme();
     const [drawerState, setDrawerState] = useState(false);
 
@@ -27,6 +27,615 @@ export function LyricsDrawer() {
                 setDrawerState(false);
             }
         }
+    };
+
+    const lyricses = () => {
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        if (name === 'swim') {
+            return `I bet you feel it now, baby
+                Especially since we've only known each other one day
+                But, I've gotta work shit out, baby
+                I'm exercising demons, got 'em runnin' 'round the block now
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Pop a couple pills in the daytime
+                Heard you got a friend, what's her head like?
+                Probably should've fucked on the first night
+                Now I gotta wait for the green light
+                I don't wanna wait for no green light
+                Narcolepsy got me feeling stage fright
+                Luckily I float at insane heights
+                Luckily, luckily, luckily, yeah
+                Location drop, now
+                Pedal to the floor like you're runnin' from the cops now
+                Oh, what a cop out
+                You picked a dance with the devil and you lucked out
+                Yeah
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim
+                Swim, push the water to the edge and watch it drip
+                Check your footing, don't get caught up in the rip, no
+                I know I said I'd call, I never did, no
+                (Swim) swim, swim now
+                I can take you, even though I've never been there
+                The tide has currently been thrashing around me again and again now
+                I've been drowning for a minute, your body keeps pulling me in, girl
+                The water's getting colder, let me in your ocean, swim
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, 'specially when I'm smoking, swim
+                World is on my shoulders, keep your body open, swim
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                I'm swimming, I'm swimming, I'm swimming, yeah
+                Out in California, I'll be forward stroking, swim
+                So hard to ignore ya, keep your body open, swim`;
+        }
+        return null;
     };
 
     const drawerS = {
@@ -58,14 +667,7 @@ export function LyricsDrawer() {
 
     return (
         <Box p={25 / 8} sx={drawerS}>
-            {/* {lyrics} */}
-            You never look at the sky <br />
-            Cause you think it's too high <br />
-            You never look at the stars <br />
-            Cause you think they're too far <br />
-            But they're showing the lights <br />
-            to the way back home <br />
-            When you don't know where to go
+            {lyricses}
         </Box>
     );
 }

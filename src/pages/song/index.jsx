@@ -11,7 +11,7 @@ function SongPage() {
 
     const music = data.songs;
     const choseMusic = music.filter((track) => track.id === idValue)[0];
-    const { source, img, name, artist, lyrics, isliked } = choseMusic;
+    const { source, img, name, artist, isliked } = choseMusic;
     // const { playlist } = choseMusic;
 
     const mainBoxS = {
@@ -134,7 +134,7 @@ function SongPage() {
                 </svg>
             </IconButton>
             <Typography sx={lyricsTypo}>LYRICS</Typography>
-            <LyricsDrawer lyrics={lyrics} />
+            <LyricsDrawer name={name} />
         </Box>
     );
 }
