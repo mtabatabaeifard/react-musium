@@ -5,10 +5,10 @@ import theme from 'theme';
 
 export default function Header() {
     const navigate = useNavigate();
-    const handelGoToSetting =()=>{
-        const path = "/setting"
-        navigate(path)
-      };
+    const handelGoToSetting = () => {
+        const path = '/setting';
+        navigate(path);
+    };
     const stylebtn = {
         button: {
             color: 'common.white',
