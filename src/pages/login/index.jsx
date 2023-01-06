@@ -20,9 +20,11 @@ export default function Login() {
             }}>
             <Logo title="Login to your account" />
             <FormSection />
-            <Social divName='Don’t have an account?'
-                buttonName=' Sign Up' 
-                linkTo='/signup'/>
+            <Social
+                divName="Don’t have an account?"
+                buttonName=" Sign Up"
+                linkTo="/signup"
+            />
         </Box>
     );
 }
