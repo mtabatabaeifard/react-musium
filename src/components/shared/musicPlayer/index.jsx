@@ -32,6 +32,24 @@ export function MusicPlayerSlider({
         setPosition(e.target.value);
     };
 
+    const randomIdValue = Math.floor(Math.random() * (10 - 0 + 1)) + 0;
+
+    const randomIdGenerator = () => {
+        if (randomIdValue !== idValue) {
+            setIdValue(randomIdValue);
+        } else if (
+            randomIdValue === idValue &&
+            randomIdValue !== 10 &&
+            randomIdValue !== 0
+        ) {
+            setIdValue(randomIdValue + 1);
+        } else if (randomIdValue === idValue && randomIdValue === 10) {
+            setIdValue(randomIdValue - 1);
+        } else if (randomIdValue === idValue && randomIdValue === 0) {
+            setIdValue(randomIdValue + 1);
+        }
+    };
+
     const play = () => {
         if (!isPlaying) {
             setIsPlaying(true);
@@ -65,6 +83,8 @@ export function MusicPlayerSlider({
                 } else {
                     setIdValue(0);
                 }
+            } else if (shuffle) {
+                randomIdGenerator();
             }
         }
         const percent = (
@@ -82,6 +102,50 @@ export function MusicPlayerSlider({
         const secondLeft = value - minute * 60;
         return `${minute}:${secondLeft < 10 ? `0${secondLeft}` : secondLeft}`;
     }
+
+    const songNextPrevState = () => {
+        let pauseState = false;
+        if (audio.paused) {
+            pauseState = true;
+        } else {
+            pauseState = false;
+        }
+        audio.pause();
+        setTimeout(() => {
+            audio.currentTime = 0;
+            if (!pauseState) {
+                audio.play();
+                setIsPlaying(true);
+            }
+        }, 100);
+        setIsPlaying(false);
+    };
+
+    const nextSong = () => {
+        songNextPrevState();
+        if (!shuffle) {
+            if (idValue !== 10) {
+                setIdValue(idValue + 1);
+            } else {
+                setIdValue(0);
+            }
+        } else if (shuffle) {
+            randomIdGenerator();
+        }
+    };
+
+    const prevSong = () => {
+        songNextPrevState();
+        if (!shuffle) {
+            if (idValue !== 0) {
+                setIdValue(idValue - 1);
+            } else {
+                setIdValue(10);
+            }
+        } else if (shuffle) {
+            randomIdGenerator();
+        }
+    };
 
     const sliderS = {
         mx: 1.8,
@@ -265,32 +329,7 @@ export function MusicPlayerSlider({
                         />
                     </svg>
                 </IconButton>
-                <IconButton
-                    aria-label="previous song"
-                    onClick={() => {
-                        let pauseState = false;
-                        if (audio.paused) {
-                            pauseState = true;
-                        } else {
-                            pauseState = false;
-                        }
-                        audio.pause();
-                        setTimeout(() => {
-                            audio.currentTime = 0;
-                            if (!pauseState) {
-                                audio.play();
-                                setIsPlaying(true);
-                            }
-                        }, 100);
-                        setIsPlaying(false);
-                        if (!shuffle) {
-                            if (idValue !== 0) {
-                                setIdValue(idValue - 1);
-                            } else {
-                                setIdValue(10);
-                            }
-                        }
-                    }}>
+                <IconButton aria-label="previous song" onClick={prevSong}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="17"
@@ -344,32 +383,7 @@ export function MusicPlayerSlider({
                         </svg>
                     )}
                 </IconButton>
-                <IconButton
-                    aria-label="next song"
-                    onClick={() => {
-                        let pauseState = false;
-                        if (audio.paused) {
-                            pauseState = true;
-                        } else {
-                            pauseState = false;
-                        }
-                        audio.pause();
-                        setTimeout(() => {
-                            audio.currentTime = 0;
-                            if (!pauseState) {
-                                audio.play();
-                                setIsPlaying(true);
-                            }
-                        }, 100);
-                        setIsPlaying(false);
-                        if (!shuffle) {
-                            if (idValue !== 10) {
-                                setIdValue(idValue + 1);
-                            } else {
-                                setIdValue(0);
-                            }
-                        }
-                    }}>
+                <IconButton aria-label="next song" onClick={nextSong}>
                     <svg
                         width="17"
                         height="20"
