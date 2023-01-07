@@ -27,17 +27,12 @@ function TabPanel(props) {
         </Typography>
     );
 }
-
 TabPanel.propTypes = {
     // eslint-disable-next-line react/require-default-props
     children: PropTypes.node,
     index: PropTypes.number.isRequired,
     value: PropTypes.number.isRequired,
 };
-[tracksData].map((item) => {
-    // eslint-disable-next-line no-console
-    return console.log(item);
-});
 function a11yProps(index) {
     return {
         id: `action-tab-${index}`,
@@ -141,114 +136,42 @@ export function FloatingStats() {
                 </Tabs>
             </AppBar>
 
-            {fabs.map((fab, index) => (
-                <Zoom
-                    color="#39C0D4"
-                    in={value === index}
-                    timeout={transitionDuration}
-                    style={{
-                        transitionDelay: `${
-                            value === index ? transitionDuration.exit : 0
-                        }ms`,
-                    }}
-                    unmountOnExit>
-                    <Box
-                        className="tracksCart"
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '18px',
-                            pt: '25px',
-                            maxHeight: '800px',
-                            overflowY: 'scroll',
-                        }}>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#1"
-                                trackArtist="swim"
-                                trackName="Chase Atlantic"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#2"
-                                trackArtist="Time"
-                                trackName="Nf"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#3"
-                                trackArtist="Movies"
-                                trackName="Conan Gray"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#4"
-                                trackArtist="lowkey"
-                                trackName="NIKI"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#5"
-                                trackArtist="Hurt"
-                                trackName="NewJeans"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#6"
-                                trackArtist="aespa"
-                                trackName="ILLUSION"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#7"
-                                trackArtist="BLACKPINK"
-                                trackName="Pink venom"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#8"
-                                trackArtist="Hurt"
-                                trackName="moods"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#8"
-                                trackArtist="Hurt"
-                                trackName="moods"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#8"
-                                trackArtist="Hurt"
-                                trackName="moods"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#8"
-                                trackArtist="Hurt"
-                                trackName="moods"
-                            />
-                        </Link>
-                        <Link to="/song">
-                            <StatsCart
-                                number="#8"
-                                trackArtist="Hurt"
-                                trackName="moods"
-                            />
-                        </Link>
-                    </Box>
-                </Zoom>
-            ))}
+            {fabs.map((fab, index) => {
+                return (
+                    <Zoom
+                        color="#39C0D4"
+                        in={value === index}
+                        timeout={transitionDuration}
+                        style={{
+                            transitionDelay: `${
+                                value === index ? transitionDuration.exit : 0
+                            }ms`,
+                        }}
+                        unmountOnExit>
+                        <Box
+                            className="tracksCart"
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '18px',
+                                pt: '25px',
+                                maxHeight: '800px',
+                                overflowY: 'scroll',
+                            }}>
+                            {tracksData.songs.map((item) => (
+                                <Link to="/song">
+                                    <StatsCart
+                                        number={item.id}
+                                        id={item.id}
+                                        trackName={item.name}
+                                        artistName={item.artist}
+                                    />
+                                </Link>
+                            ))}
+                        </Box>
+                    </Zoom>
+                );
+            })}
         </Box>
     );
 }
