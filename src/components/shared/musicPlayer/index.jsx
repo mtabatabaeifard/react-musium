@@ -44,8 +44,20 @@ export function MusicPlayerSlider({
 
     const getCurrDuration = (e) => {
         if (currentTime === duration) {
-            audio.currentTime = 0;
-            setIsPlaying(false);
+            let pauseState = false;
+            if (audio.paused) {
+                pauseState = true;
+            } else {
+                pauseState = false;
+            }
+            audio.pause();
+            setTimeout(() => {
+                audio.currentTime = 0;
+                if (!pauseState) {
+                    audio.play();
+                    setIsPlaying(true);
+                }
+            }, 100);
             if (idValue !== 10) {
                 setIdValue(idValue + 1);
             } else {
@@ -243,6 +255,21 @@ export function MusicPlayerSlider({
                 <IconButton
                     aria-label="previous song"
                     onClick={() => {
+                        let pauseState = false;
+                        if (audio.paused) {
+                            pauseState = true;
+                        } else {
+                            pauseState = false;
+                        }
+                        audio.pause();
+                        setTimeout(() => {
+                            audio.currentTime = 0;
+                            if (!pauseState) {
+                                audio.play();
+                                setIsPlaying(true);
+                            }
+                        }, 100);
+                        setIsPlaying(false);
                         if (idValue !== 0) {
                             setIdValue(idValue - 1);
                         } else {
@@ -305,6 +332,21 @@ export function MusicPlayerSlider({
                 <IconButton
                     aria-label="next song"
                     onClick={() => {
+                        let pauseState = false;
+                        if (audio.paused) {
+                            pauseState = true;
+                        } else {
+                            pauseState = false;
+                        }
+                        audio.pause();
+                        setTimeout(() => {
+                            audio.currentTime = 0;
+                            if (!pauseState) {
+                                audio.play();
+                                setIsPlaying(true);
+                            }
+                        }, 100);
+                        setIsPlaying(false);
                         if (idValue !== 10) {
                             setIdValue(idValue + 1);
                         } else {
