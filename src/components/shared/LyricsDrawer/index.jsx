@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -28,6 +29,20 @@ export function LyricsDrawer() {
             }
         }
     };
+
+    // const lyricsObj = {
+    //     swim: '',
+    //     Time: '',
+    //     Movies: '',
+    //     lowkey: '',
+    //     Hurt: '',
+    //     ILLUSION: '',
+    //     BirdSetFree: '',
+    //     ASkyFullofStars: '',
+    //     JusttheTwoofUs: '',
+    //     ParandeyeMohajer: '',
+    //     BlindingLights: '',
+    // };
 
     const drawerS = {
         background: 'linear-gradient(180deg, #39C0D4 0%, #7CEEFF 100%)',
