@@ -36,7 +36,7 @@ export function StatsCart({ number, artistName, trackName }) {
                     width: '53px',
                     height: '52px',
                 }}>
-                <img src={tracksData.songs.icon}  alt="icon" />
+                <img src={tracksData.songs.icon} alt="icon" />
             </Box>
             <Box>
                 <Box
