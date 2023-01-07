@@ -1,6 +1,6 @@
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { LyricsDrawer, MusicPlayerSlider } from 'components';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import data from 'db/tracks.json';
 
@@ -8,6 +8,10 @@ function SongPage() {
     const theme = useTheme();
     const [idValue, setIdValue] = React.useState(0);
     const [like, setLike] = React.useState(false);
+
+    useEffect(() => {
+        setLike(false);
+    }, [idValue]);
 
     const music = data.songs;
     const choseMusic = music.filter((track) => track.id === idValue)[0];
