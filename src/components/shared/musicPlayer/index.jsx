@@ -27,6 +27,10 @@ export function MusicPlayerSlider({
     const audioRef = React.useRef();
     const audio = audioRef.current;
 
+    React.useEffect(() => {
+        localStorage.setItem('songID', idValue);
+    }, [idValue]);
+
     const onChange = (e) => {
         audio.currentTime = (audio.duration / 100) * e.target.value;
         setPosition(e.target.value);
