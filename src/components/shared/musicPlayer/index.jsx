@@ -18,9 +18,13 @@ export function MusicPlayerSlider({
     setIsPlaying,
 }) {
     const theme = useTheme();
-    const [position, setPosition] = React.useState(0);
+    const [position, setPosition] = React.useState(
+        localStorage.getItem('percent') || 0,
+    );
     const [duration, setDuration] = React.useState(0);
-    const [currentTime, setCurrentTime] = React.useState(0);
+    const [currentTime, setCurrentTime] = React.useState(
+        localStorage.getItem('currentTime') || 0,
+    );
     const [like, setLike] = React.useState(false);
     const [shuffle, setShuffle] = React.useState(false);
 
@@ -32,8 +36,10 @@ export function MusicPlayerSlider({
     // }
 
     React.useEffect(() => {
-        setLike(false);
         localStorage.setItem('songID', idValue);
+        localStorage.setItem('currentTime', 0);
+        localStorage.setItem('percent', 0);
+        setLike(false);
     }, [idValue]);
 
     const onChange = (e) => {
@@ -62,6 +68,7 @@ export function MusicPlayerSlider({
     const play = () => {
         if (!isPlaying) {
             setIsPlaying(true);
+            audio.currentTime = currentTime;
             audio.play();
         }
         if (isPlaying) {
@@ -71,6 +78,7 @@ export function MusicPlayerSlider({
     };
 
     const getCurrDuration = (e) => {
+        localStorage.setItem('currentTime', currentTime);
         if (currentTime === duration) {
             let pauseState = false;
             if (audio.paused) {
@@ -103,6 +111,7 @@ export function MusicPlayerSlider({
         const time = e.currentTarget.currentTime;
 
         setPosition(+percent);
+        localStorage.setItem('percent', +percent);
         setCurrentTime(time.toFixed(0));
     };
 
