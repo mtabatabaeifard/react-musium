@@ -11,23 +11,28 @@ import { Link } from 'react-router-dom';
 export function MusicPlayerSlider({
     idValue,
     setIdValue,
-    like,
-    setLike,
     source,
     name,
     artist,
+    isPlaying,
+    setIsPlaying,
 }) {
     const theme = useTheme();
     const [position, setPosition] = React.useState(0);
-    const [isPlaying, setIsPlaying] = React.useState(false);
     const [duration, setDuration] = React.useState(0);
     const [currentTime, setCurrentTime] = React.useState(0);
+    const [like, setLike] = React.useState(false);
     const [shuffle, setShuffle] = React.useState(false);
 
     const audioRef = React.useRef();
     const audio = audioRef.current;
 
+    // if (isPlaying) {
+    //     audio.play();
+    // }
+
     React.useEffect(() => {
+        setLike(false);
         localStorage.setItem('songID', idValue);
     }, [idValue]);
 
