@@ -144,7 +144,7 @@ function SongPage() {
             </a>
 
             <Typography sx={lyricsTypo}>LYRICS</Typography>
-            <LyricsDrawer name={name} />
+            <LyricsDrawer />
         </Box>
     );
 }
