@@ -19,11 +19,11 @@ import { useNavigate } from 'react-router-dom';
 import { loginServices } from 'api/services/login';
 import { toast } from 'react-toastify';
 import { useCookies } from 'react-cookie';
-import { userInfoServices } from 'api/services/userInfo';
+// import { userInfoServices } from 'api/services/userInfo';
 
 
 export function FormSection() {
-    const userInfo = userInfoServices()
+    // const userInfo = userInfoServices()
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event) => {
@@ -57,8 +57,8 @@ export function FormSection() {
                 });
                 // const userInfo = userInfoServices()
                 // console.log(userInfo.dat);
-                localStorage.setItem('headerName', userInfo.data.given_name);
-                localStorage.setItem('headerPicture', userInfo.data.picture);
+                // localStorage.setItem('headerName', userInfo.data.given_name);
+                // localStorage.setItem('headerPicture', userInfo.data.picture);
                 navigate('/home');
                 toast.success('Wellcome back')
             }
