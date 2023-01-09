@@ -8,13 +8,18 @@
       "date": "7/5/2017",
       "source": "https://dl.musicdel.ir/Music/1401/03/chase_atlantic_swim%20128.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "swim",
       "playlist": [],
-      "tags": ["alternativ","pop","2017"],
-      "genre": ["pop"],
+      "tags": [
+        "alternativ",
+        "pop",
+        "2017"
+      ],
+      "genre": [
+        "pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 1,
@@ -24,13 +29,19 @@
       "date": "30/7/2019",
       "source": "https://ts10.tarafdari.com/contents/user760078/content-sound/20-time.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "Time",
       "playlist": [],
-      "tags": ["NF","hipHop","Time","2019"],
-      "genre": ["hipHop"],
+      "tags": [
+        "NF",
+        "hipHop",
+        "Time",
+        "2019"
+      ],
+      "genre": [
+        "hipHop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 2,
@@ -40,13 +51,19 @@
       "date": "21/7/2022",
       "source": "https://dl.audiok.ir/dl/5/5/719/Conan%20Gray%20-%20Superache%20%282022%29/01%20-%20Movies.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "Movies",
       "playlist": [],
-      "tags": ["Conan Gray","Movies","Pop","2022"],
-      "genre": ["Pop"],
+      "tags": [
+        "Conan Gray",
+        "Movies",
+        "Pop",
+        "2022"
+      ],
+      "genre": [
+        "Pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 3,
@@ -56,13 +73,20 @@
       "date": "5/6/2019",
       "source": "https://dl.zaminmusic.com/500/mxyucLe9YE4.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "lowkey",
       "playlist": [],
-      "tags": ["niki","lowkey","R&B","neo-R&B","2019"],
-      "genre": ["R&B"],
+      "tags": [
+        "niki",
+        "lowkey",
+        "R&B",
+        "neo-R&B",
+        "2019"
+      ],
+      "genre": [
+        "R&B"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 4,
@@ -72,13 +96,19 @@
       "date": "1/8/2022",
       "source": "https://dls.bts-music.ir/Day1401/2022/NewJeans%20-%20OMG[bts-music.ir].mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "Hurt",
       "playlist": [],
-      "tags": ["Hurt","New Jeans","k-pop","2022"],
-      "genre": ["k-pop"],
+      "tags": [
+        "Hurt",
+        "New Jeans",
+        "k-pop",
+        "2022"
+      ],
+      "genre": [
+        "k-pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 5,
@@ -88,13 +118,21 @@
       "date": "2/6/2022",
       "source": "https://dl.datmusic.ir/1401/03/Music/Korean/aespa/%5BDatMusic.IR%20%5D%20aespa%20-%20Illusion.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "ILLUSION",
       "playlist": [],
-      "tags": ["ILLUSION","aespa","Korean","pop"],
-      "genre": ["Korean Dance", "K-Pop","2022"],
+      "tags": [
+        "ILLUSION",
+        "aespa",
+        "Korean",
+        "pop"
+      ],
+      "genre": [
+        "Korean Dance",
+        "K-Pop",
+        "2022"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 6,
@@ -104,13 +142,19 @@
       "date": "29/1/2016",
       "source": "https://dl.behmelody.in/1400/Mehr/1.%20Sia%20-%20Bird%20Set%20Free%20%28128%29.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "BirdSetFree",
       "playlist": [],
-      "tags": ["BirdSetFree","sia","pop","2016"],
-      "genre": ["pop"],
+      "tags": [
+        "BirdSetFree",
+        "sia",
+        "pop",
+        "2016"
+      ],
+      "genre": [
+        "pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 7,
@@ -120,13 +164,22 @@
       "date": "2014",
       "source": "https://ts5.tarafdari.com/contents/user6984/content-sound/03_-_a_sky_full_of_stars.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "ASkyFullofStars",
       "playlist": [],
-      "tags": ["A Sky Full of Stars","ColdPlay","Alternative/Indie","Dance/Electronic","Pop"],
-      "genre": ["Alternative/Indie", "Dance/Electronic", "Pop"],
+      "tags": [
+        "A Sky Full of Stars",
+        "ColdPlay",
+        "Alternative/Indie",
+        "Dance/Electronic",
+        "Pop"
+      ],
+      "genre": [
+        "Alternative/Indie",
+        "Dance/Electronic",
+        "Pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 8,
@@ -136,13 +189,21 @@
       "date": "1980",
       "source": "https://ts7.tarafdari.com/contents/user713507/content-sound/bill_withers_-_just_the_two_of_us.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "JusttheTwoofUs",
       "playlist": [],
-      "tags": ["JustTheTwoOfUs","Bill Withers","Nostalgia"],
-      "genre": ["Jazz", "Soul", "Rhythm" ,"blues"],
+      "tags": [
+        "JustTheTwoOfUs",
+        "Bill Withers",
+        "Nostalgia"
+      ],
+      "genre": [
+        "Jazz",
+        "Soul",
+        "Rhythm",
+        "blues"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 9,
@@ -152,13 +213,19 @@
       "date": "2008",
       "source": "https://xx.parla-music.ir/archive/S/Siavash%20Ghomayshi/Siavash%20Ghomayshi%20-%20Ragbaar/05%20Parandeye%20Mohajer.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "ParandeyeMohajer",
       "playlist": [],
-      "tags": ["SiavashGhomayshi","parandeMohajer","2008","Ragbar"],
-      "genre": ["Pop"],
+      "tags": [
+        "SiavashGhomayshi",
+        "parandeMohajer",
+        "2008",
+        "Ragbar"
+      ],
+      "genre": [
+        "Pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     },
     {
       "id": 10,
@@ -168,13 +235,19 @@
       "date": "2019",
       "source": "https://dl.musicdel.ir/Music/1400/05/the_weeknd_blinding_lights%20128.mp3",
       "img": "https://i.scdn.co/image/ab67616d0000b2735a0c2870f4f309e382d1fad6",
-      "icon": "",
+      "keyvalue": "BlindingLights",
       "playlist": [],
-      "tags": ["Blinding Lights","TheWeeknd"],
-      "genre": [ "R&B/Soul", "Synthwave", "Pop"],
+      "tags": [
+        "Blinding Lights",
+        "TheWeeknd"
+      ],
+      "genre": [
+        "R&B/Soul",
+        "Synthwave",
+        "Pop"
+      ],
       "ispodcast&show": false,
-      "isliked": false,
-      "lyrics": ""
+      "isliked": false
     }
   ]
 }
