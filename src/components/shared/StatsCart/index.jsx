@@ -1,9 +1,8 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
-import tracksData from '../../../db/tracks.json';
 // eslint-disable-next-line react/prop-types
-export function StatsCart({ number, artistName, trackName }) {
+export function StatsCart({ number, artistName, trackName, img }) {
     const theme = useTheme();
     return (
         <Box
@@ -31,13 +30,13 @@ export function StatsCart({ number, artistName, trackName }) {
                 }}>
                 {number}
             </Box>
-            <Box
-                sx={{
-                    width: '53px',
-                    height: '52px',
-                }}>
-                <img src={tracksData.songs.icon} alt="icon" />
-            </Box>
+
+            <img
+                style={{ width: '53px', height: '52px' }}
+                src={img}
+                alt="icon"
+            />
+
             <Box>
                 <Box
                     sx={{

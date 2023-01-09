@@ -161,10 +161,12 @@ export function FloatingStats() {
                             {tracksData.songs.map((item) => (
                                 <Link to="/song">
                                     <StatsCart
+                                
                                         number={item.id}
                                         id={item.id}
                                         trackName={item.name}
                                         artistName={item.artist}
+                                        img={item.img}
                                     />
                                 </Link>
                             ))}
