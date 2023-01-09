@@ -19,8 +19,11 @@ import { useNavigate } from 'react-router-dom';
 import { loginServices } from 'api/services/login';
 import { toast } from 'react-toastify';
 import { useCookies } from 'react-cookie';
+import { userInfoServices } from 'api/services/userInfo';
+
 
 export function FormSection() {
+    const userInfo = userInfoServices()
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event) => {
@@ -35,10 +38,10 @@ export function FormSection() {
     function isValidEmail(email) {
         return /\S+@\S+\.\S+/.test(email);
     }
-    const [cookies, setCookies] = useCookies('token');
+    const [cookies, setCookies] = useCookies(['accessToken']);
     const navigate = useNavigate();
     useEffect(() => {
-        if (cookies?.token) {
+        if (cookies?.accessToken) {
             navigate('/home')
         }
     }, []);
@@ -49,9 +52,13 @@ export function FormSection() {
             setLoder(true);
             try {
                 const res = await loginServices(form);
-                setCookies('token', res?.data?.token, {
+                setCookies('accessToken', res?.data?.token, {
                     maxAge: 24 * 24 * 24 * 60
                 });
+                // const userInfo = userInfoServices()
+                // console.log(userInfo.dat);
+                localStorage.setItem('headerName', userInfo.data.given_name);
+                localStorage.setItem('headerPicture', userInfo.data.picture);
                 navigate('/home');
                 toast.success('Wellcome back')
             }
