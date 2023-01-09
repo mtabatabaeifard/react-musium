@@ -11,11 +11,14 @@ import { Button } from 'components/shared/Button';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/style.css';
 import { CheckBoxButton } from 'components/shared/CheckBoxButton';
 import { Link } from 'components';
 import { useNavigate } from 'react-router-dom';
+import { loginServices } from 'api/services/login';
+import { toast } from 'react-toastify';
+import { useCookies } from 'react-cookie';
 
 export function FormSection() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -32,17 +35,33 @@ export function FormSection() {
     function isValidEmail(email) {
         return /\S+@\S+\.\S+/.test(email);
     }
+    const [cookies, setCookies] = useCookies('token');
     const navigate = useNavigate();
-    const handelLogin = (e) => {
+    useEffect(() => {
+        if (cookies?.token) {
+            navigate('/home')
+        }
+    }, []);
+    const handelLogin = async (e) => {
         e.preventDefault();
         if (!isValidEmail(form.email)) setemailError(true);
         else {
             setLoder(true);
+            try {
+                const res = await loginServices(form);
+                setCookies('token', res?.data?.token, {
+                    maxAge: 24 * 24 * 24 * 60
+                });
+                navigate('/home');
+                toast.success('Wellcome back')
+            }
+            catch (ex) {
+                toast.error(ex?.response?.data?.error)
+            }
             setTimeout(() => {
                 setLoder(false);
-                const path = `/home`;
-                navigate(path);
             }, 2000);
+
         }
     };
     const [emailState, setEmailState] = useState(false);
