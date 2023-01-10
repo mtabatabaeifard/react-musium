@@ -1,10 +1,14 @@
-import { Alert, Typography } from '@mui/material';
+import { Alert, CircularProgress, Typography } from '@mui/material';
 import { Box, useTheme } from '@mui/system';
 import { Button, Link, TextField } from 'components';
 import React, { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export function FirstFormSection() {
+    const [loder, setLoder] = useState(false);
+    const [cookies] = useCookies();
     const theme = useTheme();
     const [resendCode, setResendCode] = useState(false);
     const [varify, setVarify] = useState('');
@@ -17,12 +21,28 @@ export function FirstFormSection() {
     const navigate = useNavigate();
     const handelLinkTOReset = (e) => {
         e.preventDefault();
-        const path = `/new-password`;
-        navigate(path);
+        if (cookies?.forgotPasswordToken) {
+            setLoder(true);
+            setTimeout(() => {
+                setLoder(false);
+                const path = `/reset-Password`;
+                navigate(path);
+            }, 1500);
+        }
+        if (cookies?.singupToken) {
+            setLoder(true);
+            setTimeout(() => {
+                setLoder(false);
+                toast.success('Welcome to Musium');
+                const path = `/home`;
+                navigate(path);
+            }, 3000);
+        }
+        // else toast.error('varify code is wrong')
     };
     const email = JSON.parse(localStorage.getItem('email'));
 
-    useEffect(() => {}, [resendCode]);
+    useEffect(() => { }, [resendCode]);
 
     return (
         <Box height="100%">
@@ -37,7 +57,14 @@ export function FirstFormSection() {
                 textAlign="center">
                 <p> Enter the OTP sent to {email}</p>
             </Box>
-            <Box
+            {loder ? (
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    paddingBottom="5rem">
+                    <CircularProgress />{' '}
+                </Box>
+            ) : <Box
                 display="flex"
                 alignItems="center"
                 flexDirection="column"
@@ -87,7 +114,7 @@ export function FirstFormSection() {
                         resend
                     </Button>
                 </Box>
-            </Box>
+            </Box>}
             <Box display="flex" justifyContent="center" pt={5}>
                 <Link style={{ color: 'transparent' }} to="/Reset-password">
                     <Button onClick={varify ? handelLinkTOReset : emptyEntry}>
