@@ -159,9 +159,20 @@ export function FloatingStats() {
                                 overflowY: 'scroll',
                             }}>
                             {tracksData.songs.map((item) => (
-                                <Link to="/song">
+                                <Link
+                                    to="/song"
+                                    onClick={() => {
+                                        localStorage.setItem(
+                                            'songID',
+                                            JSON.stringify(item.id),
+                                        );
+                                        localStorage.setItem(
+                                            'notResetCurrTime',
+                                            false,
+                                        );
+                                    }}>
                                     <StatsCart
-                                        number={item.id}
+                                        number={`#${item.id}`}
                                         id={item.id}
                                         trackName={item.name}
                                         artistName={item.artist}

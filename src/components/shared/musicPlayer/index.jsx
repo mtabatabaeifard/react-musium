@@ -11,21 +11,37 @@ import { Link } from 'react-router-dom';
 export function MusicPlayerSlider({
     idValue,
     setIdValue,
-    like,
-    setLike,
     source,
     name,
     artist,
+    isPlaying,
+    setIsPlaying,
 }) {
     const theme = useTheme();
-    const [position, setPosition] = React.useState(0);
-    const [isPlaying, setIsPlaying] = React.useState(false);
+    const [position, setPosition] = React.useState(
+        localStorage.getItem('percent') || 0,
+    );
     const [duration, setDuration] = React.useState(0);
-    const [currentTime, setCurrentTime] = React.useState(0);
+    const [currentTime, setCurrentTime] = React.useState(
+        localStorage.getItem('currentTime') || 0,
+    );
+    const [like, setLike] = React.useState(false);
     const [shuffle, setShuffle] = React.useState(false);
 
     const audioRef = React.useRef();
     const audio = audioRef.current;
+
+    React.useEffect(() => {
+        if (localStorage.getItem('notResetCurrTime') === 'false') {
+            localStorage.setItem('songID', idValue);
+            localStorage.setItem('currentTime', 0);
+            localStorage.setItem('percent', 0);
+            setCurrentTime(localStorage.getItem('currentTime'));
+            setPosition(localStorage.getItem('percent'));
+        }
+        localStorage.setItem('notResetCurrTime', true);
+        setLike(false);
+    }, [idValue]);
 
     const onChange = (e) => {
         audio.currentTime = (audio.duration / 100) * e.target.value;
@@ -53,6 +69,7 @@ export function MusicPlayerSlider({
     const play = () => {
         if (!isPlaying) {
             setIsPlaying(true);
+            audio.currentTime = currentTime;
             audio.play();
         }
         if (isPlaying) {
@@ -62,6 +79,7 @@ export function MusicPlayerSlider({
     };
 
     const getCurrDuration = (e) => {
+        localStorage.setItem('currentTime', currentTime);
         if (currentTime === duration) {
             let pauseState = false;
             if (audio.paused) {
@@ -76,7 +94,7 @@ export function MusicPlayerSlider({
                     audio.play();
                     setIsPlaying(true);
                 }
-            }, 100);
+            }, 1);
             if (!shuffle) {
                 if (idValue !== 10) {
                     setIdValue(idValue + 1);
@@ -94,6 +112,7 @@ export function MusicPlayerSlider({
         const time = e.currentTarget.currentTime;
 
         setPosition(+percent);
+        localStorage.setItem('percent', +percent);
         setCurrentTime(time.toFixed(0));
     };
 
@@ -117,7 +136,7 @@ export function MusicPlayerSlider({
                 audio.play();
                 setIsPlaying(true);
             }
-        }, 100);
+        }, 1);
         setIsPlaying(false);
     };
 
