@@ -1,17 +1,22 @@
+/* eslint-disable react/prop-types */
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { LyricsDrawer, MusicPlayerSlider } from 'components';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import data from 'db/tracks.json';
 
 function SongPage() {
     const theme = useTheme();
-    const [idValue, setIdValue] = React.useState(0);
-    const [like, setLike] = React.useState(false);
+    const [isPlaying, setIsPlaying] = React.useState(false);
+    const [idValue, setIdValue] = React.useState(
+        JSON.parse(localStorage.getItem('songID')) || 0,
+    );
 
-    useEffect(() => {
-        setLike(false);
-    }, [idValue]);
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setIsPlaying(true);
+    //     }, 1000);
+    // }, []);
 
     const music = data.songs;
     const choseMusic = music.filter((track) => track.id === idValue)[0];
@@ -119,8 +124,8 @@ function SongPage() {
                 artist={artist}
                 source={source}
                 isliked={isliked}
-                like={like}
-                setLike={setLike}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
             />
             <a href={source}>
                 <IconButton
@@ -141,7 +146,7 @@ function SongPage() {
             </a>
 
             <Typography sx={lyricsTypo}>LYRICS</Typography>
-            <LyricsDrawer name={name} />
+            <LyricsDrawer />
         </Box>
     );
 }
