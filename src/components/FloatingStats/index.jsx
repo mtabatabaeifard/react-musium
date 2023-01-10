@@ -161,12 +161,16 @@ export function FloatingStats() {
                             {tracksData.songs.map((item) => (
                                 <Link
                                     to="/song"
-                                    onClick={() =>
+                                    onClick={() => {
                                         localStorage.setItem(
                                             'songID',
                                             JSON.stringify(item.id),
-                                        )
-                                    }>
+                                        );
+                                        localStorage.setItem(
+                                            'notResetCurrTime',
+                                            false,
+                                        );
+                                    }}>
                                     <StatsCart
                                         number={`#${item.id}`}
                                         id={item.id}
