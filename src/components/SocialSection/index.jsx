@@ -8,7 +8,7 @@ import appleLogo from 'assets/images/SignInLogos/apple-icon.svg';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 import { toast } from 'react-toastify';
 
@@ -82,7 +82,6 @@ export default function Social({ divName, buttonName, linkTo }) {
         },
     });
 
- 
     return (
         <Box pt={4.5}>
             <p className="title">or continue with</p>
