@@ -42,7 +42,7 @@ export function FirstFormSection() {
     };
     const email = JSON.parse(localStorage.getItem('email'));
 
-    useEffect(() => { }, [resendCode]);
+    useEffect(() => {}, [resendCode]);
 
     return (
         <Box height="100%">
@@ -64,57 +64,59 @@ export function FirstFormSection() {
                     paddingBottom="5rem">
                     <CircularProgress />{' '}
                 </Box>
-            ) : <Box
-                display="flex"
-                alignItems="center"
-                flexDirection="column"
-                gap={4}>
-                <TextField
-                    placeholder=" Enter varify code"
-                    InputProps={{
-                        style: {
-                            fontSize: '1.6rem',
-                            height: '100%',
-                        },
-                    }}
-                    id="varify"
-                    maxRows={6}
-                    onChange={(e) => {
-                        setVarifyState(false);
-                        setVarify(e.target.value);
-                    }}
-                />
-                {varifyState && (
-                    <Alert
-                        severity="error"
-                        sx={{ width: '80%', fontSize: '1.2rem' }}>
-                        {' '}
-                        Enter varify code
-                    </Alert>
-                )}
-                <Box display="flex" alignItems="start">
-                    <Typography
-                        sx={{
-                            fontSize: '1.4rem',
-                            color: theme.palette.primary.main,
-                        }}>
-                        Didnt get the varify code?
-                    </Typography>
-                    <Button
-                        sx={{
-                            color: theme.palette.primary.main,
-                            backgroundColor: 'trasnsparent',
-                            textDecoration: 'underline',
-                            '&:hover': {
-                                backgroundColor: 'trasnsparent !important',
-                                textDecoration: 'underline',
+            ) : (
+                <Box
+                    display="flex"
+                    alignItems="center"
+                    flexDirection="column"
+                    gap={4}>
+                    <TextField
+                        placeholder=" Enter varify code"
+                        InputProps={{
+                            style: {
+                                fontSize: '1.6rem',
+                                height: '100%',
                             },
                         }}
-                        onClick={() => setResendCode(true)}>
-                        resend
-                    </Button>
+                        id="varify"
+                        maxRows={6}
+                        onChange={(e) => {
+                            setVarifyState(false);
+                            setVarify(e.target.value);
+                        }}
+                    />
+                    {varifyState && (
+                        <Alert
+                            severity="error"
+                            sx={{ width: '80%', fontSize: '1.2rem' }}>
+                            {' '}
+                            Enter varify code
+                        </Alert>
+                    )}
+                    <Box display="flex" alignItems="start">
+                        <Typography
+                            sx={{
+                                fontSize: '1.4rem',
+                                color: theme.palette.primary.main,
+                            }}>
+                            Didnt get the varify code?
+                        </Typography>
+                        <Button
+                            sx={{
+                                color: theme.palette.primary.main,
+                                backgroundColor: 'trasnsparent',
+                                textDecoration: 'underline',
+                                '&:hover': {
+                                    backgroundColor: 'trasnsparent !important',
+                                    textDecoration: 'underline',
+                                },
+                            }}
+                            onClick={() => setResendCode(true)}>
+                            resend
+                        </Button>
+                    </Box>
                 </Box>
-            </Box>}
+            )}
             <Box display="flex" justifyContent="center" pt={5}>
                 <Link style={{ color: 'transparent' }} to="/Reset-password">
                     <Button onClick={varify ? handelLinkTOReset : emptyEntry}>
