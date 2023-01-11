@@ -72,7 +72,7 @@ export function FormSection() {
             localStorage.setItem('email', JSON.stringify(form?.email));
             console.log(cookies);
             setCookies('singupToken', 'just for signUP', {
-                maxAge: 24 
+                maxAge: 24,
             });
             setLoder(true);
             setTimeout(() => {
