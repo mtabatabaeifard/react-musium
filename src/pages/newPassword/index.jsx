@@ -5,7 +5,7 @@ import { Box } from '@mui/system';
 import { FormSection } from './form';
 import './styles/style.css';
 
-export default function NewPassword() {
+export default function ResetPassword() {
     return (
         <Box
             sx={{

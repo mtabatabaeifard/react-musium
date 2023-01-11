@@ -7,10 +7,9 @@ import { Welcome } from 'pages/welcome';
 import { SignIn } from 'pages/signIn';
 import SignUp from 'pages/signup';
 import ForgotPassword from 'pages/forgotPassword';
-import ResetPassword from 'pages/ResetPassword';
 import PlayList from 'pages/PlayList';
 import Library from 'pages/Library';
-import NewPassword from 'pages/newPassword/singup';
+import Varify from 'pages/varify';
 import Folders from 'pages/Folders';
 import PlayLists from 'pages/Playlists';
 import Albums from 'pages/Albums';
@@ -19,6 +18,7 @@ import Artists from 'pages/Artists';
 import Search from 'pages/Search';
 import Folder from 'pages/Folder';
 import Setting from 'pages/Setting';
+import ResetPassword from 'pages/newPassword';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -69,9 +69,9 @@ export const routes = {
         path: '/library',
         element: <Library />,
     },
-    NewPassword: {
-        path: 'new-Password',
-        element: <NewPassword />,
+    Varify: {
+        path: 'varify',
+        element: <Varify />,
     },
     FOLDERS: {
         path: '/folders',

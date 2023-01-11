@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import IconButton from '@mui/material/IconButton';
 import PersonIcon from '@mui/icons-material/Person';
 import {
@@ -15,6 +16,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React, { useState } from 'react';
 import '../styles/style.css';
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 export function FormSection() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -41,6 +43,7 @@ export function FormSection() {
     const [passwordComparison, setPasswordComparison] = useState(false);
     const [loder, setLoder] = useState(false);
     const [passwordHave8Character, setpasswordHave8Character] = useState(false);
+    const [cookies, setCookies] = useCookies(['singupToken']);
     const inputField = (e) => {
         e.preventDefault();
         if (!form.password) setPasswordState(true);
@@ -66,10 +69,15 @@ export function FormSection() {
         else if (form.password !== form.confirmPassword)
             setPasswordComparison(true);
         else {
+            localStorage.setItem('email', JSON.stringify(form?.email));
+            console.log(cookies);
+            setCookies('singupToken', 'just for signUP', {
+                maxAge: 24,
+            });
             setLoder(true);
             setTimeout(() => {
                 setLoder(false);
-                const path = `/home`;
+                const path = `/varify`;
                 navigate(path);
             }, 3000);
         }
