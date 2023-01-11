@@ -7,11 +7,11 @@ export const BASE_INSTANCE = axios.create({
     timeout: 15000,
 });
 BASE_INSTANCE.interceptors.request.use(
-    function (config) {
+    function req(config) {
         // Do something before request is sent
         return config;
     },
-    function (error) {
+    function err(error) {
         // Do something with request error
         if (error.response?.data?.error === (500 || '500'))
             toast.error(error.response?.data?.error);
