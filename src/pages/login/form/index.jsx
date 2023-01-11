@@ -21,7 +21,6 @@ import { toast } from 'react-toastify';
 import { useCookies } from 'react-cookie';
 // import { userInfoServices } from 'api/services/userInfo';
 
-
 export function FormSection() {
     // const userInfo = userInfoServices()
     const [showPassword, setShowPassword] = React.useState(false);
@@ -42,7 +41,7 @@ export function FormSection() {
     const navigate = useNavigate();
     useEffect(() => {
         if (cookies?.accessToken) {
-            navigate('/home')
+            navigate('/home');
         }
     }, []);
     const handelLogin = async (e) => {
@@ -53,22 +52,20 @@ export function FormSection() {
             try {
                 const res = await loginServices(form);
                 setCookies('accessToken', res?.data?.token, {
-                    maxAge: 24 * 24 * 24 * 60
+                    maxAge: 24 * 24 * 24 * 60,
                 });
                 // const userInfo = userInfoServices()
                 // console.log(userInfo.dat);
                 // localStorage.setItem('headerName', userInfo.data.given_name);
                 // localStorage.setItem('headerPicture', userInfo.data.picture);
                 navigate('/home');
-                toast.success('Wellcome back')
-            }
-            catch (ex) {
-                toast.error(ex?.response?.data?.error)
+                toast.success('Wellcome back');
+            } catch (ex) {
+                toast.error(ex?.response?.data?.error);
             }
             setTimeout(() => {
                 setLoder(false);
             }, 2000);
-
         }
     };
     const [emailState, setEmailState] = useState(false);
