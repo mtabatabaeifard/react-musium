@@ -24,9 +24,9 @@ export function FormSection() {
         else {
             console.log(cookies);
             localStorage.setItem('email', JSON.stringify(email));
-            setCookies('forgotPasswordToken','just for forgotPassword',{
-                maxAge:24
-            })
+            setCookies('forgotPasswordToken', 'just for forgotPassword', {
+                maxAge: 24,
+            });
             const path = '/varify';
             navigate(path);
         }
