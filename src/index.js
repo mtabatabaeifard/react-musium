@@ -5,7 +5,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import theme from 'theme';
 import { ThemeProvider } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import App from './App';
 import './assets/fonts/font.css';
 import 'react-toastify/dist/ReactToastify.css';
