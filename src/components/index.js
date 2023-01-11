@@ -12,3 +12,6 @@ export * from 'components/Slider';
 export * from 'components/shared/Button';
 export * from 'pages/signIn/SignInButton';
 export * from 'components/shared/Link';
+export * from 'components/SearchBarExplor';
+export * from 'components/CardImgExplore';
+export * from 'components/CardImageExploretwo';

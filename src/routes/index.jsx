@@ -19,6 +19,7 @@ import Search from 'pages/Search';
 import Folder from 'pages/Folder';
 import Setting from 'pages/Setting';
 import ResetPassword from 'pages/newPassword';
+import ExplorPage from 'pages/explore';
 
 export const routes = {
     LAUNCHSCREEN: {
@@ -104,5 +105,9 @@ export const routes = {
     SETTING: {
         path: '/setting',
         element: <Setting />,
+    },
+    Explor: {
+        path: '/ExplorPage',
+        element: <ExplorPage />,
     },
 };
