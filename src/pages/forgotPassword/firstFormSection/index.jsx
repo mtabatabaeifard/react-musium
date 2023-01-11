@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Alert } from '@mui/material';
 import { Box } from '@mui/system';
 import { Button, TextField } from 'components';
