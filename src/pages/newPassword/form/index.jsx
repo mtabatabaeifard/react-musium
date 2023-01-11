@@ -51,7 +51,7 @@ export function FormSection() {
         else {
             setLoder(true);
             setTimeout(() => {
-                toast.success('Your password has been successfully changed')
+                toast.success('Your password has been successfully changed');
                 setLoder(true);
                 const path = `/login`;
                 navigate(path);
