@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import IconButton from '@mui/material/IconButton';
 import PersonIcon from '@mui/icons-material/Person';
 import {
