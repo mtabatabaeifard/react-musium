@@ -9,3 +9,6 @@ export * from 'components/shared/TitleCreator';
 export * from 'components/MusicCardHome';
 export * from 'components/SliderPictureCreator';
 export * from 'components/shared/Link';
+export * from 'components/SearchBarExplor';
+export * from 'components/CardImgExplore';
+export * from 'components/CardImageExploretwo';

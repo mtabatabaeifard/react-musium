@@ -1,10 +1,13 @@
+/* eslint-disable no-console */
 import { Alert } from '@mui/material';
 import { Box } from '@mui/system';
 import { Button, TextField } from 'components';
 import { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 
 export function FormSection() {
+    const [cookies, setCookies] = useCookies(['forgotPasswordToken']);
     const [email, setEmail] = useState('');
     const [emailState, setEmailState] = useState(false);
     const [emailError, setemailError] = useState(false);
@@ -20,8 +23,12 @@ export function FormSection() {
     const handelForgotPasssword = () => {
         if (!isValidEmail(email)) setemailError(true);
         else {
+            console.log(cookies);
             localStorage.setItem('email', JSON.stringify(email));
-            const path = '/reset-Password';
+            setCookies('forgotPasswordToken', 'just for forgotPassword', {
+                maxAge: 24,
+            });
+            const path = '/varify';
             navigate(path);
         }
     };
