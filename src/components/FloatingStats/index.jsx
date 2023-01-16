@@ -176,6 +176,7 @@ export function FloatingStats() {
                                         id={item.id}
                                         trackName={item.name}
                                         artistName={item.artist}
+                                        img={item.img}
                                     />
                                 </Link>
                             ))}
