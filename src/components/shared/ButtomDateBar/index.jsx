@@ -31,7 +31,11 @@ export function BottomDateBar() {
         setValue(newValue);
     };
     function filtredItems() {
-        findeReleaseDate();
+        const countDays = findeReleaseDate();
+        [countDays].map((item) => {
+            // eslint-disable-next-line no-console
+            return item;
+        });
     }
 
     return (
