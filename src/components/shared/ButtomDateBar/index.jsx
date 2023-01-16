@@ -59,6 +59,13 @@ export function BottomDateBar() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    function filtredItems() {
+        const countDays = findeReleaseDate();
+        [countDays].map((item) => {
+            // eslint-disable-next-line no-console
+            return item;
+        });
+    }
 
     return (
         <Box
