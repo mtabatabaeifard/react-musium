@@ -31,14 +31,15 @@ export function MusicPlayerSlider({
     const audioRef = React.useRef();
     const audio = audioRef.current;
 
-    // if (isPlaying) {
-    //     audio.play();
-    // }
-
     React.useEffect(() => {
-        localStorage.setItem('songID', idValue);
-        localStorage.setItem('currentTime', 0);
-        localStorage.setItem('percent', 0);
+        if (localStorage.getItem('notResetCurrTime') === 'false') {
+            localStorage.setItem('songID', idValue);
+            localStorage.setItem('currentTime', 0);
+            localStorage.setItem('percent', 0);
+            setCurrentTime(localStorage.getItem('currentTime'));
+            setPosition(localStorage.getItem('percent'));
+        }
+        localStorage.setItem('notResetCurrTime', true);
         setLike(false);
     }, [idValue]);
 
@@ -93,7 +94,7 @@ export function MusicPlayerSlider({
                     audio.play();
                     setIsPlaying(true);
                 }
-            }, 100);
+            }, 1);
             if (!shuffle) {
                 if (idValue !== 10) {
                     setIdValue(idValue + 1);
@@ -135,7 +136,7 @@ export function MusicPlayerSlider({
                 audio.play();
                 setIsPlaying(true);
             }
-        }, 100);
+        }, 1);
         setIsPlaying(false);
     };
 

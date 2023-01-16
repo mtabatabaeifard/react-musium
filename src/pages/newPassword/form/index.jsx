@@ -14,6 +14,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React, { useState } from 'react';
 import '../styles/style.css';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 export function FormSection() {
     const [showPassword, setShowPassword] = React.useState(false);
@@ -50,7 +51,8 @@ export function FormSection() {
         else {
             setLoder(true);
             setTimeout(() => {
-                setLoder(false);
+                toast.success('Your password has been successfully changed');
+                setLoder(true);
                 const path = `/login`;
                 navigate(path);
             }, 2000);
