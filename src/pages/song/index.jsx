@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Box, IconButton, Typography, useTheme } from '@mui/material';
 import { LyricsDrawer, MusicPlayerSlider } from 'components';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import data from 'db/tracks.json';
+import { useCookies } from 'react-cookie';
 
 function SongPage() {
     const theme = useTheme();
@@ -12,11 +13,14 @@ function SongPage() {
         JSON.parse(localStorage.getItem('songID')) || 0,
     );
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setIsPlaying(true);
-    //     }, 1000);
-    // }, []);
+    const navigate = useNavigate();
+    const [cookies] = useCookies();
+
+    useEffect(() => {
+        if (!cookies?.accessToken) {
+            navigate('/Welcome');
+        }
+    }, []);
 
     const music = data.songs;
     const choseMusic = music.filter((track) => track.id === idValue)[0];
