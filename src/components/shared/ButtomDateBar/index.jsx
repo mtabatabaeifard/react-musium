@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import findeReleaseDate from 'utils/releaseDate';
-import trackData from '../../../db/tracks.json';
 
 function LinkTab(props) {
     return (
@@ -25,10 +24,9 @@ function LinkTab(props) {
         />
     );
 }
-
 export function BottomDateBar() {
     const [value, setValue] = React.useState(0);
-
+    // const [listByDate, setListByDate] = React.useState('')
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
@@ -60,10 +58,14 @@ export function BottomDateBar() {
                 value={value}
                 onChange={handleChange}
                 aria-label="nav tabs example">
-                <LinkTab label="30 days" href="/drafts" />
-                <LinkTab label="6 Month" href="/trash" />
-                <LinkTab label="1 Year" href="/spam" />
-                <LinkTab label="Life Time" href="/spam" />
+                <LinkTab label="30 days" />
+                <LinkTab label="6 Month" />
+                <LinkTab label="1 Year" />
+                <LinkTab
+                    // eslint-disable-next-line no-console
+                    onClick={() => filtredItems()}
+                    label="Life Time"
+                />
             </Tabs>
         </Box>
     );
