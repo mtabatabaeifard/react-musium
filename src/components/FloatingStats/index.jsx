@@ -172,7 +172,7 @@ export function FloatingStats() {
                                         );
                                     }}>
                                     <StatsCart
-                                        number={item.id}
+                                        number={`#${item.id}`}
                                         id={item.id}
                                         trackName={item.name}
                                         artistName={item.artist}
