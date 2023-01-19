@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import findeReleaseDate from 'utils/releaseDate';
 import trackData from '../../../db/tracks.json';
 
 function LinkTab(props) {
@@ -24,37 +25,9 @@ function LinkTab(props) {
         />
     );
 }
-const tracksDate = trackData.songs.map((item) => {
-    const releaseDate = new Date(item.date);
-    const presentDate = new Date();
-    const difference = presentDate.getTime() - releaseDate.getTime();
-    return difference;
-});
-// eslint-disable-next-line no-console
 
 export function BottomDateBar() {
     const [value, setValue] = React.useState(0);
-    const [sort, setSort] = React.useState(0);
-
-    const handelSort = () => {
-        if (sort === 30) {
-            // eslint-disable-next-line no-console
-            console.log(30);
-        }
-        if (sort === 180) {
-            // eslint-disable-next-line no-console
-            console.log(180);
-        }
-        if (sort === 365) {
-            // eslint-disable-next-line no-console
-            console.log(365);
-        }
-        if (sort === '') {
-            // eslint-disable-next-line no-console
-            console.log('alltime');
-        }
-    };
-    handelSort();
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -87,14 +60,10 @@ export function BottomDateBar() {
                 value={value}
                 onChange={handleChange}
                 aria-label="nav tabs example">
-                <LinkTab onClick={() => setSort(30)} label="30 days" />
-                <LinkTab onClick={() => setSort(180)} label="6 Month" />
-                <LinkTab onClick={() => setSort(365)} label="1 Year" />
-                <LinkTab
-                    // eslint-disable-next-line no-console
-                    onClick={() => console.log(tracksDate)}
-                    label="sort by time"
-                />
+                <LinkTab label="30 days" href="/drafts" />
+                <LinkTab label="6 Month" href="/trash" />
+                <LinkTab label="1 Year" href="/spam" />
+                <LinkTab label="Life Time" href="/spam" />
             </Tabs>
         </Box>
     );
