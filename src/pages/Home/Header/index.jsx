@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { Button } from 'components';
-import { useLayoutEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import theme from 'theme';
 
@@ -50,7 +50,7 @@ export default function Header() {
     const [headerUsername, setHeaderUsername] = useState('');
     const [headerPicture, setHeaderPicture] = useState('');
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         setHeaderUsername(localStorage.getItem('headerName'));
         setHeaderPicture(localStorage.getItem('headerPicture'));
     }, []);

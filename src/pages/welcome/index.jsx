@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 import { Button } from 'components';
 import { Link } from 'react-router-dom';
-import { SwiperSlider } from '../../components/Slider';
+import { SwiperSlider } from './Slider';
 import circle from '../../assets/images/Welcome/Ellipse.svg';
 import mainImage from '../../assets/images/Welcome/img_girl.png';
 import './style.css';

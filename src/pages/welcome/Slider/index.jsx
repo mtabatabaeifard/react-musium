@@ -13,7 +13,7 @@ export function SwiperSlider(props) {
             slidesPerView={1}
             pagination={{ clickable: true, noSwiping: false }}>
             <SwiperSlide {...props} />
-            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Start your musical journey now!</SwiperSlide>
         </Swiper>
     );
 }
